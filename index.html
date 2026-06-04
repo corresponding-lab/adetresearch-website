@@ -29,8 +29,17 @@ body{
     gap:14px;
 }
 
-.nav-left img{
+.nav-symbol{
     width:28px;
+    height:28px;
+    border:1.5px solid #c79b3b;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#c79b3b;
+    font-size:13px;
+    font-weight:700;
 }
 
 .site-name{
@@ -88,32 +97,51 @@ body{
 .hero{
     width:1220px;
     margin:auto;
-    margin-top:42px;
+    margin-top:46px;
     display:grid;
     grid-template-columns:360px 1fr;
     column-gap:64px;
     align-items:center;
 }
 
-.hero-logo{
-    width:360px;
-    height:auto;
-}
-
-.hero-panel{
-    min-height:360px;
+.logo-panel{
+    height:380px;
+    border:1.5px solid #c79b3b;
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
+    color:#c79b3b;
+}
+
+.logo-main{
+    font-size:72px;
+    line-height:1;
+    letter-spacing:3px;
+    font-weight:700;
+}
+
+.logo-sub{
+    margin-top:18px;
+    font-size:20px;
+    letter-spacing:3px;
+    text-align:center;
+}
+
+.hero-panel{
+    min-height:380px;
     border-top:1.5px solid #c79b3b;
     border-bottom:1.5px solid #c79b3b;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
 }
 
 .hero-title{
     color:#c79b3b;
     text-align:center;
-    font-size:76px;
+    font-size:78px;
     line-height:1.02;
     letter-spacing:2.5px;
     font-weight:700;
@@ -125,19 +153,19 @@ body{
 }
 
 .hero-tagline{
-    margin-top:28px;
+    margin-top:30px;
     color:#c79b3b;
     font-size:30px;
     font-style:italic;
     text-align:center;
 }
 
-/* SUBTITLE */
+/* DESCRIPTION */
 
 .subtitle{
     width:1120px;
     margin:auto;
-    margin-top:48px;
+    margin-top:52px;
     color:#c79b3b;
     font-size:24px;
     line-height:1.72;
@@ -148,7 +176,7 @@ body{
 .footer{
     width:1120px;
     margin:auto;
-    margin-top:40px;
+    margin-top:42px;
     color:white;
     text-align:center;
     font-size:15px;
@@ -166,7 +194,7 @@ body{
 <div class="navbar">
 
     <div class="nav-left">
-        <img src="logo.png">
+        <div class="nav-symbol">A</div>
         <div class="site-name">www.adetresearch.org</div>
     </div>
 
@@ -188,7 +216,18 @@ body{
 
 <div class="hero">
 
-    <img class="hero-logo" src="logo.png">
+    <div class="logo-panel">
+
+        <div class="logo-main">ADET</div>
+
+        <div class="logo-sub">
+            ALLIANCE FOR<br>
+            DEVELOPMENT IN<br>
+            EVIDENCE AND<br>
+            TRANSFORMATION
+        </div>
+
+    </div>
 
     <div class="hero-panel">
 
