@@ -11,8 +11,6 @@ body{
     font-family:Georgia, serif;
 }
 
-/* TOP MENU */
-
 .navbar{
     background:#111111;
     height:72px;
@@ -35,54 +33,61 @@ body{
 
 .site-name{
     color:white;
-    font-size:20px;
+    font-size:22px;
+    font-weight:bold;
 }
 
 .nav-right{
     display:flex;
-    gap:34px;
-    color:white;
+    align-items:center;
+    gap:30px;
     font-size:18px;
+    font-weight:bold;
 }
 
-/* HERO */
+.nav-right a{
+    color:white;
+    text-decoration:none;
+}
+
+.nav-right a:hover{
+    color:#c89b2b;
+}
 
 .hero{
     display:flex;
     justify-content:center;
     align-items:flex-start;
-    gap:34px;
-    margin-top:36px;
+    gap:22px;
+    margin-top:28px;
 }
 
 .logo{
-    width:28%;
-    max-width:390px;
+    width:23%;
+    max-width:320px;
 }
 
 .banner{
-    width:52%;
-    max-width:850px;
+    width:63%;
+    max-width:980px;
 }
-
-/* TEXT */
 
 .subtitle{
     color:#c89b2b;
-    font-size:28px;
+    font-size:31px;
     line-height:1.7;
-    margin-top:90px;
-    margin-left:95px;
-    margin-right:95px;
+    margin-top:60px;
+    margin-left:90px;
+    margin-right:90px;
 }
 
 .footer{
     color:white;
     text-align:center;
-    font-size:15px;
-    line-height:1.9;
-    margin-top:90px;
-    padding-bottom:40px;
+    font-size:17px;
+    line-height:2;
+    margin-top:65px;
+    padding-bottom:35px;
 }
 
 </style>
@@ -99,14 +104,15 @@ body{
     </div>
 
     <div class="nav-right">
-        <div>Home</div>
-        <div>About</div>
-        <div>Members & Collaborators</div>
-        <div>Projects</div>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="members.html">Members & Collaborators</a>
+        <a href="projects.html">Projects</a>
+        <a href="research-information-access.html">Research Information Access</a>
+        <a href="#">Search</a>
     </div>
 
 </div>
-
 
 <div class="hero">
 
@@ -116,13 +122,11 @@ body{
 
 </div>
 
-
 <div class="subtitle">
 
 <b>ADET Research Group</b> — Generating evidence across health, behavioral, and care systems to guide better practice and outcomes — for lasting impact.
 
 </div>
-
 
 <div class="footer">
 
