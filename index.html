@@ -92,7 +92,7 @@ body{
     display:flex;
     align-items:center;
     justify-content:center;
-    gap:58px;
+    gap:38px;
 }
 
 .hero-logo{
@@ -101,22 +101,41 @@ body{
     object-fit:contain;
 }
 
-.hero-text{
-    width:660px;
+.hero-banner{
+    position:relative;
+    height:430px;
+    width:760px;
+    overflow:hidden;
+}
+
+.hero-banner img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
     text-align:center;
     color:#c79b3b;
 }
 
 .hero-title{
-    font-size:70px;
-    line-height:1.05;
+    font-size:58px;
+    line-height:1.08;
     letter-spacing:2px;
     font-weight:700;
 }
 
 .hero-tagline{
-    margin-top:28px;
-    font-size:32px;
+    margin-top:26px;
+    font-size:28px;
     font-style:italic;
     color:#c79b3b;
 }
@@ -179,16 +198,22 @@ body{
 
     <img class="hero-logo" src="logo.describe_2.png">
 
-    <div class="hero-text">
+    <div class="hero-banner">
 
-        <div class="hero-title">
-            ADET<br>
-            RESEARCH<br>
-            GROUP
-        </div>
+        <img src="home-banner_2.png">
 
-        <div class="hero-tagline">
-            “For the greater good”
+        <div class="hero-overlay">
+
+            <div class="hero-title">
+                ADET<br>
+                RESEARCH<br>
+                GROUP
+            </div>
+
+            <div class="hero-tagline">
+                “For the greater good”
+            </div>
+
         </div>
 
     </div>
