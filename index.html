@@ -24,24 +24,24 @@ body{
 .nav-left{
     display:flex;
     align-items:center;
-    gap:18px;
+    gap:16px;
 }
 
 .nav-left img{
-    width:34px;
+    width:30px;
 }
 
 .site-name{
     color:white;
-    font-size:22px;
+    font-size:18px;
     font-weight:bold;
 }
 
 .nav-right{
     display:flex;
     align-items:center;
-    gap:30px;
-    font-size:18px;
+    gap:24px;
+    font-size:16px;
     font-weight:bold;
 }
 
@@ -52,6 +52,39 @@ body{
 
 .nav-right a:hover{
     color:#c89b2b;
+}
+
+.dropdown{
+    position:relative;
+}
+
+.dropdown-content{
+    display:none;
+    position:absolute;
+    background:#222222;
+    min-width:260px;
+    top:32px;
+    right:0;
+    padding-top:10px;
+    padding-bottom:10px;
+    z-index:999;
+}
+
+.dropdown-content a{
+    display:block;
+    padding:12px 18px;
+    color:white;
+    text-decoration:none;
+    font-size:15px;
+}
+
+.dropdown-content a:hover{
+    background:#333333;
+    color:#c89b2b;
+}
+
+.dropdown:hover .dropdown-content{
+    display:block;
 }
 
 .hero{
@@ -99,17 +132,43 @@ body{
 <div class="navbar">
 
     <div class="nav-left">
+
         <img src="logo.describe.png">
-        <div class="site-name">www.adetresearch.org</div>
+
+        <div class="site-name">
+            www.adetresearch.org
+        </div>
+
     </div>
 
     <div class="nav-right">
+
         <a href="index.html">Home</a>
+
         <a href="about.html">About</a>
-        <a href="members.html">Members & Collaborators</a>
+
+        <a href="members.html">
+            Members & Collaborators
+        </a>
+
         <a href="projects.html">Projects</a>
-        <a href="research-information-access.html">Research Information Access</a>
-        <a href="#">Search</a>
+
+        <div class="dropdown">
+
+            <a href="#">
+                Research Information Access ▼
+            </a>
+
+            <div class="dropdown-content">
+
+                <a href="project3-pis.html">
+                    Project III – PIS Access
+                </a>
+
+            </div>
+
+        </div>
+
     </div>
 
 </div>
