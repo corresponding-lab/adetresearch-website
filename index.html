@@ -88,56 +88,48 @@ body{
 .hero{
     width:1220px;
     margin:auto;
-    margin-top:34px;
-    display:flex;
+    margin-top:42px;
+    display:grid;
+    grid-template-columns:360px 1fr;
+    column-gap:64px;
     align-items:center;
-    justify-content:center;
-    gap:38px;
 }
 
 .hero-logo{
-    height:430px;
-    width:auto;
-    object-fit:contain;
+    width:360px;
+    height:auto;
 }
 
-.hero-banner{
-    position:relative;
-    height:430px;
-    width:760px;
-    overflow:hidden;
-}
-
-.hero-banner img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    object-position:center;
-}
-
-.hero-overlay{
-    position:absolute;
-    inset:0;
+.hero-panel{
+    min-height:360px;
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
-    text-align:center;
-    color:#c79b3b;
+    border-top:1.5px solid #c79b3b;
+    border-bottom:1.5px solid #c79b3b;
 }
 
 .hero-title{
-    font-size:58px;
-    line-height:1.08;
-    letter-spacing:2px;
+    color:#c79b3b;
+    text-align:center;
+    font-size:76px;
+    line-height:1.02;
+    letter-spacing:2.5px;
     font-weight:700;
 }
 
+.hero-title-small{
+    font-size:62px;
+    letter-spacing:2px;
+}
+
 .hero-tagline{
-    margin-top:26px;
-    font-size:28px;
-    font-style:italic;
+    margin-top:28px;
     color:#c79b3b;
+    font-size:30px;
+    font-style:italic;
+    text-align:center;
 }
 
 /* SUBTITLE */
@@ -145,7 +137,7 @@ body{
 .subtitle{
     width:1120px;
     margin:auto;
-    margin-top:42px;
+    margin-top:48px;
     color:#c79b3b;
     font-size:24px;
     line-height:1.72;
@@ -156,7 +148,7 @@ body{
 .footer{
     width:1120px;
     margin:auto;
-    margin-top:38px;
+    margin-top:40px;
     color:white;
     text-align:center;
     font-size:15px;
@@ -196,24 +188,18 @@ body{
 
 <div class="hero">
 
-    <img class="hero-logo" src="logo.describe_2.png">
+    <img class="hero-logo" src="logo.png">
 
-    <div class="hero-banner">
+    <div class="hero-panel">
 
-        <img src="home-banner_2.png">
+        <div class="hero-title">
+            ADET<br>
+            <span class="hero-title-small">RESEARCH</span><br>
+            <span class="hero-title-small">GROUP</span>
+        </div>
 
-        <div class="hero-overlay">
-
-            <div class="hero-title">
-                ADET<br>
-                RESEARCH<br>
-                GROUP
-            </div>
-
-            <div class="hero-tagline">
-                “For the greater good”
-            </div>
-
+        <div class="hero-tagline">
+            “For the greater good”
         </div>
 
     </div>
