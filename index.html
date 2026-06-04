@@ -10,7 +10,6 @@ body{
     font-family:Georgia, serif;
     background:
         radial-gradient(circle at 35% 35%, rgba(32,70,150,0.45), transparent 38%),
-        radial-gradient(circle at 75% 20%, rgba(255,210,90,0.05), transparent 25%),
         linear-gradient(180deg,#001b63 0%,#001247 45%,#000d35 100%);
 }
 
@@ -52,98 +51,44 @@ body{
     text-decoration:none;
 }
 
-.nav-right a:hover{
-    color:#c79b3b;
-}
-
-.dropdown{
-    position:relative;
-}
-
-.dropdown-content{
-    display:none;
-    position:absolute;
-    background:#001141;
-    min-width:250px;
-    top:28px;
-    right:0;
-    z-index:999;
-}
-
-.dropdown-content a{
-    display:block;
-    padding:10px 16px;
-    color:white;
-    text-decoration:none;
-    font-size:14px;
-}
-
-.dropdown:hover .dropdown-content{
-    display:block;
-}
-
 /* HERO */
 
 .hero{
     width:1220px;
     margin:34px auto 0;
     display:grid;
-    grid-template-columns:360px 1fr;
+    grid-template-columns:360px 760px;
     gap:42px;
-    align-items:center;
-}
-
-.logo-card{
-    height:430px;
-    background:linear-gradient(180deg,#07192d,#020b18);
-    border:1px solid rgba(199,155,59,0.45);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    box-shadow:0 0 28px rgba(0,0,0,0.45);
-    overflow:hidden;
+    align-items:start;
 }
 
 .logo-card img{
-    width:100%;
-    height:100%;
-    object-fit:contain;
-}
-
-.hero-card{
-    height:430px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    overflow:hidden;
+    width:360px;
+    height:auto;
+    display:block;
 }
 
 .hero-card img{
-    width:100%;
-    height:100%;
-    object-fit:contain;
-    object-position:center;
+    width:760px;
+    height:auto;
+    display:block;
 }
 
 /* SUBTITLE */
 
 .subtitle{
     width:1120px;
-    margin:46px auto 0;
+    margin:42px auto 0;
     color:#cfa13a;
     font-size:24px;
     line-height:1.72;
-}
-
-.subtitle b{
-    color:#cfa13a;
 }
 
 /* FOOTER */
 
 .footer{
     width:1120px;
-    margin:38px auto 0;
+    margin:34px auto 0;
     color:white;
     text-align:center;
     font-size:15px;
@@ -169,13 +114,7 @@ body{
         <a href="#">About</a>
         <a href="#">Members & Collaborators</a>
         <a href="#">Projects</a>
-
-        <div class="dropdown">
-            <a href="#">Research Information Access ▼</a>
-            <div class="dropdown-content">
-                <a href="#">Project III – PIS Access</a>
-            </div>
-        </div>
+        <a href="#">Research Information Access ▼</a>
     </div>
 
 </div>
