@@ -8,44 +8,81 @@
 body{
     background:#03144a;
     margin:0;
-    padding-top:40px;
     font-family:Georgia, serif;
 }
+
+/* TOP MENU */
+
+.navbar{
+    background:#111111;
+    height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-left:30px;
+    padding-right:30px;
+}
+
+.nav-left{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.nav-left img{
+    width:34px;
+}
+
+.site-name{
+    color:white;
+    font-size:20px;
+}
+
+.nav-right{
+    display:flex;
+    gap:34px;
+    color:white;
+    font-size:18px;
+}
+
+/* HERO */
 
 .hero{
     display:flex;
     justify-content:center;
     align-items:flex-start;
-    gap:30px;
+    gap:34px;
+    margin-top:36px;
 }
 
 .logo{
-    width:320px;
+    width:28%;
+    max-width:390px;
 }
 
 .banner{
-    width:700px;
+    width:52%;
+    max-width:850px;
 }
 
-.title{
-    color:#d4a52f;
-    font-size:56px;
-    text-align:center;
-    margin-top:50px;
-}
+/* TEXT */
 
 .subtitle{
     color:#c89b2b;
-    text-align:center;
-    font-size:20px;
-    margin-top:10px;
+    font-size:28px;
+    line-height:1.7;
+    margin-top:90px;
+    margin-left:95px;
+    margin-right:95px;
 }
 
 .footer{
     color:white;
     text-align:center;
-    margin-top:80px;
-    font-size:18px;
+    font-size:15px;
+    line-height:1.9;
+    margin-top:90px;
+    padding-bottom:40px;
 }
 
 </style>
@@ -54,24 +91,48 @@ body{
 
 <body>
 
+<div class="navbar">
+
+    <div class="nav-left">
+        <img src="logo.describe.png">
+        <div class="site-name">www.adetresearch.org</div>
+    </div>
+
+    <div class="nav-right">
+        <div>Home</div>
+        <div>About</div>
+        <div>Members & Collaborators</div>
+        <div>Projects</div>
+    </div>
+
+</div>
+
+
 <div class="hero">
 
-<img class="logo" src="logo.describe.png">
+    <img class="logo" src="logo.describe.png">
 
-<img class="banner" src="home-banner.png">
+    <img class="banner" src="home-banner.png">
 
 </div>
 
-<div class="title">
-ADET Research Group
-</div>
 
 <div class="subtitle">
-Generating evidence across health, behavioral, and care systems.
+
+<b>ADET Research Group</b> — Generating evidence across health, behavioral, and care systems to guide better practice and outcomes — for lasting impact.
+
 </div>
 
+
 <div class="footer">
-© 2025–2026 ADET Research Group
+
+© 2025–2026 ADET Research Group. All rights reserved. |
+<i>Last updated April 2026.</i> |
+Independent and self-funded initiative (no external grant support) |
+Not affiliated with any university, hospital, or organization |
+Bangkok, Thailand |
+Email: contact@adetresearch.org
+
 </div>
 
 </body>
