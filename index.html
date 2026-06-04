@@ -17,9 +17,7 @@ body{
     background:#001141;
     height:68px;
     width:1220px;
-
     margin:auto;
-
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -46,7 +44,6 @@ body{
     display:flex;
     align-items:center;
     gap:22px;
-
     font-size:15px;
     font-weight:400;
 }
@@ -57,10 +54,8 @@ body{
 }
 
 .nav-right a:hover{
-    color:#b08a3c;
+    color:#c79b3b;
 }
-
-/* DROPDOWN */
 
 .dropdown{
     position:relative;
@@ -68,28 +63,19 @@ body{
 
 .dropdown-content{
     display:none;
-
     position:absolute;
-
     background:#001141;
-
     min-width:250px;
-
     top:28px;
     right:0;
-
     z-index:999;
 }
 
 .dropdown-content a{
     display:block;
-
     padding:10px 16px;
-
     color:white;
-
     text-decoration:none;
-
     font-size:14px;
 }
 
@@ -100,75 +86,63 @@ body{
 /* HERO */
 
 .hero{
-
-    width:1280px;
-
+    width:1220px;
     margin:auto;
-
-    margin-top:26px;
-
+    margin-top:34px;
     display:flex;
-
+    align-items:center;
     justify-content:center;
-
-    align-items:flex-start;
-
-    gap:26px;
+    gap:58px;
 }
 
-.logo{
-
+.hero-logo{
     height:430px;
-
     width:auto;
-
     object-fit:contain;
 }
 
-.banner{
+.hero-text{
+    width:660px;
+    text-align:center;
+    color:#c79b3b;
+}
 
-    height:430px;
+.hero-title{
+    font-size:70px;
+    line-height:1.05;
+    letter-spacing:2px;
+    font-weight:700;
+}
 
-    width:auto;
-
-    object-fit:contain;
+.hero-tagline{
+    margin-top:28px;
+    font-size:32px;
+    font-style:italic;
+    color:#c79b3b;
 }
 
 /* SUBTITLE */
 
 .subtitle{
-
     width:1120px;
-
     margin:auto;
-
-    margin-top:38px;
-
-    color:#b08a3c;
-
-    font-size:23px;
-
+    margin-top:42px;
+    color:#c79b3b;
+    font-size:24px;
     line-height:1.72;
 }
 
 /* FOOTER */
 
 .footer{
-
     width:1120px;
-
     margin:auto;
-
     margin-top:38px;
-
     color:white;
-
     text-align:center;
-
-    font-size:16px;
-
-    line-height:1.9;
-
+    font-size:15px;
+    font-weight:400;
+    line-height:2;
     padding-bottom:30px;
 }
 
@@ -181,50 +155,43 @@ body{
 <div class="navbar">
 
     <div class="nav-left">
-
         <img src="logo.png">
-
-        <div class="site-name">
-            www.adetresearch.org
-        </div>
-
+        <div class="site-name">www.adetresearch.org</div>
     </div>
 
     <div class="nav-right">
-
         <a href="#">Home</a>
-
         <a href="#">About</a>
-
         <a href="#">Members & Collaborators</a>
-
         <a href="#">Projects</a>
 
         <div class="dropdown">
-
-            <a href="#">
-                Research Information Access ▼
-            </a>
-
+            <a href="#">Research Information Access ▼</a>
             <div class="dropdown-content">
-
-                <a href="#">
-                    Project III – PIS Access
-                </a>
-
+                <a href="#">Project III – PIS Access</a>
             </div>
-
         </div>
-
     </div>
 
 </div>
 
 <div class="hero">
 
-    <img class="logo" src="logo.describe_2.png">
+    <img class="hero-logo" src="logo.describe_2.png">
 
-    <img class="banner" src="home-banner_2.png">
+    <div class="hero-text">
+
+        <div class="hero-title">
+            ADET<br>
+            RESEARCH<br>
+            GROUP
+        </div>
+
+        <div class="hero-tagline">
+            “For the greater good”
+        </div>
+
+    </div>
 
 </div>
 
