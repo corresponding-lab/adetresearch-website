@@ -11,14 +11,22 @@ body{
     font-family:Georgia, serif;
 }
 
+/* NAVBAR */
+
 .navbar{
     background:#02124a;
     height:72px;
+
+    width:1200px;
+
+    margin:auto;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding-left:30px;
-    padding-right:30px;
+
+    padding-left:10px;
+    padding-right:10px;
 }
 
 .nav-left{
@@ -56,6 +64,8 @@ body{
     color:#c89b2b;
 }
 
+/* DROPDOWN */
+
 .dropdown{
     position:relative;
 }
@@ -63,25 +73,33 @@ body{
 .dropdown-content{
     display:none;
     position:absolute;
-    background:#222222;
+
+    background:#02124a;
+
     min-width:260px;
+
     top:32px;
     right:0;
+
     padding-top:10px;
     padding-bottom:10px;
+
     z-index:999;
 }
 
 .dropdown-content a{
     display:block;
+
     padding:12px 18px;
+
     color:white;
+
     text-decoration:none;
+
     font-size:15px;
 }
 
 .dropdown-content a:hover{
-    background:#333333;
     color:#c89b2b;
 }
 
@@ -89,41 +107,76 @@ body{
     display:block;
 }
 
+/* HERO BLOCK */
+
 .hero{
-    display:flex;
-    justify-content:center;
-    align-items:flex-start;
-    gap:18px;
+
+    width:1200px;
+
+    margin:auto;
+
     margin-top:22px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    gap:32px;
 }
 
 .logo{
     height:430px;
-    width:auto;
+    width:320px;
+
     object-fit:cover;
 }
 
 .banner{
     height:430px;
-    width:auto;
+    width:680px;
+
     object-fit:cover;
+
+    object-position:center;
 }
+
+/* TEXT BLOCK */
 
 .subtitle{
-    color:#c89b2b;
-    font-size:25px;
-    line-height:1.7;
+
+    width:1200px;
+
+    margin:auto;
+
     margin-top:70px;
-    margin-left:90px;
-    margin-right:90px;
+
+    color:#c89b2b;
+
+    font-size:25px;
+
+    line-height:1.7;
 }
 
+/* FOOTER */
+
 .footer{
-    color:white;
-    text-align:center;
-    font-size:17px;
-    line-height:2;
+
+    width:1200px;
+
+    margin:auto;
+
     margin-top:65px;
+
+    color:white;
+
+    text-align:center;
+
+    font-size:17px;
+
+    line-height:2;
+
     padding-bottom:35px;
 }
 
@@ -137,7 +190,7 @@ body{
 
     <div class="nav-left">
 
-        <img src="logo.png">
+        <img src="logo.describe_2.png">
 
         <div class="site-name">
             www.adetresearch.org
@@ -151,9 +204,7 @@ body{
 
         <a href="#">About</a>
 
-        <a href="#">
-            Members & Collaborators
-        </a>
+        <a href="#">Members & Collaborators</a>
 
         <a href="#">Projects</a>
 
