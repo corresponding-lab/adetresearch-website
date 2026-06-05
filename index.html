@@ -9,7 +9,7 @@ body{
     margin:0;
     font-family:Georgia, serif;
     background:#031238;
-    overflow-x:hidden;
+    overflow-x:visible;
 }
 
 /* NAVBAR */
@@ -22,6 +22,8 @@ body{
     display:flex;
     align-items:center;
     justify-content:space-between;
+    position:relative;
+    z-index:1000;
 }
 
 .nav-left{
@@ -45,6 +47,7 @@ body{
     align-items:center;
     gap:14px;
     font-size:16px;
+    white-space:nowrap;
 }
 
 .nav-right a{
@@ -54,6 +57,46 @@ body{
 
 .nav-right a:hover{
     color:#c79b3b;
+}
+
+/* DROPDOWN */
+
+.dropdown{
+    position:relative;
+}
+
+.dropdown > a{
+    color:white;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+.dropdown-menu{
+    display:none;
+    position:absolute;
+    top:28px;
+    right:0;
+    min-width:230px;
+    background:#2a241f;
+    padding:14px 16px;
+    text-align:center;
+    z-index:9999;
+}
+
+.dropdown-menu a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    font-size:16px;
+    line-height:1.5;
+}
+
+.dropdown-menu a:hover{
+    color:#c79b3b;
+}
+
+.dropdown:hover .dropdown-menu{
+    display:block;
 }
 
 /* HERO */
@@ -145,7 +188,13 @@ body{
         <a href="#">About</a>
         <a href="#">Members & Collaborators</a>
         <a href="#">Projects</a>
-        <a href="#">Research Information Access ▼</a>
+
+        <div class="dropdown">
+            <a href="#">Research Information Access ▼</a>
+            <div class="dropdown-menu">
+                <a href="#">Project III – PIS Access</a>
+            </div>
+        </div>
     </div>
 
 </div>
