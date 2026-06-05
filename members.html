@@ -1,1 +1,406 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Georgia, serif;
+    background:#031238;
+    overflow-x:visible;
+}
+
+/* NAVBAR */
+
+.navbar{
+    height:68px;
+    max-width:1280px;
+    width:95%;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:relative;
+    z-index:1000;
+}
+
+.nav-left{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.nav-left img{
+    width:28px;
+}
+
+.site-name{
+    color:white;
+    font-size:18px;
+    font-weight:500;
+}
+
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    font-size:16px;
+    white-space:nowrap;
+}
+
+.nav-right a{
+    color:white;
+    text-decoration:none;
+}
+
+.nav-right a:hover{
+    color:#c79b3b;
+}
+
+/* DROPDOWN */
+
+.dropdown{
+    position:relative;
+}
+
+.dropdown > a{
+    color:white;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+.dropdown-menu{
+    display:none;
+    position:absolute;
+    top:28px;
+    right:0;
+    min-width:230px;
+    background:#2a241f;
+    padding:14px 16px;
+    text-align:center;
+    z-index:9999;
+}
+
+.dropdown-menu a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    font-size:16px;
+    line-height:1.5;
+}
+
+.dropdown-menu a:hover{
+    color:#c79b3b;
+}
+
+.dropdown:hover .dropdown-menu{
+    display:block;
+}
+
+/* MEMBERS */
+
+.members-container{
+    width:1100px;
+    margin:58px auto 0;
+    color:white;
+}
+
+.page-title{
+    color:#d4a017;
+    font-size:46px;
+    line-height:1.2;
+    font-weight:bold;
+    text-align:center;
+    margin-bottom:18px;
+}
+
+.page-subtitle{
+    color:white;
+    font-size:21px;
+    line-height:1.7;
+    text-align:center;
+    width:820px;
+    margin:0 auto 58px;
+}
+
+.section{
+    margin-bottom:72px;
+}
+
+.section-title{
+    color:#d4a017;
+    font-size:32px;
+    line-height:1.3;
+    font-weight:bold;
+    text-align:center;
+    margin-bottom:34px;
+}
+
+.card-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:38px 34px;
+    align-items:start;
+}
+
+.card-grid.center-one{
+    grid-template-columns:360px;
+    justify-content:center;
+}
+
+.member-card{
+    text-align:center;
+}
+
+.member-card img{
+    width:100%;
+    max-width:330px;
+    display:block;
+    margin:0 auto 18px;
+}
+
+.member-name{
+    color:white;
+    font-size:22px;
+    line-height:1.45;
+    font-weight:bold;
+    margin-bottom:8px;
+}
+
+.member-role{
+    color:#d4a017;
+    font-size:18px;
+    line-height:1.45;
+    margin-bottom:8px;
+}
+
+.member-affiliation{
+    color:white;
+    font-size:17px;
+    line-height:1.55;
+}
+
+.note{
+    width:920px;
+    margin:10px auto 0;
+    color:white;
+    font-size:18px;
+    line-height:1.75;
+    text-align:center;
+}
+
+/* FOOTER */
+
+.footer{
+    width:1000px;
+    margin:82px auto 0;
+    color:white;
+    text-align:center;
+    font-size:16px;
+    line-height:1.8;
+    padding-bottom:42px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+    <div class="nav-left">
+        <img src="logo.png">
+        <div class="site-name">www.adetresearch.org</div>
+    </div>
+
+    <div class="nav-right">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="members.html">Members & Collaborators</a>
+        <a href="#">Projects</a>
+
+        <div class="dropdown">
+            <a href="#">Research Information Access ▼</a>
+            <div class="dropdown-menu">
+                <a href="#">Project III – PIS Access</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="members-container">
+
+    <div class="page-title">
+        Members & Collaborators
+    </div>
+
+    <div class="page-subtitle">
+        ADET Research Group brings together members, collaborators, contributors, and advisors across disciplines to support independent, ethical, and collaborative research.
+    </div>
+
+    <div class="section">
+
+        <div class="section-title">
+            Founder & Director
+        </div>
+
+        <div class="card-grid center-one">
+
+            <div class="member-card">
+                <img src="founder.png">
+
+                <div class="member-name">
+                    Aeckapholpholladet Detkaew
+                </div>
+
+                <div class="member-role">
+                    Founder & Director
+                </div>
+
+                <div class="member-affiliation">
+                    Faculty of Medicine Siriraj Hospital,<br>
+                    Mahidol University, Bangkok, Thailand
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="section">
+
+        <div class="section-title">
+            Member Categories
+        </div>
+
+        <div class="card-grid">
+
+            <div class="member-card">
+                <img src="member.png">
+
+                <div class="member-name">
+                    Member
+                </div>
+
+                <div class="member-role">
+                    Core Research Member
+                </div>
+
+                <div class="member-affiliation">
+                    Internal research involvement and project-based contribution.
+                </div>
+            </div>
+
+            <div class="member-card">
+                <img src="associate-member.png">
+
+                <div class="member-name">
+                    Associate Member
+                </div>
+
+                <div class="member-role">
+                    Research Associate
+                </div>
+
+                <div class="member-affiliation">
+                    Collaborative support within defined research activities.
+                </div>
+            </div>
+
+            <div class="member-card">
+                <img src="Affiliate.png">
+
+                <div class="member-name">
+                    Affiliate
+                </div>
+
+                <div class="member-role">
+                    Affiliated Research Participant
+                </div>
+
+                <div class="member-affiliation">
+                    Linked participation in selected research or academic activities.
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="section">
+
+        <div class="section-title">
+            External Research Roles
+        </div>
+
+        <div class="card-grid">
+
+            <div class="member-card">
+                <img src="collaborator.png">
+
+                <div class="member-name">
+                    Collaborator
+                </div>
+
+                <div class="member-role">
+                    Project Collaborator
+                </div>
+
+                <div class="member-affiliation">
+                    Contributes to research development, review, or implementation.
+                </div>
+            </div>
+
+            <div class="member-card">
+                <img src="contributor.png">
+
+                <div class="member-name">
+                    Contributor
+                </div>
+
+                <div class="member-role">
+                    Academic Contributor
+                </div>
+
+                <div class="member-affiliation">
+                    Provides defined academic, methodological, or technical input.
+                </div>
+            </div>
+
+            <div class="member-card">
+                <img src="honorary-advisor.png">
+
+                <div class="member-name">
+                    Honorary Advisor
+                </div>
+
+                <div class="member-role">
+                    Advisory Board
+                </div>
+
+                <div class="member-affiliation">
+                    Provides high-level academic or scientific advisory support.
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="note">
+        Role titles reflect the nature and scope of involvement in ADET Research Group activities and do not imply institutional employment, appointment, or formal affiliation unless explicitly stated.
+    </div>
+
+</div>
+
+<div class="footer">
+    © 2025–2026 ADET Research Group. All rights reserved.
+</div>
+
+</body>
+
+</html>
