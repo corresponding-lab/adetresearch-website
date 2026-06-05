@@ -1,1 +1,301 @@
+<!DOCTYPE html>
 
+<html>
+<head>
+<style>
+body{
+    margin:0;
+    font-family:Georgia, serif;
+    background:#031238;
+    overflow-x:visible;
+}
+
+/* NAVBAR */
+
+.navbar{
+height:68px;
+max-width:1280px;
+width:95%;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:space-between;
+position:relative;
+z-index:1000;
+}
+
+.nav-left{
+display:flex;
+align-items:center;
+gap:14px;
+}
+
+.nav-left img{
+width:28px;
+}
+
+.site-name{
+color:white;
+font-size:18px;
+font-weight:500;
+}
+
+.nav-right{
+display:flex;
+align-items:center;
+gap:14px;
+font-size:16px;
+white-space:nowrap;
+}
+
+.nav-right a{
+color:white;
+text-decoration:none;
+}
+
+.nav-right a:hover
+
+/* DROPDOWN */
+
+.dropdown{
+position:relative;
+}
+
+.dropdown > a{
+color:white;
+text-decoration:none;
+cursor:pointer;
+}
+
+.dropdown-menu{
+display:none;
+position:absolute;
+top:28px;
+right:0;
+min-width:230px;
+background:#2a241f;
+padding:14px 16px;
+text-align:center;
+z-index:9999;
+}
+
+.dropdown-menu a{
+display:block;
+color:white;
+text-decoration:none;
+font-size:16px;
+line-height:1.5;
+}
+
+.dropdown-menu a:hover
+
+.dropdown:hover .dropdown-menu{
+display:block;
+}
+
+/* ABOUT */
+
+.about-container{
+width:1000px;
+margin:46px auto 0;
+color:white;
+}
+
+.about-header{
+display:flex;
+align-items:center;
+gap:60px;
+margin-bottom:40px;
+}
+
+.about-logo img{
+width:230px;
+display:block;
+}
+
+.about-title{
+color:#d4a017;
+font-size:56px;
+line-height:1.2;
+font-weight:bold;
+}
+
+.divider{
+border:none;
+border-top:2px solid rgba(255,255,255,0.75);
+margin:32px 0 48px;
+}
+
+.section{
+margin-bottom:56px;
+}
+
+.section-title{
+color:#d4a017;
+font-size:42px;
+margin-bottom:18px;
+font-weight:bold;
+}
+
+.section-text{
+color:white;
+font-size:22px;
+line-height:1.8;
+}
+
+.values-list{
+padding-left:30px;
+margin:0;
+}
+
+.values-list li{
+margin-bottom:14px;
+color:white;
+font-size:22px;
+line-height:1.7;
+}
+
+.note-text{
+color:white;
+font-size:21px;
+line-height:1.85;
+}
+
+.memo{
+margin-top:18px;
+font-style:italic;
+}
+
+/* FOOTER */
+
+.footer{
+width:1000px;
+margin:70px auto 0;
+color:white;
+text-align:center;
+font-size:16px;
+line-height:1.8;
+padding-bottom:30px;
+} </style>
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="nav-left">
+        <img src="logo.png">
+        <div class="site-name">www.adetresearch.org</div>
+    </div>
+
+```
+<div class="nav-right">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="#">Members & Collaborators</a>
+    <a href="#">Projects</a>
+
+    <div class="dropdown">
+        <a href="#">Research Information Access ▼</a>
+        <div class="dropdown-menu">
+            <a href="#">Project III – PIS Access</a>
+        </div>
+    </div>
+</div>
+```
+
+</div>
+
+<div class="about-container">
+
+```
+<div class="about-header">
+    <div class="about-logo">
+        <img src="logo.describe_2.png">
+    </div>
+
+    <div class="about-title">
+        About ADET Research Group
+    </div>
+</div>
+
+<hr class="divider">
+
+<div class="section">
+    <div class="section-title">Who we are</div>
+    <div class="section-text">
+        Founded in 2023, ADET Research Group is an independent, self-funded initiative based in Thailand. It brings together researchers across disciplines to conduct research with integrity, generating evidence across health, behavioral, and care systems.
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-title">What we do</div>
+    <div class="section-text">
+        We generate evidence ranging from psychometric validation to clinical and collaborative research — linking health, behavioral, and care systems to inform better practice and advance outcomes.
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-title">Our values</div>
+    <ul class="values-list">
+        <li><b>Independence</b> — operating without external funding or institutional influence.</li>
+        <li><b>Collaboration</b> — working with partners across disciplines and countries.</li>
+        <li><b>Integrity</b> — upholding ethical and transparent research.</li>
+        <li><b>Impact</b> — striving to generate evidence that leads to meaningful and lasting improvements.</li>
+    </ul>
+</div>
+
+<div class="section">
+    <div class="section-title">Our mission</div>
+    <div class="section-text">
+        To generate evidence with integrity and collaboration, transforming research into meaningful and lasting improvements in health, behavioral science, and society.
+    </div>
+</div>
+
+<hr class="divider">
+
+<div class="section">
+    <div class="section-title">Note on Activities</div>
+    <div class="note-text">
+        All research activities under ADET Research Group are initiated and directed by the group, conducted without external funding, and operate independently from institutional programs.
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-title">Institutional Acknowledgment</div>
+    <div class="note-text">
+        ADET Research Group is an independent, self-funded research initiative founded by personnel of the Faculty of Medicine Siriraj Hospital, Mahidol University.
+        <br><br>
+        To ensure transparency in academic activities, the establishment of ADET Research Group has been formally notified to the Faculty of Medicine Siriraj Hospital through an official memorandum submitted for acknowledgment. The communication was intended solely to inform the Faculty of the group’s existence and scope of activities as an independent research entity operating under its founder’s responsibility, without the use of institutional funds or resources.
+    </div>
+
+    <div class="note-text memo">
+        (Institutional memorandum submitted and received for acknowledgment on 30–31 October 2025, Faculty of Medicine Siriraj Hospital, Mahidol University.)
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-title">Research Correspondence</div>
+    <div class="note-text">
+        ADET Research Group maintains a dedicated email address for research correspondence and future manuscript communication.
+        <br>
+        It serves as the primary contact for scholarly inquiries, collaborative projects, and upcoming publications.
+        <br><br>
+        Email: corresponding@adetresearch.org
+    </div>
+</div>
+```
+
+</div>
+
+<div class="footer">
+    © 2025–2026 ADET Research Group. All rights reserved. |
+    <i>Last updated April 2026.</i> |
+    Independent and self-funded initiative (no external grant support) |
+    Not affiliated with any university, hospital, or organization |
+    Bangkok, Thailand |
+    Email: contact@adetresearch.org
+</div>
+
+</body>
+</html>
