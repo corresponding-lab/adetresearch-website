@@ -1,26 +1,33 @@
+```html
 <!DOCTYPE html>
-
 <html>
 
 <head>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <style>
+
+/* =========================
+   BODY
+========================= */
 
 body{
     margin:0;
     font-family:Georgia, serif;
-    background:#001141;
-    overflow-x:hidden;
+
+    background:
+        radial-gradient(circle at 35% 35%, rgba(32,70,150,0.45), transparent 38%),
+        radial-gradient(circle at 75% 20%, rgba(255,210,90,0.05), transparent 25%),
+        linear-gradient(180deg,#001b63 0%,#001247 45%,#000d35 100%);
 }
 
-/* NAVBAR */
+/* =========================
+   NAVBAR
+========================= */
 
 .navbar{
     height:68px;
-    width:1120px;
-    max-width:92vw;
+    width:1220px;
+
     margin:auto;
 
     display:flex;
@@ -41,12 +48,14 @@ body{
 .site-name{
     color:white;
     font-size:18px;
+    font-weight:600;
 }
 
 .nav-right{
     display:flex;
     align-items:center;
     gap:22px;
+
     font-size:15px;
 }
 
@@ -56,78 +65,105 @@ body{
 }
 
 .nav-right a:hover{
-    color:#c79b3b;
+    color:#d4a63a;
 }
 
-/* HERO */
+/* =========================
+   HERO SECTION
+========================= */
 
 .hero{
-     width:1220px;
+    width:1120px;
+    max-width:92vw;
+
     margin:34px auto 0;
-    display:grid;
-    grid-template-columns:350px 830px;
-    gap:18px;
-    align-items:start;
+
+    display:flex;
+    align-items:flex-start;
+    justify-content:center;
+
+    gap:28px;
 }
 
-/* IMAGE 1 */
+/* =========================
+   LEFT LOGO CARD
+========================= */
 
 .logo-card{
     width:350px;
     height:380px;
+
     overflow:hidden;
+
+    display:flex;
+    align-items:flex-start;
+    justify-content:center;
 }
 
 .logo-card img{
     width:350px;
     height:auto;
+
     display:block;
+
     transform:translateX(0px) translateY(-8px);
 }
 
-/* IMAGE 2 */
+/* =========================
+   RIGHT HERO CARD
+========================= */
 
 .hero-card{
     width:650px;
     height:380px;
+
     overflow:hidden;
+
+    display:flex;
+    align-items:flex-start;
+    justify-content:center;
 }
 
 .hero-card img{
     width:650px;
     height:auto;
+
     display:block;
-    transform:translateY(-138px);
+
+    transform:translateX(0px) translateY(-128px);
 }
 
-/* SUBTITLE */
+/* =========================
+   DESCRIPTION
+========================= */
 
-.subtitle{
-    width:1120px;
-    max-width:92vw;
-    margin:28px auto 0;
-    color:#c79b3b;
-    font-size:24px;
-    line-height:1.72;
-}
-
-/* FOOTER */
-
-.footer{
-    width:1120px;
-    max-width:92vw;
+.description{
+    width:1220px;
 
     margin:34px auto 0;
 
-    color:white;
+    color:#f1c15c;
+
+    font-size:20px;
+    line-height:1.7;
+    font-weight:600;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    width:1220px;
+
+    margin:38px auto 28px;
 
     text-align:center;
 
-    font-size:16px;
+    color:white;
 
-    line-height:2;
-
-    padding-bottom:30px;
+    font-size:14px;
+    line-height:1.8;
 }
 
 </style>
@@ -136,72 +172,70 @@ body{
 
 <body>
 
+<!-- =========================
+     NAVBAR
+========================= -->
+
 <div class="navbar">
 
-```
-<div class="nav-left">
+    <div class="nav-left">
+        <img src="logo.png">
+        <div class="site-name">www.adetresearch.org</div>
+    </div>
 
-    <img src="logo.png">
-
-    <div class="site-name">
-        www.adetresearch.org
+    <div class="nav-right">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Members & Collaborators</a>
+        <a href="#">Projects</a>
+        <a href="#">Research Information Access ▼</a>
     </div>
 
 </div>
 
-<div class="nav-right">
-
-    <a href="#">Home</a>
-
-    <a href="#">About</a>
-
-    <a href="#">Members & Collaborators</a>
-
-    <a href="#">Projects</a>
-
-    <a href="#">
-        Research Information Access ▼
-    </a>
-
-</div>
-```
-
-</div>
+<!-- =========================
+     HERO
+========================= -->
 
 <div class="hero">
 
-```
-<div class="logo-card">
+    <div class="logo-card">
+        <img src="logo.describe_2.png">
+    </div>
 
-    <img src="logo.describe_2.png">
-
-</div>
-
-<div class="hero-card">
-
-    <img src="Original-banner.png">
-
-</div>
-```
+    <div class="hero-card">
+        <img src="Original-banner.png">
+    </div>
 
 </div>
 
-<div class="subtitle">
+<!-- =========================
+     DESCRIPTION
+========================= -->
+
+<div class="description">
 
 <b>ADET Research Group</b> — Generating evidence across health, behavioral, and care systems to guide better practice and outcomes — for lasting impact.
 
 </div>
 
+<!-- =========================
+     FOOTER
+========================= -->
+
 <div class="footer">
 
-© 2025–2026 ADET Research Group. All rights reserved. | <i>Last updated April 2026.</i> |
+© 2025–2026 ADET Research Group. All rights reserved. |
+<i>Last updated April 2026.</i> |
 Independent and self-funded initiative (no external grant support) |
+<br>
 Not affiliated with any university, hospital, or organization |
 Bangkok, Thailand |
-Email: [contact@adetresearch.org](mailto:contact@adetresearch.org)
+Email: contact@adetresearch.org
 
 </div>
 
 </body>
 
 </html>
+```
