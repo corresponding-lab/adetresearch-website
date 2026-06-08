@@ -1,1 +1,338 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+
+<title>Projects | ADET Research Group</title>
+
+<link rel="icon" type="image/png" href="logo.png">
+
+<style>
+
+body{
+    margin:0;
+    font-family:Georgia, serif;
+    background:#031238;
+    overflow-x:visible;
+    color:white;
+}
+
+/* NAVBAR */
+
+.navbar{
+    height:68px;
+    max-width:1280px;
+    width:95%;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:relative;
+    z-index:1000;
+}
+
+.nav-left{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.nav-left img{
+    width:28px;
+}
+
+.site-name{
+    color:white;
+    font-size:18px;
+    font-weight:500;
+}
+
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    font-size:16px;
+    white-space:nowrap;
+}
+
+.nav-right a{
+    color:white;
+    text-decoration:none;
+}
+
+.nav-right a:hover{
+    color:#c79b3b;
+}
+
+/* DROPDOWN */
+
+.dropdown{
+    position:relative;
+}
+
+.dropdown > a{
+    color:white;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+.dropdown-menu{
+    display:none;
+    position:absolute;
+    top:28px;
+    right:0;
+    min-width:230px;
+    background:#2a241f;
+    padding:14px 16px;
+    text-align:center;
+    z-index:9999;
+}
+
+.dropdown-menu a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    font-size:16px;
+    line-height:1.5;
+}
+
+.dropdown-menu a:hover{
+    color:#c79b3b;
+}
+
+.dropdown:hover .dropdown-menu{
+    display:block;
+}
+
+/* PAGE */
+
+.projects-container{
+    max-width:1120px;
+    width:92%;
+    margin:56px auto 0;
+}
+
+.page-title{
+    color:#d4a017;
+    font-size:54px;
+    text-align:center;
+    margin-bottom:26px;
+    font-weight:bold;
+}
+
+.page-line{
+    width:100%;
+    height:2px;
+    background:white;
+    opacity:0.85;
+    margin-bottom:70px;
+}
+
+/* PROJECT */
+
+.project-block{
+    margin-bottom:110px;
+}
+
+.project-layout{
+    display:grid;
+    grid-template-columns:320px 1fr;
+    gap:54px;
+    align-items:start;
+}
+
+.project-image img{
+    width:100%;
+    display:block;
+}
+
+.project-content{
+    font-size:19px;
+    line-height:1.9;
+}
+
+.project-content b{
+    color:#d4a017;
+}
+
+.instrument-title{
+    color:#d4a017;
+    font-size:22px;
+    font-weight:bold;
+    margin-top:38px;
+    margin-bottom:18px;
+}
+
+.instrument-item{
+    margin-bottom:26px;
+}
+
+/* NOTE */
+
+.note-divider{
+    width:100%;
+    height:2px;
+    background:white;
+    opacity:0.85;
+    margin:12px auto 18px;
+}
+
+.note{
+    font-size:18px;
+    line-height:1.8;
+}
+
+.note-block{
+    margin-bottom:42px;
+}
+
+.note-title{
+    color:#d4a017;
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:10px;
+    line-height:1.5;
+}
+
+/* FOOTER */
+
+.footer{
+    max-width:1000px;
+    width:92%;
+    margin:82px auto 0;
+    color:white;
+    text-align:center;
+    font-size:16px;
+    line-height:1.8;
+    padding-bottom:42px;
+}
+
+/* IPAD */
+
+@media (max-width:1100px){
+
+    .project-layout{
+        grid-template-columns:1fr;
+        gap:36px;
+    }
+
+    .project-image{
+        max-width:340px;
+        margin:auto;
+    }
+
+    .nav-right{
+        gap:10px;
+        font-size:15px;
+    }
+
+    .page-title{
+        font-size:48px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+    <div class="nav-left">
+        <img src="logo.png">
+        <div class="site-name">www.adetresearch.org</div>
+    </div>
+
+    <div class="nav-right">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="members.html">Members & Collaborators</a>
+        <a href="projects.html">Projects</a>
+
+        <div class="dropdown">
+            <a href="#">Research Information Access ▼</a>
+
+            <div class="dropdown-menu">
+                <a href="#">Project III – PIS Access</a>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="projects-container">
+
+    <div class="page-title">
+        Active Research
+    </div>
+
+    <div class="page-line"></div>
+
+    <!-- PROJECT I -->
+
+    <div class="project-block">
+
+        <div class="project-layout">
+
+            <div class="project-image">
+                <img src="project1.png.png">
+            </div>
+
+            <div class="project-content">
+
+                <b>Focus:</b> Thai CHB-21, Thai HLS-14; n=1,048 post-CAG.
+                <br>
+
+                <b>Goals:</b> Cut-off for cardiac outcomes; predictive accuracy vs risk scores.
+                <br>
+
+                <b>Status:</b> IRB-approved (2023–ongoing).
+                <br>
+
+                <b>Current Progress:</b> 462/1,048 participants enrolled; longitudinal outcome follow-up ongoing.
+                <br>
+
+                <b>Principal Investigator:</b> Aeckapholpholladet Detkaew.
+                <br>
+
+                <b>Funding:</b> Self-funded (no external grant support).
+
+                <div class="instrument-title">
+                    — Research Instruments —
+                </div>
+
+                <div class="instrument-item">
+                    <b>1. CHB-21 – Cardiac Health Behavior Scale (Thai Version).</b>
+                    <br>
+                    Translated under academic permission by Aeckapholpholladet Detkaew (Master’s Thesis, Burapha University, 2021 – Thai language) in collaboration with one of the original developers (co-authorship planned).
+                    <br>
+                    - Back-translation reviewed and face-validated by the original developer. Included in Project I (IRB 2023).
+                </div>
+
+                <div class="instrument-item">
+                    <b>2. HLS-14 – Health Literacy Scale (Thai & Cardiac-Adapted Versions).</b>
+                    <br>
+                    Translated under academic permission by Aeckapholpholladet Detkaew (2022) in collaboration with one of the original developers (co-authorship planned).
+                    <br>
+                    - Back-translation reviewed and face-validated by the original developer. Included in Project I (IRB 2023).
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="footer">
+© 2025–2026 ADET Research Group. All rights reserved. |
+<i>Last updated April 2026.</i>
+</div>
+
+</body>
+
+</html>
