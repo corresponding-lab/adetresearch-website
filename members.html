@@ -102,7 +102,8 @@ body{
 /* MEMBERS */
 
 .members-container{
-    width:1100px;
+    max-width:1100px;
+    width:92%;
     margin:72px auto 0;
     color:white;
 }
@@ -117,7 +118,7 @@ body{
     line-height:1.2;
     font-weight:bold;
     text-align:center;
-    margin-bottom:24px;
+    margin-bottom:28px;
 }
 
 .section-line{
@@ -125,15 +126,18 @@ body{
     height:2px;
     background:white;
     opacity:0.85;
-    margin:0 auto 64px;
+    margin:0 auto 78px;
 }
 
 .role-row{
     display:grid;
     grid-template-columns:repeat(3, 1fr);
-    gap:44px;
+    gap:54px;
     align-items:start;
-    margin-bottom:92px;
+    margin-bottom:100px;
+    padding-left:18px;
+    padding-right:18px;
+    box-sizing:border-box;
 }
 
 .role-row.one-card{
@@ -150,13 +154,14 @@ body{
 
 .member-card{
     text-align:center;
+    padding-top:6px;
 }
 
 .member-card img{
     width:100%;
     max-width:300px;
     display:block;
-    margin:0 auto 20px;
+    margin:0 auto 22px;
 }
 
 .member-affiliation{
@@ -197,13 +202,47 @@ body{
 /* FOOTER */
 
 .footer{
-    width:1000px;
+    max-width:1000px;
+    width:92%;
     margin:110px auto 0;
     color:white;
     text-align:center;
     font-size:16px;
     line-height:1.8;
     padding-bottom:46px;
+}
+
+/* IPAD RESPONSIVE */
+
+@media (max-width:1100px){
+
+    .nav-right{
+        gap:10px;
+        font-size:15px;
+    }
+
+    .members-container{
+        width:92%;
+    }
+
+    .section-title{
+        font-size:46px;
+    }
+
+    .section-line{
+        margin-bottom:70px;
+    }
+
+    .role-row{
+        gap:40px;
+        padding-left:14px;
+        padding-right:14px;
+    }
+
+    .role-row.two-card{
+        width:680px;
+    }
+
 }
 
 </style>
@@ -223,7 +262,7 @@ body{
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="members.html">Members & Collaborators</a>
-        <a href="#">Projects</a>
+        <a href="projects.html">Projects</a>
 
         <div class="dropdown">
             <a href="#">Research Information Access ▼</a>
