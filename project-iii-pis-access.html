@@ -1,1 +1,423 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+
+<title>Project III – PIS Access | ADET Research Group</title>
+
+<link rel="icon" type="image/png" href="logo.png">
+
+<style>
+
+body{
+    margin:0;
+    font-family:Georgia, serif;
+    background:#031238;
+    overflow-x:visible;
+    color:white;
+}
+
+/* NAVBAR */
+
+.navbar{
+    height:68px;
+    max-width:1280px;
+    width:95%;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:relative;
+    z-index:1000;
+}
+
+.nav-left{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.nav-left img{
+    width:28px;
+}
+
+.site-name{
+    color:white;
+    font-size:18px;
+    font-weight:500;
+}
+
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    font-size:16px;
+    white-space:nowrap;
+}
+
+.nav-right a{
+    color:white;
+    text-decoration:none;
+}
+
+.nav-right a:hover{
+    color:#c79b3b;
+}
+
+/* DROPDOWN */
+
+.dropdown{
+    position:relative;
+}
+
+.dropdown > a{
+    color:white;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+.dropdown-menu{
+    display:none;
+    position:absolute;
+    top:28px;
+    right:0;
+    min-width:300px;
+    background:#2a241f;
+    padding:16px 18px;
+    text-align:center;
+    z-index:9999;
+}
+
+.dropdown-menu a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    font-size:16px;
+    line-height:1.8;
+}
+
+.dropdown-menu a:hover{
+    color:#c79b3b;
+}
+
+.dropdown:hover .dropdown-menu{
+    display:block;
+}
+
+/* CONTENT */
+
+.projects-container{
+    max-width:1120px;
+    width:92%;
+    margin:56px auto 0;
+}
+
+.page-title{
+    color:#d4a017;
+    font-size:50px;
+    text-align:center;
+    margin-bottom:54px;
+    font-weight:bold;
+}
+
+.page-line{
+    width:100%;
+    height:2px;
+    background:white;
+    opacity:0.85;
+    margin-bottom:72px;
+}
+
+.project-block{
+    margin-bottom:72px;
+}
+
+.project-layout{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:64px;
+    align-items:start;
+}
+
+.project-content{
+    font-size:18px;
+    line-height:1.9;
+}
+
+.instrument-title{
+    color:#d4a017;
+    font-size:24px;
+    font-weight:bold;
+    margin-bottom:24px;
+    line-height:1.5;
+}
+
+.pis-button{
+    display:inline-block;
+    margin-top:10px;
+    padding:12px 26px;
+    border:1px solid #d4a017;
+    color:#d4a017;
+    text-decoration:none;
+    font-size:18px;
+    transition:0.2s;
+}
+
+.pis-button:hover{
+    background:#d4a017;
+    color:#031238;
+}
+
+/* FOOTER */
+
+.footer{
+    width:1000px;
+    margin:70px auto 0;
+    color:white;
+    text-align:center;
+    font-size:16px;
+    line-height:1.8;
+    padding-bottom:42px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width:1100px){
+
+    .project-layout{
+        grid-template-columns:1fr;
+        gap:42px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+    <div class="nav-left">
+        <img src="logo.png">
+        <div class="site-name">www.adetresearch.org</div>
+    </div>
+
+    <div class="nav-right">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="members.html">Members & Collaborators</a>
+        <a href="projects.html">Projects</a>
+
+        <div class="dropdown">
+            <a href="research-info.html">
+                Research Information Access ▼
+            </a>
+
+            <div class="dropdown-menu">
+                <a href="project-iii-pis-access.html">
+                    Project III – PIS Access
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="projects-container">
+
+    <div class="page-title">
+        Project III – PIS Access
+    </div>
+
+    <div class="page-line"></div>
+
+    <!-- ABOUT -->
+
+    <div class="project-block">
+
+        <div class="project-layout">
+
+            <div class="project-content">
+
+                <div class="instrument-title">
+                    About This Page
+                </div>
+
+                This page contains the Participant Information Sheet (PIS) for the research project titled:
+                <br><br>
+
+                “An Investigation of Psychometric Properties: the Individual Work Performance Questionnaire, the Responsibility Questionnaire, and the Perceived Occupational Stress Scale in Working Age Adults.”
+                <br><br>
+
+                The PIS is provided exclusively for individuals who have been invited to consider participation in this study.
+
+            </div>
+
+            <div class="project-content">
+
+                <div class="instrument-title">
+                    เว็บไซต์หน้านี้จัดทำขึ้นเพื่อ
+                </div>
+
+                หน้าเว็บไซต์นี้จัดทำขึ้นเพื่อแสดงเอกสารชี้แจงผู้เข้าร่วมของโครงการวิจัย:
+                <br><br>
+
+                “การตรวจสอบคุณสมบัติเครื่องมือวิจัย: แบบสอบถามประสิทธิภาพการทำงานส่วนบุคคล แบบสอบถามความรับผิดชอบหน้าที่ และแบบประเมินการรับรู้ความเครียดจากการทำงาน ในผู้ใหญ่วัยทำงาน”
+                <br><br>
+
+                เอกสารนี้จัดทำขึ้นสำหรับผู้ที่ได้รับการเชิญชวนให้พิจารณาเข้าร่วมโครงการวิจัยเท่านั้น
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ETHICS -->
+
+    <div class="project-block">
+
+        <div class="project-layout">
+
+            <div class="project-content">
+
+                <div class="instrument-title">
+                    Ethics Approval Status
+                </div>
+
+                The research project has been fully approved by the Human Research Ethics Committee (HREC).
+                <br><br>
+
+                The approved PIS is now available for access at the link below.
+
+            </div>
+
+            <div class="project-content">
+
+                <div class="instrument-title">
+                    สถานะการรับรองจริยธรรมของโครงการ
+                </div>
+
+                โครงการวิจัยได้รับการรับรองจากคณะกรรมการจริยธรรมการวิจัยในคนเรียบร้อยแล้ว
+                <br><br>
+
+                เอกสารชี้แจงผู้เข้าร่วม ฉบับที่ได้รับการรับรอง สามารถเข้าดูได้จากลิงก์ด้านล่าง
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- PIS -->
+
+    <div class="project-block">
+
+        <div class="project-layout">
+
+            <div class="project-content">
+
+                <div class="instrument-title">
+                    Participant Information Sheet
+                </div>
+
+                Please click the button below to view the approved PIS:
+                <br><br>
+
+                <a class="pis-button"
+                   href="https://drive.google.com/file/d/15qqLzb4bt3WGPrHy5W0mOEQ9KYAvmZGu/view"
+                   target="_blank">
+                    View PIS 📄
+                </a>
+
+            </div>
+
+            <div class="project-content">
+
+                <div class="instrument-title">
+                    เอกสารชี้แจงผู้เข้าร่วมการวิจัย
+                </div>
+
+                โปรดกดปุ่มด้านล่างเพื่อเข้าดูเอกสารที่ได้รับการรับรองแล้ว:
+                <br><br>
+
+                <a class="pis-button"
+                   href="https://drive.google.com/file/d/15qqLzb4bt3WGPrHy5W0mOEQ9KYAvmZGu/view"
+                   target="_blank">
+                    ดูเอกสาร 📄
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- INQUIRIES -->
+
+    <div class="project-block">
+
+        <div class="project-layout">
+
+            <div class="project-content">
+
+                <div class="instrument-title">
+                    Further Inquiries
+                </div>
+
+                For questions regarding this research project, please contact the project’s Official LINE account:
+                <br><br>
+
+                <a href="https://line.me/R/ti/p/@270nxtlw?ts=12081336&oat_content=url"
+                   target="_blank"
+                   style="color:#d4a017;">
+                    [Link to the Official LINE OA]
+                </a>
+
+                <br><br>
+
+                <i>
+                This channel is intended solely for research-related inquiries.
+                </i>
+
+            </div>
+
+            <div class="project-content">
+
+                <div class="instrument-title">
+                    สอบถามข้อมูลเพิ่มเติม
+                </div>
+
+                หากมีข้อสงสัยเกี่ยวกับโครงการวิจัย สามารถติดต่อผ่านบัญชีไลน์ทางการของโครงการได้ที่:
+                <br><br>
+
+                <a href="https://line.me/R/ti/p/@270nxtlw?ts=12081336&oat_content=url"
+                   target="_blank"
+                   style="color:#d4a017;">
+                    [ลิงก์ไปยังบัญชีไลน์ทางการของโครงการ]
+                </a>
+
+                <br><br>
+
+                <i>
+                ช่องทางนี้ใช้สำหรับการสอบถามข้อมูลที่เกี่ยวข้องกับงานวิจัยเท่านั้น
+                </i>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="footer">
+© 2025–2026 ADET Research Group. All rights reserved.
+</div>
+
+</body>
+
+</html>
