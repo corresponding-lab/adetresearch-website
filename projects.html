@@ -104,7 +104,7 @@ body{
     display:block;
 }
 
-/* PAGE */
+/* PROJECTS */
 
 .projects-container{
     max-width:1120px;
@@ -114,9 +114,9 @@ body{
 
 .page-title{
     color:#d4a017;
-    font-size:54px;
+    font-size:50px;
     text-align:center;
-    margin-bottom:26px;
+    margin-bottom:24px;
     font-weight:bold;
 }
 
@@ -125,19 +125,17 @@ body{
     height:2px;
     background:white;
     opacity:0.85;
-    margin-bottom:70px;
+    margin-bottom:68px;
 }
 
-/* PROJECT */
-
 .project-block{
-    margin-bottom:110px;
+    margin-bottom:108px;
 }
 
 .project-layout{
     display:grid;
-    grid-template-columns:320px 1fr;
-    gap:54px;
+    grid-template-columns:310px 1fr;
+    gap:52px;
     align-items:start;
 }
 
@@ -147,8 +145,8 @@ body{
 }
 
 .project-content{
-    font-size:19px;
-    line-height:1.9;
+    font-size:18px;
+    line-height:1.82;
 }
 
 .project-content b{
@@ -157,14 +155,14 @@ body{
 
 .instrument-title{
     color:#d4a017;
-    font-size:22px;
+    font-size:20px;
     font-weight:bold;
-    margin-top:38px;
-    margin-bottom:18px;
+    margin-top:34px;
+    margin-bottom:16px;
 }
 
 .instrument-item{
-    margin-bottom:26px;
+    margin-bottom:22px;
 }
 
 /* NOTE */
@@ -174,12 +172,13 @@ body{
     height:2px;
     background:white;
     opacity:0.85;
-    margin:12px auto 18px;
+    margin:10px auto 18px;
 }
 
 .note{
     font-size:18px;
-    line-height:1.8;
+    line-height:1.75;
+    text-align:left;
 }
 
 .note-block{
@@ -192,6 +191,10 @@ body{
     font-weight:bold;
     margin-bottom:10px;
     line-height:1.5;
+}
+
+.note-text{
+    color:white;
 }
 
 /* FOOTER */
@@ -207,9 +210,18 @@ body{
     padding-bottom:42px;
 }
 
-/* IPAD */
+/* IPAD RESPONSIVE */
 
 @media (max-width:1100px){
+
+    .nav-right{
+        gap:10px;
+        font-size:15px;
+    }
+
+    .page-title{
+        font-size:46px;
+    }
 
     .project-layout{
         grid-template-columns:1fr;
@@ -219,15 +231,6 @@ body{
     .project-image{
         max-width:340px;
         margin:auto;
-    }
-
-    .nav-right{
-        gap:10px;
-        font-size:15px;
-    }
-
-    .page-title{
-        font-size:48px;
     }
 
 }
@@ -265,10 +268,7 @@ body{
 
 <div class="projects-container">
 
-    <div class="page-title">
-        Active Research
-    </div>
-
+    <div class="page-title">Active Research</div>
     <div class="page-line"></div>
 
     <!-- PROJECT I -->
@@ -285,24 +285,17 @@ body{
 
                 <b>Focus:</b> Thai CHB-21, Thai HLS-14; n=1,048 post-CAG.
                 <br>
-
                 <b>Goals:</b> Cut-off for cardiac outcomes; predictive accuracy vs risk scores.
                 <br>
-
                 <b>Status:</b> IRB-approved (2023–ongoing).
                 <br>
-
                 <b>Current Progress:</b> 462/1,048 participants enrolled; longitudinal outcome follow-up ongoing.
                 <br>
-
                 <b>Principal Investigator:</b> Aeckapholpholladet Detkaew.
                 <br>
-
                 <b>Funding:</b> Self-funded (no external grant support).
 
-                <div class="instrument-title">
-                    — Research Instruments —
-                </div>
+                <div class="instrument-title">— Research Instruments —</div>
 
                 <div class="instrument-item">
                     <b>1. CHB-21 – Cardiac Health Behavior Scale (Thai Version).</b>
@@ -326,11 +319,175 @@ body{
 
     </div>
 
+    <!-- PROJECT II -->
+
+    <div class="project-block">
+
+        <div class="project-layout">
+
+            <div class="project-image">
+                <img src="project2.png.png">
+            </div>
+
+            <div class="project-content">
+
+                <b>Focus:</b> Thai PSQI, Thai Mini-MASQ, Thai PSS-10, Thai DMI, C-MRCI; n=1,040 post-CAG.
+                <br>
+                <b>Goals:</b> Cut-off for AF, mortality, major cardiac events.
+                <br>
+                <b>Status:</b> IRB-approved (2024–ongoing).
+                <br>
+                <b>Current Progress:</b> 211/1,040 participants enrolled; recruitment and psychometric validation ongoing.
+                <br>
+                <b>Principal Investigator:</b> Aeckapholpholladet Detkaew.
+                <br>
+                <b>Funding:</b> Self-funded (no external grant support).
+
+                <div class="instrument-title">— Research Instruments —</div>
+
+                <div class="instrument-item">
+                    <b>1. Mini-MASQ – Mini-Mood and Anxiety Questionnaire (Thai Version).</b>
+                    <br>
+                    Translated under academic permission by Aeckapholpholladet Detkaew (2023), based on the original Mini-MASQ.
+                    <br>
+                    - Back-translation reviewed and face-validated by the original developers. Included in Project II (IRB 2024).
+                </div>
+
+                <div class="instrument-item">
+                    <b>2. DMI – Detkaew Medication-Adherence Index.</b>
+                    <br>
+                    Developed by Aeckapholpholladet Detkaew (2024) as an original research instrument for evaluating real-world medication-taking behavior.
+                    <br>
+                    - Currently under validation in Project II (IRB 2024).
+                </div>
+
+                <div class="instrument-item">
+                    <b>3. C-MRCI – Clinical and Medication Regimen Complexity Index.</b>
+                    <br>
+                    Developed by Aeckapholpholladet Detkaew (2025) as a new research instrument conceptually derived from the MRCI framework to assess overall treatment complexity.
+                    <br>
+                    - Currently under validation in Project II (IRB 2024; Amendment 2025).
+                </div>
+
+                <div class="instrument-item">
+                    <b>4. PSQI – Pittsburgh Sleep Quality Index (Thai Version).</b>
+                    <br>
+                    Thai version by Sitasuwan T et al. (2014), used under academic permission from the University of Pittsburgh (2023).
+                    <br>
+                    - Included in Project II (IRB 2024).
+                </div>
+
+                <div class="instrument-item">
+                    <b>5. PSS-10 – Perceived Stress Scale (Thai Version).</b>
+                    <br>
+                    Thai version authorized for academic use via MAPI Research Trust (RST Assessments LLC, 2023), with permission acknowledged from Sheldon Cohen.
+                    <br>
+                    - Included in Project II (IRB 2024).
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- PROJECT III -->
+
+    <div class="project-block">
+
+        <div class="project-layout">
+
+            <div class="project-image">
+                <img src="project3.png.png">
+            </div>
+
+            <div class="project-content">
+
+                <b>Focus:</b> Thai IWPQ, Thai RQ, Thai POS Scale; n=400 working-age adults.
+                <br>
+                <b>Goals:</b> Exploratory cut-off determination in Thai working-age adults; cross-cultural comparison of the POS Scale with Italy (n=302).
+                <br>
+                <b>Status:</b> Dual-IRB approved (2025–2026; ongoing).
+                <br>
+                <b>Current Progress:</b> Site approval completed; field data collection pending initiation.
+                <br>
+                <b>Principal Investigator:</b> Aeckapholpholladet Detkaew.
+                <br>
+                <b>Funding:</b> Self-funded (no external grant support).
+
+                <div class="instrument-title">— Research Instruments —</div>
+
+                <div class="instrument-item">
+                    <b>1. IWPQ – Individual Work Performance Questionnaire (Thai Version).</b>
+                    <br>
+                    Translated under academic permission by Aeckapholpholladet Detkaew (2023) in collaboration with one of the original developers (co-authorship planned).
+                    <br>
+                    - Back-translation reviewed and face-validated by the original developers. Included in Project III (IRB 2025).
+                </div>
+
+                <div class="instrument-item">
+                    <b>2. RQ – Responsibility Questionnaire (Thai Version).</b>
+                    <br>
+                    Translated under academic permission by Aeckapholpholladet Detkaew (2024), based on the original RQ.
+                    <br>
+                    - Back-translation reviewed and face-validated by the original developers. Included in Project III (IRB 2025).
+                </div>
+
+                <div class="instrument-item">
+                    <b>3. POS Scale – Perceived Occupational Stress Scale (Thai Version).</b>
+                    <br>
+                    Translated under academic permission by Aeckapholpholladet Detkaew (2025) in collaboration with one of the original developers (listed as IRB co-investigator; co-authorship planned).
+                    <br>
+                    - Back-translation reviewed and face-validated by the original developer. Included in Project III (IRB 2025).
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="note-divider"></div>
+
+    <div class="note">
+
+        <div class="note-block">
+
+            <div class="note-title">
+                Note on Project Ownership and Funding:
+            </div>
+
+            <div class="note-text">
+                All projects presented on this page are initiated and led by Principal Investigators who are members of the ADET Research Group.
+                <br><br>
+                Ethical approvals for certain projects have been granted by institutional review boards (IRBs) through members’ professional affiliations, ensuring appropriate ethical oversight and reflecting academic collaboration.
+                <br><br>
+                Each project remains under the responsibility of its designated Principal Investigator and/or its granting body and is conducted independently, with funding information specified individually for each project.
+            </div>
+
+        </div>
+
+        <div class="note-block">
+
+            <div class="note-title">
+                Disclaimer on Intellectual Ownership and Digital Record:
+            </div>
+
+            <div class="note-text">
+                All research concepts and contents presented on this website originate from Principal Investigators (PIs) within the ADET Research Group.
+                <br><br>
+                Each project remains under the full intellectual ownership of its respective PI. Information is publicly displayed to ensure academic transparency and serves as the permanent digital record of ADET Research Group’s independent research and authorship.
+            </div>
+
+        </div>
+
+    </div>
+
 </div>
 
 <div class="footer">
-© 2025–2026 ADET Research Group. All rights reserved. |
-<i>Last updated April 2026.</i>
+    © 2025–2026 ADET Research Group. All rights reserved. |
+    <i>Last updated April 2026.</i>
 </div>
 
 </body>
