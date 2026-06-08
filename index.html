@@ -69,10 +69,13 @@ body{
     position:relative;
 }
 
-.dropdown > a{
+.dropdown > span{
     color:white;
-    text-decoration:none;
     cursor:pointer;
+}
+
+.dropdown > span:hover{
+    color:#c79b3b;
 }
 
 .dropdown-menu{
@@ -80,9 +83,9 @@ body{
     position:absolute;
     top:28px;
     right:0;
-    min-width:300px;
+    min-width:260px;
     background:#2a241f;
-    padding:16px 18px;
+    padding:14px 16px;
     text-align:center;
     z-index:9999;
 }
@@ -92,7 +95,7 @@ body{
     color:white;
     text-decoration:none;
     font-size:16px;
-    line-height:1.8;
+    line-height:1.6;
 }
 
 .dropdown-menu a:hover{
@@ -100,6 +103,7 @@ body{
 }
 
 .dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu,
 .dropdown-menu:hover{
     display:block;
 }
@@ -195,10 +199,9 @@ body{
         <a href="projects.html">Projects</a>
 
         <div class="dropdown">
-            <a href="#">Research Information Access ▼</a>
+            <span>Research Information Access ▼</span>
 
             <div class="dropdown-menu">
-                <a href="research-info.html">Research Information Access</a>
                 <a href="project-iii-pis-access.html">Project III – PIS Access</a>
             </div>
         </div>
