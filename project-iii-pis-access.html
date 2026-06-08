@@ -3,7 +3,7 @@
 
 <head>
 
-<title>Project III – PIS Access | ADET Research Group</title>
+<title>Project III – Participant Information Sheet (PIS) | ADET Research Group</title>
 
 <link rel="icon" type="image/png" href="logo.png">
 
@@ -68,6 +68,8 @@ body{
 
 .dropdown{
     position:relative;
+    display:flex;
+    align-items:center;
 }
 
 .dropdown > a{
@@ -76,14 +78,27 @@ body{
     cursor:pointer;
 }
 
+.dropdown > a:hover{
+    color:#c79b3b;
+}
+
+.dropdown::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    top:100%;
+    height:18px;
+}
+
 .dropdown-menu{
     display:none;
     position:absolute;
-    top:28px;
+    top:34px;
     right:0;
-    min-width:300px;
+    min-width:360px;
     background:#2a241f;
-    padding:16px 18px;
+    padding:14px 16px;
     text-align:center;
     z-index:9999;
 }
@@ -93,14 +108,16 @@ body{
     color:white;
     text-decoration:none;
     font-size:16px;
-    line-height:1.8;
+    line-height:1.6;
 }
 
 .dropdown-menu a:hover{
     color:#c79b3b;
 }
 
-.dropdown:hover .dropdown-menu{
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu,
+.dropdown-menu:hover{
     display:block;
 }
 
@@ -129,43 +146,68 @@ body{
 }
 
 .project-block{
-    margin-bottom:72px;
+    margin-bottom:68px;
 }
 
 .project-layout{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:64px;
-    align-items:start;
+    align-items:stretch;
 }
 
 .project-content{
     font-size:18px;
-    line-height:1.9;
+    line-height:1.75;
+}
+
+.access-card{
+    display:flex;
+    flex-direction:column;
+    height:100%;
 }
 
 .instrument-title{
     color:#d4a017;
     font-size:24px;
     font-weight:bold;
-    margin-bottom:24px;
-    line-height:1.5;
+    margin-bottom:20px;
+    line-height:1.45;
+    text-align:center;
+}
+
+.link-center{
+    text-align:center;
+    margin-top:auto;
+    padding-top:28px;
 }
 
 .pis-button{
-    display:inline-block;
-    margin-top:10px;
-    padding:12px 26px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:180px;
+    height:52px;
     border:1px solid #d4a017;
     color:#d4a017;
     text-decoration:none;
-    font-size:18px;
+    font-size:17px;
+    text-align:center;
+    box-sizing:border-box;
     transition:0.2s;
 }
 
 .pis-button:hover{
     background:#d4a017;
     color:#031238;
+}
+
+.inquiry-link{
+    color:#d4a017;
+}
+
+.inquiry-link:hover{
+    color:#c79b3b;
 }
 
 /* FOOTER */
@@ -183,6 +225,11 @@ body{
 /* RESPONSIVE */
 
 @media (max-width:1100px){
+
+    .nav-right{
+        gap:10px;
+        font-size:15px;
+    }
 
     .project-layout{
         grid-template-columns:1fr;
@@ -211,13 +258,14 @@ body{
         <a href="projects.html">Projects</a>
 
         <div class="dropdown">
+
             <a href="research-info.html">
                 Research Information Access ▼
             </a>
 
             <div class="dropdown-menu">
                 <a href="project-iii-pis-access.html">
-                    Project III – PIS Access
+                    Project III – Participant Information Sheet (PIS)
                 </a>
             </div>
 
@@ -229,7 +277,7 @@ body{
 <div class="projects-container">
 
     <div class="page-title">
-        Project III – PIS Access
+        Project III – Participant Information Sheet (PIS)
     </div>
 
     <div class="page-line"></div>
@@ -318,37 +366,39 @@ body{
 
         <div class="project-layout">
 
-            <div class="project-content">
+            <div class="project-content access-card">
 
                 <div class="instrument-title">
                     Participant Information Sheet
                 </div>
 
                 Please click the button below to view the approved PIS:
-                <br><br>
 
-                <a class="pis-button"
-                   href="https://drive.google.com/file/d/15qqLzb4bt3WGPrHy5W0mOEQ9KYAvmZGu/view"
-                   target="_blank">
-                    View PIS 📄
-                </a>
+                <div class="link-center">
+                    <a class="pis-button"
+                       href="https://drive.google.com/file/d/15qqLzb4bt3WGPrHy5W0mOEQ9KYAvmZGu/view"
+                       target="_blank">
+                        View PIS
+                    </a>
+                </div>
 
             </div>
 
-            <div class="project-content">
+            <div class="project-content access-card">
 
                 <div class="instrument-title">
                     เอกสารชี้แจงผู้เข้าร่วมการวิจัย
                 </div>
 
                 โปรดกดปุ่มด้านล่างเพื่อเข้าดูเอกสารที่ได้รับการรับรองแล้ว:
-                <br><br>
 
-                <a class="pis-button"
-                   href="https://drive.google.com/file/d/15qqLzb4bt3WGPrHy5W0mOEQ9KYAvmZGu/view"
-                   target="_blank">
-                    ดูเอกสาร 📄
-                </a>
+                <div class="link-center">
+                    <a class="pis-button"
+                       href="https://drive.google.com/file/d/15qqLzb4bt3WGPrHy5W0mOEQ9KYAvmZGu/view"
+                       target="_blank">
+                        ดูเอกสาร
+                    </a>
+                </div>
 
             </div>
 
@@ -369,15 +419,16 @@ body{
                 </div>
 
                 For questions regarding this research project, please contact the project’s Official LINE account:
-                <br><br>
 
-                <a href="https://line.me/R/ti/p/@270nxtlw?ts=12081336&oat_content=url"
-                   target="_blank"
-                   style="color:#d4a017;">
-                    [Link to the Official LINE OA]
-                </a>
+                <div class="link-center">
+                    <a class="inquiry-link"
+                       href="https://line.me/R/ti/p/@270nxtlw?ts=12081336&oat_content=url"
+                       target="_blank">
+                        [Link to the Official LINE OA]
+                    </a>
+                </div>
 
-                <br><br>
+                <br>
 
                 <i>
                 This channel is intended solely for research-related inquiries.
@@ -392,15 +443,16 @@ body{
                 </div>
 
                 หากมีข้อสงสัยเกี่ยวกับโครงการวิจัย สามารถติดต่อผ่านบัญชีไลน์ทางการของโครงการได้ที่:
-                <br><br>
 
-                <a href="https://line.me/R/ti/p/@270nxtlw?ts=12081336&oat_content=url"
-                   target="_blank"
-                   style="color:#d4a017;">
-                    [ลิงก์ไปยังบัญชีไลน์ทางการของโครงการ]
-                </a>
+                <div class="link-center">
+                    <a class="inquiry-link"
+                       href="https://line.me/R/ti/p/@270nxtlw?ts=12081336&oat_content=url"
+                       target="_blank">
+                        [ลิงก์ไปยังบัญชีไลน์ทางการของโครงการ]
+                    </a>
+                </div>
 
-                <br><br>
+                <br>
 
                 <i>
                 ช่องทางนี้ใช้สำหรับการสอบถามข้อมูลที่เกี่ยวข้องกับงานวิจัยเท่านั้น
