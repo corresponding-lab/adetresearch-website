@@ -49,8 +49,8 @@ body{
 .nav-right{
     display:flex;
     align-items:center;
-    gap:14px;
-    font-size:16px;
+    gap:10px;
+    font-size:15px;
     white-space:nowrap;
 }
 
@@ -61,51 +61,6 @@ body{
 
 .nav-right a:hover{
     color:#c79b3b;
-}
-
-/* DROPDOWN */
-
-.dropdown{
-    position:relative;
-}
-
-.dropdown > span{
-    color:white;
-    cursor:pointer;
-}
-
-.dropdown > span:hover{
-    color:#c79b3b;
-}
-
-.dropdown-menu{
-    display:none;
-    position:absolute;
-    top:28px;
-    right:0;
-    min-width:260px;
-    background:#2a241f;
-    padding:14px 16px;
-    text-align:center;
-    z-index:9999;
-}
-
-.dropdown-menu a{
-    display:block;
-    color:white;
-    text-decoration:none;
-    font-size:16px;
-    line-height:1.6;
-}
-
-.dropdown-menu a:hover{
-    color:#c79b3b;
-}
-
-.dropdown:hover .dropdown-menu,
-.dropdown:focus-within .dropdown-menu,
-.dropdown-menu:hover{
-    display:block;
 }
 
 /* HERO */
@@ -197,15 +152,8 @@ body{
         <a href="about.html">About</a>
         <a href="members.html">Members & Collaborators</a>
         <a href="projects.html">Projects</a>
-
-        <div class="dropdown">
-            <span>Research Information Access ▼</span>
-
-            <div class="dropdown-menu">
-                <a href="project-iii-pis-access.html">Project III – PIS Access</a>
-            </div>
-        </div>
-
+        <a href="research-info.html">Research Information Access</a>
+        <a href="project-iii-pis-access.html">Project III – PIS Access</a>
     </div>
 
 </div>
