@@ -5,6 +5,10 @@
 
 <title>ADET Global Research Network</title>
 
+<link rel="icon" type="image/png" href="logo.png">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
 <style>
 
 body{
@@ -14,84 +18,252 @@ body{
     color:white;
 }
 
-.container{
-    width:90%;
-    max-width:1400px;
+.navbar{
+    height:68px;
+    max-width:1280px;
+    width:95%;
     margin:auto;
-    padding-top:60px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:relative;
+    z-index:1000;
+}
+
+.nav-left{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.nav-left img{
+    width:28px;
+}
+
+.site-name{
+    color:white;
+    font-size:18px;
+    font-weight:500;
+    text-decoration:none;
+}
+
+.site-name:hover{
+    color:#c79b3b;
+}
+
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    font-size:16px;
+    white-space:nowrap;
+}
+
+.nav-right a{
+    color:white;
+    text-decoration:none;
+}
+
+.nav-right a:hover{
+    color:#c79b3b;
+}
+
+.dropdown{
+    position:relative;
+    display:flex;
+    align-items:center;
+}
+
+.dropdown > a{
+    color:white;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+.dropdown > a:hover{
+    color:#c79b3b;
+}
+
+.dropdown-menu{
+    display:none;
+    position:absolute;
+    top:34px;
+    right:0;
+    min-width:360px;
+    background:#2a241f;
+    padding:14px 16px;
     text-align:center;
+    z-index:9999;
+}
+
+.dropdown-menu a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    font-size:16px;
+    line-height:1.6;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu,
+.dropdown-menu:hover{
+    display:block;
+}
+
+.page{
+    max-width:1280px;
+    width:94%;
+    margin:55px auto 0;
+    text-align:center;
+}
+
+.kicker{
+    color:#7fb5ff;
+    font-size:15px;
+    letter-spacing:2px;
+    font-weight:bold;
+    margin-bottom:10px;
 }
 
 .title{
     color:#d4a017;
-    font-size:60px;
+    font-size:54px;
+    line-height:1.2;
     font-weight:bold;
-    margin-bottom:20px;
+    margin-bottom:14px;
 }
 
 .subtitle{
-    font-size:24px;
     color:white;
-    margin-bottom:60px;
+    font-size:21px;
+    line-height:1.5;
+    margin-bottom:34px;
 }
 
-.map-container{
-    position:relative;
-    width:100%;
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:22px;
+    max-width:920px;
+    margin:0 auto 36px;
 }
 
-.map-container img{
-    width:100%;
-    display:block;
+.stat-card{
+    border:1px solid rgba(212,160,23,0.45);
+    background:rgba(255,255,255,0.035);
+    padding:18px 14px;
 }
 
-.marker{
-    position:absolute;
-    width:18px;
-    height:18px;
-    border-radius:50%;
-    background:#d4a017;
-    box-shadow:0 0 20px #d4a017;
+.stat-number{
+    color:#d4a017;
+    font-size:34px;
+    font-weight:bold;
 }
 
-.thailand{
-    top:56%;
-    left:71%;
-}
-
-.italy{
-    top:42%;
-    left:52%;
-}
-
-.canada{
-    top:34%;
-    left:18%;
-}
-
-.usa{
-    top:45%;
-    left:21%;
-}
-
-.japan{
-    top:47%;
-    left:82%;
-}
-
-.popup{
-    position:absolute;
-    background:rgba(0,0,0,0.85);
+.stat-label{
     color:white;
-    padding:12px 16px;
-    border-radius:12px;
+    font-size:16px;
+    margin-top:4px;
+}
+
+.map-wrap{
+    border:1px solid rgba(212,160,23,0.55);
+    background:#020b22;
+    padding:12px;
+}
+
+#map{
+    width:100%;
+    height:620px;
+    background:#020b22;
+}
+
+.leaflet-container{
+    background:#020b22;
+    font-family:Georgia, serif;
+}
+
+.leaflet-popup-content-wrapper{
+    background:#07142f;
+    color:white;
     border:1px solid #d4a017;
-    display:none;
-    width:240px;
+    border-radius:10px;
 }
 
-.marker:hover + .popup{
-    display:block;
+.leaflet-popup-tip{
+    background:#07142f;
+}
+
+.popup-country{
+    color:#d4a017;
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:8px;
+}
+
+.popup-name{
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    margin-bottom:4px;
+}
+
+.popup-detail{
+    color:white;
+    font-size:15px;
+    line-height:1.45;
+}
+
+.back-link{
+    display:inline-block;
+    margin:34px auto 0;
+    color:#031238;
+    background:#d4a017;
+    padding:12px 24px;
+    text-decoration:none;
+    font-size:17px;
+    font-weight:bold;
+}
+
+.back-link:hover{
+    background:white;
+    color:#031238;
+}
+
+.footer{
+    max-width:1000px;
+    width:92%;
+    margin:60px auto 0;
+    color:white;
+    text-align:center;
+    font-size:16px;
+    line-height:1.8;
+    padding-bottom:42px;
+}
+
+@media (max-width:900px){
+
+    .nav-right{
+        font-size:13px;
+        gap:8px;
+    }
+
+    .title{
+        font-size:38px;
+    }
+
+    .subtitle{
+        font-size:18px;
+    }
+
+    .stats{
+        grid-template-columns:repeat(2, 1fr);
+    }
+
+    #map{
+        height:520px;
+    }
+
 }
 
 </style>
@@ -100,58 +272,203 @@ body{
 
 <body>
 
-<div class="container">
+<div class="navbar">
+
+    <div class="nav-left">
+        <img src="logo.png">
+
+        <a href="index.html" class="site-name">
+            www.adetresearch.org
+        </a>
+    </div>
+
+    <div class="nav-right">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="members.html">Members & Collaborators</a>
+        <a href="projects.html">Projects</a>
+
+        <div class="dropdown">
+            <a href="research-info.html">
+                Research Information Access ▼
+            </a>
+
+            <div class="dropdown-menu">
+                <a href="project-iii-pis-access.html">
+                    Project III – Participant Information Sheet (PIS)
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="page">
+
+    <div class="kicker">OUR NETWORK</div>
 
     <div class="title">
         ADET Global Research Network
     </div>
 
     <div class="subtitle">
-        Connecting researchers across countries and disciplines
+        Connecting ADET members, collaborators, contributors, and advisors across countries.
     </div>
 
-    <div class="map-container">
-
-        <img src="world-map.png">
-
-        <div class="marker thailand"></div>
-        <div class="popup" style="top:58%;left:73%;">
-            Thailand<br>
-            Founder & Director<br>
-            Aeckapholpholladet Detkaew
+    <div class="stats">
+        <div class="stat-card">
+            <div class="stat-number">5</div>
+            <div class="stat-label">Countries</div>
         </div>
 
-        <div class="marker italy"></div>
-        <div class="popup" style="top:44%;left:54%;">
-            Italy<br>
-            Francesco Marcatto<br>
-            Collaborator
+        <div class="stat-card">
+            <div class="stat-number">5</div>
+            <div class="stat-label">Network Locations</div>
         </div>
 
-        <div class="marker canada"></div>
-        <div class="popup" style="top:36%;left:20%;">
-            Canada<br>
-            Mooly Mei-Ching Wong<br>
-            Collaborator
+        <div class="stat-card">
+            <div class="stat-number">10+</div>
+            <div class="stat-label">Individuals</div>
         </div>
 
-        <div class="marker usa"></div>
-        <div class="popup" style="top:47%;left:23%;">
-            USA<br>
-            Hyunkyoung Oh<br>
-            Collaborator
+        <div class="stat-card">
+            <div class="stat-number">ADET</div>
+            <div class="stat-label">Research Group</div>
         </div>
-
-        <div class="marker japan"></div>
-        <div class="popup" style="top:49%;left:84%;">
-            Japan<br>
-            Machi Suka<br>
-            Contributor
-        </div>
-
     </div>
+
+    <div class="map-wrap">
+        <div id="map"></div>
+    </div>
+
+    <a href="members.html" class="back-link">
+        Back to Members & Collaborators
+    </a>
 
 </div>
+
+<div class="footer">
+    © 2025–2026 ADET Research Group. All rights reserved.
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+
+const networkData = [
+    {
+        country: "Thailand",
+        lat: 13.7563,
+        lng: 100.5018,
+        people: [
+            {
+                name: "Aeckapholpholladet Detkaew",
+                role: "Founder & Director",
+                affiliation: "Faculty of Medicine Siriraj Hospital, Mahidol University, Bangkok, Thailand."
+            },
+            {
+                name: "ADET Members",
+                role: "Members / Affiliates / Advisory Board",
+                affiliation: "Various institutions in Thailand."
+            }
+        ]
+    },
+    {
+        country: "Italy",
+        lat: 45.6495,
+        lng: 13.7768,
+        people: [
+            {
+                name: "Francesco Marcatto",
+                role: "Collaborator",
+                affiliation: "University of Trieste, Italy."
+            }
+        ]
+    },
+    {
+        country: "Canada",
+        lat: 49.2606,
+        lng: -123.2460,
+        people: [
+            {
+                name: "Mooly Mei-Ching Wong",
+                role: "Collaborator",
+                affiliation: "University of British Columbia, Canada."
+            }
+        ]
+    },
+    {
+        country: "USA",
+        lat: 43.0389,
+        lng: -87.9065,
+        people: [
+            {
+                name: "Hyunkyoung Oh",
+                role: "Collaborator",
+                affiliation: "University of Wisconsin–Milwaukee School of Nursing, USA."
+            }
+        ]
+    },
+    {
+        country: "Japan",
+        lat: 35.6895,
+        lng: 139.6917,
+        people: [
+            {
+                name: "Machi Suka",
+                role: "Contributor",
+                affiliation: "The Jikei University School of Medicine, Japan."
+            }
+        ]
+    }
+];
+
+const map = L.map("map", {
+    worldCopyJump: true,
+    scrollWheelZoom: true
+}).setView([20, 20], 2);
+
+L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+    attribution: "&copy; OpenStreetMap &copy; CARTO",
+    subdomains: "abcd",
+    maxZoom: 8
+}).addTo(map);
+
+const goldIcon = L.divIcon({
+    className: "adet-marker",
+    html: `<div style="
+        width:18px;
+        height:18px;
+        background:#d4a017;
+        border:2px solid white;
+        border-radius:50%;
+        box-shadow:0 0 18px #d4a017;
+    "></div>`,
+    iconSize: [22,22],
+    iconAnchor: [11,11]
+});
+
+networkData.forEach(location => {
+
+    let peopleHtml = location.people.map(person => `
+        <div style="margin-bottom:12px;">
+            <div class="popup-name">${person.name}</div>
+            <div class="popup-detail">${person.role}</div>
+            <div class="popup-detail">${person.affiliation}</div>
+        </div>
+    `).join("");
+
+    let popupHtml = `
+        <div class="popup-country">${location.country}</div>
+        ${peopleHtml}
+    `;
+
+    L.marker([location.lat, location.lng], {icon: goldIcon})
+        .addTo(map)
+        .bindPopup(popupHtml);
+});
+
+</script>
 
 </body>
 
