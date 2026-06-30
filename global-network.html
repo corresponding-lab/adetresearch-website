@@ -74,7 +74,7 @@ body{
 .page{
     max-width:1280px;
     width:94%;
-    margin:55px auto 0;
+    margin:28px auto 0;
     text-align:center;
 }
 
@@ -83,44 +83,44 @@ body{
     font-size:15px;
     letter-spacing:2px;
     font-weight:bold;
-    margin-bottom:10px;
+    margin-bottom:8px;
 }
 
 .title{
     color:#d4a017;
-    font-size:54px;
-    line-height:1.2;
+    font-size:44px;
+    line-height:1.15;
     font-weight:bold;
-    margin-bottom:14px;
+    margin-bottom:10px;
 }
 
 .subtitle{
     color:white;
-    font-size:21px;
-    line-height:1.5;
-    margin-bottom:34px;
+    font-size:18px;
+    line-height:1.4;
+    margin-bottom:24px;
 }
 
 /* STATS */
 
 .stats{
     display:grid;
-    grid-template-columns:repeat(4, 1fr);
-    gap:22px;
-    max-width:960px;
-    margin:0 auto 36px;
+    grid-template-columns:repeat(3, 1fr);
+    gap:18px;
+    max-width:760px;
+    margin:0 auto 26px;
 }
 
 .stat-card{
     position:relative;
     border:1px solid rgba(212,160,23,0.45);
     background:rgba(255,255,255,0.035);
-    padding:18px 14px;
+    padding:12px 12px;
 }
 
 .stat-number{
     color:#d4a017;
-    font-size:34px;
+    font-size:30px;
     font-weight:bold;
 }
 
@@ -182,7 +182,7 @@ body{
 
 #map{
     width:100%;
-    height:620px;
+    height:430px;
     background:#020b22;
 }
 
@@ -203,7 +203,7 @@ body{
 }
 
 .leaflet-popup-content{
-    max-height:360px;
+    max-height:320px;
     overflow-y:auto;
 }
 
@@ -243,12 +243,12 @@ body{
 
 .back-link{
     display:inline-block;
-    margin:34px auto 0;
+    margin:24px auto 0;
     color:#031238;
     background:#d4a017;
-    padding:12px 24px;
+    padding:11px 24px;
     text-decoration:none;
-    font-size:17px;
+    font-size:16px;
     font-weight:bold;
 }
 
@@ -262,12 +262,12 @@ body{
 .footer{
     max-width:1000px;
     width:92%;
-    margin:60px auto 0;
+    margin:36px auto 0;
     color:white;
     text-align:center;
     font-size:16px;
     line-height:1.8;
-    padding-bottom:42px;
+    padding-bottom:34px;
 }
 
 /* RESPONSIVE */
@@ -280,19 +280,20 @@ body{
     }
 
     .title{
-        font-size:38px;
+        font-size:36px;
     }
 
     .subtitle{
-        font-size:18px;
+        font-size:17px;
     }
 
     .stats{
-        grid-template-columns:repeat(2, 1fr);
+        grid-template-columns:1fr;
+        max-width:320px;
     }
 
     #map{
-        height:520px;
+        height:420px;
     }
 
 }
@@ -358,11 +359,6 @@ body{
                 <div class="dropdown-item">Psychology (1)</div>
                 <div class="dropdown-item">Social Work (1)</div>
             </div>
-        </div>
-
-        <div class="stat-card">
-            <div class="stat-number">3</div>
-            <div class="stat-label">Continents</div>
         </div>
 
     </div>
