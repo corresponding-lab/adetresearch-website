@@ -1,1 +1,158 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+
+<title>ADET Global Research Network</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Georgia, serif;
+    background:#031238;
+    color:white;
+}
+
+.container{
+    width:90%;
+    max-width:1400px;
+    margin:auto;
+    padding-top:60px;
+    text-align:center;
+}
+
+.title{
+    color:#d4a017;
+    font-size:60px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.subtitle{
+    font-size:24px;
+    color:white;
+    margin-bottom:60px;
+}
+
+.map-container{
+    position:relative;
+    width:100%;
+}
+
+.map-container img{
+    width:100%;
+    display:block;
+}
+
+.marker{
+    position:absolute;
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:#d4a017;
+    box-shadow:0 0 20px #d4a017;
+}
+
+.thailand{
+    top:56%;
+    left:71%;
+}
+
+.italy{
+    top:42%;
+    left:52%;
+}
+
+.canada{
+    top:34%;
+    left:18%;
+}
+
+.usa{
+    top:45%;
+    left:21%;
+}
+
+.japan{
+    top:47%;
+    left:82%;
+}
+
+.popup{
+    position:absolute;
+    background:rgba(0,0,0,0.85);
+    color:white;
+    padding:12px 16px;
+    border-radius:12px;
+    border:1px solid #d4a017;
+    display:none;
+    width:240px;
+}
+
+.marker:hover + .popup{
+    display:block;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="title">
+        ADET Global Research Network
+    </div>
+
+    <div class="subtitle">
+        Connecting researchers across countries and disciplines
+    </div>
+
+    <div class="map-container">
+
+        <img src="world-map.png">
+
+        <div class="marker thailand"></div>
+        <div class="popup" style="top:58%;left:73%;">
+            Thailand<br>
+            Founder & Director<br>
+            Aeckapholpholladet Detkaew
+        </div>
+
+        <div class="marker italy"></div>
+        <div class="popup" style="top:44%;left:54%;">
+            Italy<br>
+            Francesco Marcatto<br>
+            Collaborator
+        </div>
+
+        <div class="marker canada"></div>
+        <div class="popup" style="top:36%;left:20%;">
+            Canada<br>
+            Mooly Mei-Ching Wong<br>
+            Collaborator
+        </div>
+
+        <div class="marker usa"></div>
+        <div class="popup" style="top:47%;left:23%;">
+            USA<br>
+            Hyunkyoung Oh<br>
+            Collaborator
+        </div>
+
+        <div class="marker japan"></div>
+        <div class="popup" style="top:49%;left:84%;">
+            Japan<br>
+            Machi Suka<br>
+            Contributor
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
