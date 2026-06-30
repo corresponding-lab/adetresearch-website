@@ -3,7 +3,7 @@
 
 <head>
 
-<title>ADET Global Research Network</title>
+<title>ADET Research Network</title>
 
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
@@ -76,14 +76,6 @@ body{
     width:94%;
     margin:28px auto 0;
     text-align:center;
-}
-
-.kicker{
-    color:#7fb5ff;
-    font-size:15px;
-    letter-spacing:2px;
-    font-weight:bold;
-    margin-bottom:8px;
 }
 
 .title{
@@ -207,7 +199,7 @@ body{
     overflow-y:auto;
 }
 
-.popup-country{
+.popup-location{
     color:#d4a017;
     font-size:19px;
     font-weight:bold;
@@ -326,14 +318,12 @@ body{
 
 <div class="page">
 
-    <div class="kicker">OUR NETWORK</div>
-
     <div class="title">
-        ADET Global Research Network
+        ADET Research Network
     </div>
 
     <div class="subtitle">
-        Connecting ADET members, collaborators, contributors, and advisors across countries.
+        Connecting researchers across countries and disciplines.
     </div>
 
     <div class="stats">
@@ -345,12 +335,12 @@ body{
 
         <div class="stat-card">
             <div class="stat-number">8+</div>
-            <div class="stat-label">Institutions</div>
+            <div class="stat-label">Affiliations</div>
         </div>
 
         <div class="stat-card interactive">
             <div class="stat-number">12</div>
-            <div class="stat-label">Individuals ▼</div>
+            <div class="stat-label">Researchers ▼</div>
 
             <div class="background-dropdown">
                 <div class="dropdown-title">Professional Backgrounds</div>
@@ -368,7 +358,7 @@ body{
     </div>
 
     <a href="members.html" class="back-link">
-        Back to Members & Collaborators
+        Enter Members & Collaborators
     </a>
 
 </div>
@@ -383,7 +373,7 @@ body{
 
 const networkData = [
     {
-        country: "Thailand",
+        location: "Bangkok, Thailand",
         lat: 13.7563,
         lng: 100.5018,
         people: [
@@ -393,28 +383,8 @@ const networkData = [
                 countryText: "Thailand"
             },
             {
-                name: "Chanandchidadussadee Toonsiri",
-                affiliation: "Burapha University",
-                countryText: "Thailand"
-            },
-            {
-                name: "Areeya Somroop",
-                affiliation: "Panyapiwat Institute of Management",
-                countryText: "Thailand"
-            },
-            {
-                name: "Wannisa Jampathet",
-                affiliation: "Somdech Phra Nangchao Sirikit Hospital, Naval Medical Department, Royal Thai Navy",
-                countryText: "Thailand"
-            },
-            {
                 name: "Witsupha Soison",
                 affiliation: "King Chulalongkorn Memorial Hospital, Thai Red Cross Society",
-                countryText: "Thailand"
-            },
-            {
-                name: "Ketsarin Khamwangchan",
-                affiliation: "Queen Savang Vadhana Memorial Hospital, Thai Red Cross Society",
                 countryText: "Thailand"
             },
             {
@@ -435,7 +405,34 @@ const networkData = [
         ]
     },
     {
-        country: "Italy",
+        location: "Chonburi, Thailand",
+        lat: 13.3611,
+        lng: 100.9847,
+        people: [
+            {
+                name: "Chanandchidadussadee Toonsiri",
+                affiliation: "Burapha University",
+                countryText: "Thailand"
+            },
+            {
+                name: "Areeya Somroop",
+                affiliation: "Panyapiwat Institute of Management",
+                countryText: "Thailand"
+            },
+            {
+                name: "Wannisa Jampathet",
+                affiliation: "Somdech Phra Nangchao Sirikit Hospital, Naval Medical Department, Royal Thai Navy",
+                countryText: "Thailand"
+            },
+            {
+                name: "Ketsarin Khamwangchan",
+                affiliation: "Queen Savang Vadhana Memorial Hospital, Thai Red Cross Society",
+                countryText: "Thailand"
+            }
+        ]
+    },
+    {
+        location: "Italy",
         lat: 45.6495,
         lng: 13.7768,
         people: [
@@ -447,7 +444,7 @@ const networkData = [
         ]
     },
     {
-        country: "Canada",
+        location: "Canada",
         lat: 49.2606,
         lng: -123.2460,
         people: [
@@ -459,7 +456,7 @@ const networkData = [
         ]
     },
     {
-        country: "United States",
+        location: "United States",
         lat: 43.0389,
         lng: -87.9065,
         people: [
@@ -471,7 +468,7 @@ const networkData = [
         ]
     },
     {
-        country: "Japan",
+        location: "Japan",
         lat: 35.6895,
         lng: 139.6917,
         people: [
@@ -498,15 +495,15 @@ L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
 const goldIcon = L.divIcon({
     className: "adet-marker",
     html: `<div style="
-        width:18px;
-        height:18px;
+        width:15px;
+        height:15px;
         background:#d4a017;
         border:2px solid white;
         border-radius:50%;
-        box-shadow:0 0 18px #d4a017;
+        box-shadow:0 0 14px #d4a017;
     "></div>`,
-    iconSize: [22,22],
-    iconAnchor: [11,11]
+    iconSize: [19,19],
+    iconAnchor: [9.5,9.5]
 });
 
 networkData.forEach(location => {
@@ -520,7 +517,7 @@ networkData.forEach(location => {
     `).join("");
 
     let popupHtml = `
-        <div class="popup-country">${location.country}</div>
+        <div class="popup-location">${location.location}</div>
         ${peopleHtml}
     `;
 
