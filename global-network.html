@@ -168,18 +168,18 @@ body{
 
 .map-wrap{
     border:1px solid rgba(212,160,23,0.55);
-    background:#020b22;
+    background:#eef2f5;
     padding:12px;
 }
 
 #map{
     width:100%;
     height:430px;
-    background:#020b22;
+    background:#eef2f5;
 }
 
 .leaflet-container{
-    background:#020b22;
+    background:#eef2f5;
     font-family:Georgia, serif;
 }
 
@@ -486,24 +486,23 @@ const map = L.map("map", {
     scrollWheelZoom: true
 }).setView([20, 20], 2);
 
-L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
-    attribution: "&copy; OpenStreetMap &copy; CARTO",
-    subdomains: "abcd",
+L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}", {
+    attribution: "Tiles &copy; Esri",
     maxZoom: 8
 }).addTo(map);
 
 const goldIcon = L.divIcon({
     className: "adet-marker",
     html: `<div style="
-        width:15px;
-        height:15px;
+        width:10px;
+        height:10px;
         background:#d4a017;
         border:2px solid white;
         border-radius:50%;
-        box-shadow:0 0 14px #d4a017;
+        box-shadow:0 0 6px #d4a017;
     "></div>`,
-    iconSize: [19,19],
-    iconAnchor: [9.5,9.5]
+    iconSize: [14,14],
+    iconAnchor: [7,7]
 });
 
 networkData.forEach(location => {
