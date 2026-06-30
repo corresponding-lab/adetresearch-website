@@ -6,7 +6,6 @@
 <title>ADET Global Research Network</title>
 
 <link rel="icon" type="image/png" href="logo.png">
-
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 
 <style>
@@ -17,6 +16,8 @@ body{
     background:#031238;
     color:white;
 }
+
+/* NAVBAR */
 
 .navbar{
     height:68px;
@@ -68,47 +69,7 @@ body{
     color:#c79b3b;
 }
 
-.dropdown{
-    position:relative;
-    display:flex;
-    align-items:center;
-}
-
-.dropdown > a{
-    color:white;
-    text-decoration:none;
-    cursor:pointer;
-}
-
-.dropdown > a:hover{
-    color:#c79b3b;
-}
-
-.dropdown-menu{
-    display:none;
-    position:absolute;
-    top:34px;
-    right:0;
-    min-width:360px;
-    background:#2a241f;
-    padding:14px 16px;
-    text-align:center;
-    z-index:9999;
-}
-
-.dropdown-menu a{
-    display:block;
-    color:white;
-    text-decoration:none;
-    font-size:16px;
-    line-height:1.6;
-}
-
-.dropdown:hover .dropdown-menu,
-.dropdown:focus-within .dropdown-menu,
-.dropdown-menu:hover{
-    display:block;
-}
+/* PAGE */
 
 .page{
     max-width:1280px;
@@ -140,15 +101,18 @@ body{
     margin-bottom:34px;
 }
 
+/* STATS */
+
 .stats{
     display:grid;
     grid-template-columns:repeat(4, 1fr);
     gap:22px;
-    max-width:920px;
+    max-width:960px;
     margin:0 auto 36px;
 }
 
 .stat-card{
+    position:relative;
     border:1px solid rgba(212,160,23,0.45);
     background:rgba(255,255,255,0.035);
     padding:18px 14px;
@@ -165,6 +129,50 @@ body{
     font-size:16px;
     margin-top:4px;
 }
+
+.stat-card.interactive{
+    cursor:pointer;
+}
+
+.stat-card.interactive:hover{
+    background:rgba(212,160,23,0.10);
+}
+
+.background-dropdown{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:50%;
+    transform:translateX(-50%);
+    width:260px;
+    background:#07142f;
+    border:1px solid #d4a017;
+    padding:16px 18px;
+    z-index:5000;
+    text-align:left;
+    margin-top:10px;
+    box-shadow:0 8px 24px rgba(0,0,0,0.45);
+}
+
+.stat-card.interactive:hover .background-dropdown{
+    display:block;
+}
+
+.dropdown-title{
+    color:#d4a017;
+    font-size:17px;
+    font-weight:bold;
+    margin-bottom:10px;
+    text-align:center;
+}
+
+.dropdown-item{
+    color:white;
+    font-size:15px;
+    line-height:1.75;
+}
+
+/* MAP */
 
 .map-wrap{
     border:1px solid rgba(212,160,23,0.55);
@@ -194,11 +202,28 @@ body{
     background:#07142f;
 }
 
+.leaflet-popup-content{
+    max-height:360px;
+    overflow-y:auto;
+}
+
 .popup-country{
     color:#d4a017;
-    font-size:18px;
+    font-size:19px;
     font-weight:bold;
-    margin-bottom:8px;
+    margin-bottom:12px;
+}
+
+.popup-person{
+    margin-bottom:14px;
+    padding-bottom:12px;
+    border-bottom:1px solid rgba(212,160,23,0.25);
+}
+
+.popup-person:last-child{
+    border-bottom:none;
+    margin-bottom:0;
+    padding-bottom:0;
 }
 
 .popup-name{
@@ -213,6 +238,8 @@ body{
     font-size:15px;
     line-height:1.45;
 }
+
+/* BUTTON */
 
 .back-link{
     display:inline-block;
@@ -230,6 +257,8 @@ body{
     color:#031238;
 }
 
+/* FOOTER */
+
 .footer{
     max-width:1000px;
     width:92%;
@@ -240,6 +269,8 @@ body{
     line-height:1.8;
     padding-bottom:42px;
 }
+
+/* RESPONSIVE */
 
 @media (max-width:900px){
 
@@ -287,18 +318,7 @@ body{
         <a href="about.html">About</a>
         <a href="members.html">Members & Collaborators</a>
         <a href="projects.html">Projects</a>
-
-        <div class="dropdown">
-            <a href="research-info.html">
-                Research Information Access ▼
-            </a>
-
-            <div class="dropdown-menu">
-                <a href="project-iii-pis-access.html">
-                    Project III – Participant Information Sheet (PIS)
-                </a>
-            </div>
-        </div>
+        <a href="research-info.html">Research Information Access</a>
     </div>
 
 </div>
@@ -316,25 +336,35 @@ body{
     </div>
 
     <div class="stats">
+
         <div class="stat-card">
             <div class="stat-number">5</div>
             <div class="stat-label">Countries</div>
         </div>
 
         <div class="stat-card">
-            <div class="stat-number">5</div>
-            <div class="stat-label">Network Locations</div>
+            <div class="stat-number">8+</div>
+            <div class="stat-label">Institutions</div>
+        </div>
+
+        <div class="stat-card interactive">
+            <div class="stat-number">12</div>
+            <div class="stat-label">Individuals ▼</div>
+
+            <div class="background-dropdown">
+                <div class="dropdown-title">Professional Backgrounds</div>
+                <div class="dropdown-item">Nursing (8)</div>
+                <div class="dropdown-item">Medicine (2)</div>
+                <div class="dropdown-item">Psychology (1)</div>
+                <div class="dropdown-item">Social Work (1)</div>
+            </div>
         </div>
 
         <div class="stat-card">
-            <div class="stat-number">10+</div>
-            <div class="stat-label">Individuals</div>
+            <div class="stat-number">3</div>
+            <div class="stat-label">Continents</div>
         </div>
 
-        <div class="stat-card">
-            <div class="stat-number">ADET</div>
-            <div class="stat-label">Research Group</div>
-        </div>
     </div>
 
     <div class="map-wrap">
@@ -363,13 +393,48 @@ const networkData = [
         people: [
             {
                 name: "Aeckapholpholladet Detkaew",
-                role: "Founder & Director",
-                affiliation: "Faculty of Medicine Siriraj Hospital, Mahidol University, Bangkok, Thailand."
+                affiliation: "Faculty of Medicine Siriraj Hospital, Mahidol University",
+                countryText: "Thailand"
             },
             {
-                name: "ADET Members",
-                role: "Members / Affiliates / Advisory Board",
-                affiliation: "Various institutions in Thailand."
+                name: "Chanandchidadussadee Toonsiri",
+                affiliation: "Burapha University",
+                countryText: "Thailand"
+            },
+            {
+                name: "Areeya Somroop",
+                affiliation: "Panyapiwat Institute of Management",
+                countryText: "Thailand"
+            },
+            {
+                name: "Wannisa Jampathet",
+                affiliation: "Somdech Phra Nangchao Sirikit Hospital, Naval Medical Department, Royal Thai Navy",
+                countryText: "Thailand"
+            },
+            {
+                name: "Witsupha Soison",
+                affiliation: "King Chulalongkorn Memorial Hospital, Thai Red Cross Society",
+                countryText: "Thailand"
+            },
+            {
+                name: "Ketsarin Khamwangchan",
+                affiliation: "Queen Savang Vadhana Memorial Hospital, Thai Red Cross Society",
+                countryText: "Thailand"
+            },
+            {
+                name: "Methinee Pimprasri",
+                affiliation: "Faculty of Medicine Ramathibodi Hospital, Mahidol University",
+                countryText: "Thailand"
+            },
+            {
+                name: "Thamonnat Srisawat",
+                affiliation: "Faculty of Medicine Siriraj Hospital, Mahidol University",
+                countryText: "Thailand"
+            },
+            {
+                name: "Chairat Permpikul",
+                affiliation: "Faculty of Medicine Siriraj Hospital, Mahidol University",
+                countryText: "Thailand"
             }
         ]
     },
@@ -380,8 +445,8 @@ const networkData = [
         people: [
             {
                 name: "Francesco Marcatto",
-                role: "Collaborator",
-                affiliation: "University of Trieste, Italy."
+                affiliation: "University of Trieste",
+                countryText: "Italy"
             }
         ]
     },
@@ -392,20 +457,20 @@ const networkData = [
         people: [
             {
                 name: "Mooly Mei-Ching Wong",
-                role: "Collaborator",
-                affiliation: "University of British Columbia, Canada."
+                affiliation: "University of British Columbia",
+                countryText: "Canada"
             }
         ]
     },
     {
-        country: "USA",
+        country: "United States",
         lat: 43.0389,
         lng: -87.9065,
         people: [
             {
                 name: "Hyunkyoung Oh",
-                role: "Collaborator",
-                affiliation: "University of Wisconsin–Milwaukee School of Nursing, USA."
+                affiliation: "University of Wisconsin–Milwaukee School of Nursing",
+                countryText: "United States"
             }
         ]
     },
@@ -416,8 +481,8 @@ const networkData = [
         people: [
             {
                 name: "Machi Suka",
-                role: "Contributor",
-                affiliation: "The Jikei University School of Medicine, Japan."
+                affiliation: "The Jikei University School of Medicine",
+                countryText: "Japan"
             }
         ]
     }
@@ -451,10 +516,10 @@ const goldIcon = L.divIcon({
 networkData.forEach(location => {
 
     let peopleHtml = location.people.map(person => `
-        <div style="margin-bottom:12px;">
+        <div class="popup-person">
             <div class="popup-name">${person.name}</div>
-            <div class="popup-detail">${person.role}</div>
             <div class="popup-detail">${person.affiliation}</div>
+            <div class="popup-detail">${person.countryText}</div>
         </div>
     `).join("");
 
