@@ -227,6 +227,13 @@ body{
     opacity:0.82;
 }
 
+.search-note{
+    color:rgba(255,255,255,0.55);
+    font-size:13px;
+    line-height:1.5;
+    margin-top:2px;
+}
+
 /* RESPONSIVE */
 
 @media (max-width:1100px){
@@ -328,6 +335,10 @@ Email: contact@adetresearch.org
             🇹🇭 🇺🇸 🇲🇾 🇭🇰 🇮🇹 🇰🇷 🇵🇭 🇮🇳 🇸🇬
         </div>
 
+        <div class="search-note" id="metricsNote">
+            Google Search visibility since September 2025. Last updated July 2026.
+        </div>
+
     </div>
 
 </div>
@@ -337,8 +348,42 @@ Email: contact@adetresearch.org
 const fallbackMetrics = {
     googleSearchVisits: 568,
     countriesReached: 9,
-    flags: ["🇹🇭", "🇺🇸", "🇲🇾", "🇭🇰", "🇮🇹", "🇰🇷", "🇵🇭", "🇮🇳", "🇸🇬"]
+    flags: ["TH", "US", "MY", "HK", "IT", "KR", "PH", "IN", "SG"],
+    lastUpdated: "2026-07-01"
 };
+
+function countryCodeToFlag(code){
+    if(typeof code !== "string"){
+        return "";
+    }
+
+    const cleanCode = code.trim().toUpperCase();
+
+    if(cleanCode.length !== 2){
+        return code;
+    }
+
+    return cleanCode.replace(/./g, char =>
+        String.fromCodePoint(127397 + char.charCodeAt())
+    );
+}
+
+function formatMonthYear(dateString){
+    if(!dateString){
+        return "July 2026";
+    }
+
+    const date = new Date(dateString + "T00:00:00");
+
+    if(isNaN(date.getTime())){
+        return "July 2026";
+    }
+
+    return date.toLocaleDateString("en-US", {
+        month:"long",
+        year:"numeric"
+    });
+}
 
 function animateNumber(element, target, suffix){
     let duration = 900;
@@ -369,18 +414,25 @@ function renderMetrics(data){
 
     animateNumber(
         document.getElementById("googleSearchVisits"),
-        data.googleSearchVisits,
+        Number(data.googleSearchVisits || fallbackMetrics.googleSearchVisits),
         "+"
     );
 
     animateNumber(
         document.getElementById("countriesReached"),
-        data.countriesReached,
+        Number(data.countriesReached || fallbackMetrics.countriesReached),
         "+"
     );
 
+    const flags = Array.isArray(data.flags) ? data.flags : fallbackMetrics.flags;
+
     document.getElementById("flagRow").textContent =
-        data.flags.join(" ");
+        flags.map(countryCodeToFlag).join(" ");
+
+    document.getElementById("metricsNote").textContent =
+        "Google Search visibility since September 2025. Last updated " +
+        formatMonthYear(data.lastUpdated || fallbackMetrics.lastUpdated) +
+        ".";
 }
 
 fetch("metrics.json")
