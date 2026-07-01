@@ -218,12 +218,26 @@ body{
 }
 
 .search-flags{
-    margin-top:2px;
-    color:white;
-    font-size:14px;
-    line-height:1.5;
-    letter-spacing:1px;
-    opacity:0.82;
+    margin-top:4px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:5px;
+    flex-wrap:wrap;
+    opacity:0.88;
+}
+
+.search-flags img{
+    width:18px;
+    height:13px;
+    border-radius:2px;
+    box-shadow:0 0 2px rgba(255,255,255,0.15);
+}
+
+.more-countries{
+    color:rgba(255,255,255,0.78);
+    font-size:13px;
+    margin-left:4px;
 }
 
 .search-note{
@@ -269,7 +283,6 @@ body{
         <a href="index.html" class="site-name">
             www.adetresearch.org
         </a>
-
     </div>
 
     <div class="nav-right">
@@ -333,7 +346,12 @@ Email: contact@adetresearch.org
         </div>
 
         <div class="search-flags" id="flagRow">
-            🇹🇭 🇺🇸 🇲🇾 🇭🇰 🇮🇹 🇰🇷 🇵🇭 🇮🇳 🇸🇬
+            <img src="https://flagcdn.com/24x18/th.png" alt="Thailand">
+            <img src="https://flagcdn.com/24x18/us.png" alt="United States">
+            <img src="https://flagcdn.com/24x18/it.png" alt="Italy">
+            <img src="https://flagcdn.com/24x18/kr.png" alt="South Korea">
+            <img src="https://flagcdn.com/24x18/sg.png" alt="Singapore">
+            <span class="more-countries">+61 more countries</span>
         </div>
 
         <div class="search-note" id="metricsNote">
@@ -351,37 +369,8 @@ const METRICS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzpzZoTS3Nh9XM
 const fallbackMetrics = {
     googleSearchVisits: 569,
     countriesReached: 66,
-    flags: ["THA", "USA", "MYS", "HKG", "ITA", "KOR", "PHL", "IND", "SGP"],
     lastUpdated: "2026-06-29"
 };
-
-const iso3ToIso2 = {
-    THA:"TH", USA:"US", MYS:"MY", HKG:"HK", ITA:"IT",
-    KOR:"KR", PHL:"PH", IND:"IN", SGP:"SG",
-    GBR:"GB", DEU:"DE", FRA:"FR", JPN:"JP", AUS:"AU",
-    CAN:"CA", CHN:"CN", TWN:"TW", VNM:"VN", IDN:"ID",
-    ARE:"AE", SAU:"SA", AUT:"AT", BEL:"BE", NLD:"NL",
-    NOR:"NO", DNK:"DK", ESP:"ES", POL:"PL", RUS:"RU",
-    ZAF:"ZA", NZL:"NZ", XKK:"XK"
-};
-
-function countryCodeToFlag(code){
-    if(typeof code !== "string") return "";
-
-    let cleanCode = code.trim().toUpperCase();
-
-    if(cleanCode.length === 3 && iso3ToIso2[cleanCode]){
-        cleanCode = iso3ToIso2[cleanCode];
-    }
-
-    if(cleanCode.length !== 2){
-        return "";
-    }
-
-    return cleanCode.replace(/./g, char =>
-        String.fromCodePoint(127397 + char.charCodeAt())
-    );
-}
 
 function formatMonthYear(dateString){
     if(!dateString){
@@ -425,20 +414,25 @@ function animateNumber(element, target, suffix){
     requestAnimationFrame(step);
 }
 
-function selectDisplayFlags(flags){
-    const preferred = ["THA", "USA", "MYS", "HKG", "ITA", "KOR", "PHL", "IND", "SGP"];
+function renderFlagRow(countries){
+    const featuredCountries = [
+        {code:"th", name:"Thailand"},
+        {code:"us", name:"United States"},
+        {code:"it", name:"Italy"},
+        {code:"kr", name:"South Korea"},
+        {code:"sg", name:"Singapore"}
+    ];
 
-    const available = Array.isArray(flags) && flags.length > 0
-        ? flags.map(code => String(code).toUpperCase())
-        : fallbackMetrics.flags;
+    const remaining = Math.max(countries - featuredCountries.length, 0);
 
-    const selected = preferred.filter(code => available.includes(code));
-
-    return selected.length > 0 ? selected : available.slice(0, 9);
+    document.getElementById("flagRow").innerHTML =
+        featuredCountries.map(country =>
+            `<img src="https://flagcdn.com/24x18/${country.code}.png" alt="${country.name}">`
+        ).join("") +
+        `<span class="more-countries">+${remaining} more countries</span>`;
 }
 
 function renderMetrics(data){
-
     const visits = Number(data.googleSearchVisits) > 0
         ? Number(data.googleSearchVisits)
         : fallbackMetrics.googleSearchVisits;
@@ -447,8 +441,9 @@ function renderMetrics(data){
         ? Number(data.countriesReached)
         : fallbackMetrics.countriesReached;
 
-    const displayFlags = selectDisplayFlags(data.flags);
-    const updatedMonth = formatMonthYear(data.lastUpdated || fallbackMetrics.lastUpdated);
+    const updatedMonth = formatMonthYear(
+        data.lastUpdated || fallbackMetrics.lastUpdated
+    );
 
     animateNumber(
         document.getElementById("googleSearchVisits"),
@@ -462,8 +457,7 @@ function renderMetrics(data){
         "+"
     );
 
-    document.getElementById("flagRow").textContent =
-        displayFlags.map(countryCodeToFlag).filter(Boolean).join(" ");
+    renderFlagRow(countries);
 
     document.getElementById("metricsNote").textContent =
         "Google Search visibility since September 2025. Metrics through " +
