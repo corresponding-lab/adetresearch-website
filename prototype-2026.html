@@ -1,1 +1,935 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+
+<title>Projects | ADET Research Group</title>
+
+<link rel="icon" type="image/png" href="logo.png">
+
+<style>
+
+body{
+    margin:0;
+    font-family:Georgia, serif;
+    background:#031238;
+    overflow-x:visible;
+    color:white;
+}
+
+/* NAVBAR */
+
+.navbar{
+    height:68px;
+    max-width:1280px;
+    width:95%;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:relative;
+    z-index:1000;
+}
+
+.nav-left{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.nav-left img{
+    width:28px;
+}
+
+.site-name{
+    color:white;
+    font-size:18px;
+    font-weight:500;
+    text-decoration:none;
+}
+
+.site-name:hover{
+    color:#c79b3b;
+}
+
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    font-size:16px;
+    white-space:nowrap;
+}
+
+.nav-right a{
+    color:white;
+    text-decoration:none;
+}
+
+.nav-right a:hover{
+    color:#c79b3b;
+}
+
+/* DROPDOWN */
+
+.dropdown{
+    position:relative;
+    display:flex;
+    align-items:center;
+}
+
+.dropdown > a{
+    color:white;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+.dropdown > a:hover{
+    color:#c79b3b;
+}
+
+.dropdown::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    top:100%;
+    height:18px;
+}
+
+.dropdown-menu{
+    display:none;
+    position:absolute;
+    top:34px;
+    right:0;
+    min-width:360px;
+    background:#2a241f;
+    padding:14px 16px;
+    text-align:center;
+    z-index:9999;
+}
+
+.dropdown-menu a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    font-size:16px;
+    line-height:1.6;
+}
+
+.dropdown-menu a:hover{
+    color:#c79b3b;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu,
+.dropdown-menu:hover{
+    display:block;
+}
+
+/* MAIN */
+
+.projects-container{
+    max-width:1120px;
+    width:92%;
+    margin:56px auto 0;
+}
+
+.page-title{
+    color:#d4a017;
+    font-size:50px;
+    text-align:center;
+    margin-bottom:14px;
+    font-weight:bold;
+}
+
+.page-subtitle{
+    text-align:center;
+    font-size:18px;
+    line-height:1.55;
+    color:white;
+    max-width:760px;
+    margin:0 auto 34px;
+}
+
+.page-line{
+    width:100%;
+    height:2px;
+    background:white;
+    opacity:0.85;
+    margin-bottom:54px;
+}
+
+/* RESEARCH LANDSCAPE */
+
+.landscape-section{
+    margin-bottom:70px;
+}
+
+.landscape-title{
+    color:#d4a017;
+    font-size:28px;
+    text-align:center;
+    margin-bottom:12px;
+    font-weight:bold;
+}
+
+.landscape-note{
+    color:white;
+    font-size:16px;
+    text-align:center;
+    line-height:1.6;
+    margin-bottom:28px;
+}
+
+.landscape-map{
+    position:relative;
+    height:560px;
+    border:1px solid rgba(212,160,23,0.75);
+    background:
+        radial-gradient(circle at center, rgba(212,160,23,0.10), transparent 34%),
+        radial-gradient(circle at 20% 25%, rgba(255,255,255,0.05), transparent 24%),
+        radial-gradient(circle at 80% 74%, rgba(255,255,255,0.04), transparent 22%),
+        #06183f;
+    overflow:hidden;
+}
+
+.landscape-map::before{
+    content:"";
+    position:absolute;
+    inset:48px 70px;
+    border:1px dashed rgba(255,255,255,0.22);
+    border-radius:50%;
+}
+
+.landscape-map::after{
+    content:"";
+    position:absolute;
+    inset:100px 170px;
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:50%;
+}
+
+.axis-line{
+    position:absolute;
+    background:rgba(212,160,23,0.72);
+}
+
+.axis-vertical{
+    width:2px;
+    height:360px;
+    left:50%;
+    top:100px;
+    transform:translateX(-50%);
+}
+
+.axis-horizontal{
+    height:2px;
+    width:620px;
+    left:50%;
+    top:280px;
+    transform:translateX(-50%);
+}
+
+.axis-diagonal-1{
+    width:2px;
+    height:420px;
+    left:50%;
+    top:70px;
+    transform:translateX(-50%) rotate(45deg);
+    background:rgba(255,255,255,0.22);
+}
+
+.axis-diagonal-2{
+    width:2px;
+    height:420px;
+    left:50%;
+    top:70px;
+    transform:translateX(-50%) rotate(-45deg);
+    background:rgba(255,255,255,0.22);
+}
+
+.core-circle{
+    position:absolute;
+    width:132px;
+    height:132px;
+    left:50%;
+    top:280px;
+    transform:translate(-50%,-50%);
+    border:1px solid rgba(255,255,255,0.65);
+    border-radius:50%;
+    background:rgba(3,18,56,0.9);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    font-size:15px;
+    line-height:1.45;
+    box-shadow:0 0 18px rgba(212,160,23,0.22);
+}
+
+.field-label{
+    position:absolute;
+    color:#d4a017;
+    font-size:22px;
+    font-weight:bold;
+    text-align:center;
+    line-height:1.35;
+}
+
+.field-label span{
+    display:block;
+    color:white;
+    font-size:14px;
+    font-weight:normal;
+    margin-top:4px;
+}
+
+.field-clinical{
+    top:34px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.field-behavior{
+    left:60px;
+    top:245px;
+}
+
+.field-measurement{
+    right:60px;
+    top:245px;
+}
+
+.field-occupational{
+    bottom:34px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.project-node{
+    position:absolute;
+    width:26px;
+    height:26px;
+    border-radius:50%;
+    background:#d4a017;
+    border:3px solid white;
+    box-shadow:0 0 18px rgba(212,160,23,0.85);
+    cursor:pointer;
+    z-index:20;
+}
+
+.project-node:hover .node-card{
+    display:block;
+}
+
+.node-card{
+    display:none;
+    position:absolute;
+    width:260px;
+    background:#0b1b42;
+    border:1px solid rgba(212,160,23,0.75);
+    padding:14px 16px;
+    color:white;
+    font-size:15px;
+    line-height:1.55;
+    z-index:40;
+    box-shadow:0 0 16px rgba(0,0,0,0.35);
+}
+
+.node-card b{
+    color:#d4a017;
+    font-size:17px;
+}
+
+.node-card a{
+    color:white;
+    text-decoration:underline;
+}
+
+.node-card a:hover{
+    color:#c79b3b;
+}
+
+.node-p1{
+    left:37%;
+    top:178px;
+}
+
+.node-p2{
+    left:46%;
+    top:332px;
+}
+
+.node-p3{
+    left:62%;
+    top:366px;
+}
+
+.node-p1 .node-card{
+    left:34px;
+    top:-18px;
+}
+
+.node-p2 .node-card{
+    left:-285px;
+    top:-22px;
+}
+
+.node-p3 .node-card{
+    left:34px;
+    top:-22px;
+}
+
+.map-instruction{
+    text-align:center;
+    color:white;
+    font-size:15px;
+    margin-top:16px;
+    opacity:0.95;
+}
+
+/* PROJECT DETAILS */
+
+.details-title{
+    color:#d4a017;
+    font-size:30px;
+    text-align:center;
+    margin-bottom:36px;
+    font-weight:bold;
+}
+
+.project-block{
+    border-top:1px solid rgba(255,255,255,0.75);
+    padding-top:34px;
+    margin-bottom:58px;
+}
+
+.project-heading{
+    color:#d4a017;
+    font-size:28px;
+    font-weight:bold;
+    margin-bottom:18px;
+}
+
+.project-content{
+    font-size:16px;
+    line-height:1.68;
+    color:#d4a017;
+}
+
+.project-content b{
+    color:white;
+}
+
+.project-content a{
+    color:white !important;
+    text-decoration:underline;
+}
+
+.project-content a:hover{
+    color:#c79b3b !important;
+}
+
+.thesis-link{
+    color:white !important;
+    text-decoration:underline;
+}
+
+.thesis-wrapper{
+    color:white;
+}
+
+.instrument-title{
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+    margin-top:30px;
+    margin-bottom:14px;
+}
+
+.instrument-item{
+    margin-bottom:16px;
+}
+
+/* NOTE */
+
+.note-divider{
+    width:100%;
+    height:2px;
+    background:white;
+    opacity:0.85;
+    margin:10px auto 18px;
+}
+
+.note{
+    font-size:17px;
+    line-height:1.68;
+    text-align:left;
+}
+
+.note-block{
+    margin-bottom:18px;
+}
+
+.note-title{
+    color:#d4a017;
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:8px;
+    line-height:1.5;
+}
+
+.note-text{
+    color:white;
+}
+
+/* FOOTER */
+
+.footer{
+    max-width:1000px;
+    width:92%;
+    margin:64px auto 0;
+    color:white;
+    text-align:center;
+    font-size:16px;
+    line-height:1.8;
+    padding-bottom:42px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width:1100px){
+
+    .nav-right{
+        gap:10px;
+        font-size:15px;
+    }
+
+    .landscape-map{
+        height:520px;
+    }
+
+    .axis-horizontal{
+        width:520px;
+    }
+
+    .field-behavior{
+        left:36px;
+    }
+
+    .field-measurement{
+        right:36px;
+    }
+
+}
+
+@media (max-width:780px){
+
+    .navbar{
+        height:auto;
+        padding:18px 0;
+        align-items:flex-start;
+        flex-direction:column;
+        gap:14px;
+    }
+
+    .nav-right{
+        flex-wrap:wrap;
+        white-space:normal;
+        line-height:1.6;
+    }
+
+    .page-title{
+        font-size:38px;
+    }
+
+    .landscape-map{
+        height:620px;
+    }
+
+    .axis-horizontal{
+        width:78%;
+    }
+
+    .axis-vertical{
+        height:390px;
+    }
+
+    .field-label{
+        font-size:18px;
+    }
+
+    .field-behavior{
+        left:18px;
+        top:268px;
+    }
+
+    .field-measurement{
+        right:18px;
+        top:268px;
+    }
+
+    .node-p1{
+        left:32%;
+        top:180px;
+    }
+
+    .node-p2{
+        left:43%;
+        top:346px;
+    }
+
+    .node-p3{
+        left:60%;
+        top:390px;
+    }
+
+    .node-card{
+        width:220px;
+    }
+
+    .node-p1 .node-card,
+    .node-p2 .node-card,
+    .node-p3 .node-card{
+        left:-98px;
+        top:34px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+    <div class="nav-left">
+        <img src="logo.png">
+
+        <a href="index.html" class="site-name">
+            www.adetresearch.org
+        </a>
+
+    </div>
+
+    <div class="nav-right">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="members.html">Members & Collaborators</a>
+        <a href="projects.html">Projects</a>
+
+        <div class="dropdown">
+
+            <a href="research-info.html">
+                Research Information Access ▼
+            </a>
+
+            <div class="dropdown-menu">
+                <a href="project-iii-pis-access.html">
+                    Project III – Participant Information Sheet (PIS)
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="projects-container">
+
+    <div class="page-title">Active Research</div>
+
+    <div class="page-subtitle">
+        ADET research activities are organized across interconnected clinical, behavioral, measurement, and occupational health domains.
+    </div>
+
+    <div class="page-line"></div>
+
+    <div class="landscape-section">
+
+        <div class="landscape-title">Research Landscape</div>
+
+        <div class="landscape-note">
+            Project nodes indicate where each active study is positioned within the broader research ecosystem.
+        </div>
+
+        <div class="landscape-map">
+
+            <div class="axis-line axis-vertical"></div>
+            <div class="axis-line axis-horizontal"></div>
+            <div class="axis-diagonal-1"></div>
+            <div class="axis-diagonal-2"></div>
+
+            <div class="field-label field-clinical">
+                Clinical Science
+                <span>Patients · Outcomes · Care</span>
+            </div>
+
+            <div class="field-label field-behavior">
+                Behavior
+                <span>Health behavior · Adherence</span>
+            </div>
+
+            <div class="field-label field-measurement">
+                Measurement
+                <span>Psychometrics · Instruments</span>
+            </div>
+
+            <div class="field-label field-occupational">
+                Occupational Health
+                <span>Work · Stress · Performance</span>
+            </div>
+
+            <div class="core-circle">
+                Evidence<br>
+                Measurement<br>
+                Impact
+            </div>
+
+            <div class="project-node node-p1">
+                <div class="node-card">
+                    <b>Project I</b>
+                    <br>
+                    Post-CAG cohort study focused on cardiac health behavior and health literacy.
+                    <br><br>
+                    <a href="#project-i">View full details ↓</a>
+                </div>
+            </div>
+
+            <div class="project-node node-p2">
+                <div class="node-card">
+                    <b>Project II</b>
+                    <br>
+                    Psychometric evaluation of mental health, medication adherence, and treatment complexity.
+                    <br><br>
+                    <a href="#project-ii">View full details ↓</a>
+                </div>
+            </div>
+
+            <div class="project-node node-p3">
+                <div class="node-card">
+                    <b>Project III</b>
+                    <br>
+                    Work performance, responsibility, occupational stress, and cross-cultural comparison.
+                    <br><br>
+                    <a href="#project-iii">View full details ↓</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="map-instruction">
+            Move the cursor over each project node to preview the study area.
+        </div>
+
+    </div>
+
+    <div class="details-title">Project Details</div>
+
+    <!-- PROJECT I -->
+
+    <div class="project-block" id="project-i">
+
+        <div class="project-heading">Project I</div>
+
+        <div class="project-content">
+
+            <b>Focus:</b> Thai CHB-21, Thai HLS-14; n=1,048 post-CAG.
+            <br>
+            <b>Goals:</b> Cut-off for cardiac outcomes; predictive accuracy vs risk scores.
+            <br>
+            <b>Status:</b> IRB-approved (2023–ongoing).
+            <br>
+            <b>Current Progress:</b> 462/1,048 participants enrolled; longitudinal outcome follow-up ongoing.
+            <br>
+            <b>Principal Investigator:</b> Aeckapholpholladet Detkaew.
+            <br>
+            <b>Funding:</b> Self-funded (no external grant support).
+
+            <div class="instrument-title">— Research Instruments —</div>
+
+            <div class="instrument-item">
+                <b>1. CHB-21 – Cardiac Health Behavior Scale (Thai Version).</b>
+                <br>
+                Translated under academic permission by Aeckapholpholladet Detkaew <span class="thesis-wrapper">(</span><a class="thesis-link" href="https://ir.buu.ac.th/dspace/bitstream/1513/325/1/61910044.pdf" target="_blank">Master’s Thesis, Burapha University, 2021 – Thai language</a><span class="thesis-wrapper">)</span> in collaboration with one of the original developers (co-authorship planned).
+                <br>
+                - Back-translation reviewed and face-validated by the original developer. Included in Project I (IRB 2023).
+            </div>
+
+            <div class="instrument-item">
+                <b>2. HLS-14 – Health Literacy Scale (Thai & Cardiac-Adapted Versions).</b>
+                <br>
+                Translated under academic permission by Aeckapholpholladet Detkaew (2022) in collaboration with one of the original developers (co-authorship planned).
+                <br>
+                - Back-translation reviewed and face-validated by the original developer. Included in Project I (IRB 2023).
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- PROJECT II -->
+
+    <div class="project-block" id="project-ii">
+
+        <div class="project-heading">Project II</div>
+
+        <div class="project-content">
+
+            <b>Focus:</b> Thai PSQI, Thai Mini-MASQ, Thai PSS-10, Thai DMI, C-MRCI; n=1,040 post-CAG.
+            <br>
+            <b>Goals:</b> Cut-off for AF, mortality, major cardiac events.
+            <br>
+            <b>Status:</b> IRB-approved (2024–ongoing).
+            <br>
+            <b>Current Progress:</b> 211/1,040 participants enrolled; recruitment and psychometric validation ongoing.
+            <br>
+            <b>Principal Investigator:</b> Aeckapholpholladet Detkaew.
+            <br>
+            <b>Funding:</b> Self-funded (no external grant support).
+
+            <div class="instrument-title">— Research Instruments —</div>
+
+            <div class="instrument-item">
+                <b>1. Mini-MASQ – Mini-Mood and Anxiety Questionnaire (Thai Version).</b>
+                <br>
+                Translated under academic permission by Aeckapholpholladet Detkaew (2023), based on the original Mini-MASQ.
+                <br>
+                - Back-translation reviewed and face-validated by the original developers. Included in Project II (IRB 2024).
+            </div>
+
+            <div class="instrument-item">
+                <b>2. DMI – Detkaew Medication-Adherence Index.</b>
+                <br>
+                Developed by Aeckapholpholladet Detkaew (2024) as an original research instrument for evaluating real-world medication-taking behavior.
+                <br>
+                - Currently under validation in Project II (IRB 2024).
+            </div>
+
+            <div class="instrument-item">
+                <b>3. C-MRCI – Clinical and Medication Regimen Complexity Index.</b>
+                <br>
+                Developed by Aeckapholpholladet Detkaew (2025) as a new research instrument conceptually derived from the MRCI framework to assess overall treatment complexity.
+                <br>
+                - Currently under validation in Project II (IRB 2024; Amendment 2025).
+            </div>
+
+            <div class="instrument-item">
+                <b>4. PSQI – Pittsburgh Sleep Quality Index (Thai Version).</b>
+                <br>
+                Thai version by Sitasuwan T et al. (2014), used under academic permission from the University of Pittsburgh (2023).
+                <br>
+                - Included in Project II (IRB 2024).
+            </div>
+
+            <div class="instrument-item">
+                <b>5. PSS-10 – Perceived Stress Scale (Thai Version).</b>
+                <br>
+                Thai version authorized for academic use via MAPI Research Trust (RST Assessments LLC, 2023), with permission acknowledged from Sheldon Cohen.
+                <br>
+                - Included in Project II (IRB 2024).
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- PROJECT III -->
+
+    <div class="project-block" id="project-iii">
+
+        <div class="project-heading">Project III</div>
+
+        <div class="project-content">
+
+            <b>Focus:</b> Thai IWPQ, Thai RQ, Thai POS Scale; n=400 working-age adults.
+            <br>
+            <b>Goals:</b> Exploratory cut-off determination in Thai working-age adults; cross-cultural comparison of the POS Scale with Italy (n=302).
+            <br>
+            <b>Status:</b> Dual-IRB approved (2025–2026; ongoing).
+            <br>
+            <b>Current Progress:</b> Site approval completed; field data collection pending initiation.
+            <br>
+            <b>Principal Investigator:</b> Aeckapholpholladet Detkaew.
+            <br>
+            <b>Funding:</b> Self-funded (no external grant support).
+
+            <div class="instrument-title">— Research Instruments —</div>
+
+            <div class="instrument-item">
+                <b>1. IWPQ – Individual Work Performance Questionnaire (Thai Version).</b>
+                <br>
+                Translated under academic permission by Aeckapholpholladet Detkaew (2023) in collaboration with one of the original developers (co-authorship planned).
+                <br>
+                - Back-translation reviewed and face-validated by the original developers. Included in Project III (IRB 2025).
+            </div>
+
+            <div class="instrument-item">
+                <b>2. RQ – Responsibility Questionnaire (Thai Version).</b>
+                <br>
+                Translated under academic permission by Aeckapholpholladet Detkaew (2024), based on the original RQ.
+                <br>
+                - Back-translation reviewed and face-validated by the original developers. Included in Project III (IRB 2025).
+            </div>
+
+            <div class="instrument-item">
+                <b>3. POS Scale – Perceived Occupational Stress Scale (Thai Version).</b>
+                <br>
+                Translated under academic permission by Aeckapholpholladet Detkaew (2025) in collaboration with one of the original developers (listed as IRB co-investigator; co-authorship planned).
+                <br>
+                - Back-translation reviewed and face-validated by the original developer. Included in Project III (IRB 2025).
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="note-divider"></div>
+
+    <div class="note">
+
+        <div class="note-block">
+
+            <div class="note-title">
+                Note on Project Ownership and Funding:
+            </div>
+
+            <div class="note-text">
+                All projects presented on this page are initiated and led by Principal Investigators who are members of the ADET Research Group.
+                <br><br>
+                Ethical approvals for certain projects have been granted by institutional review boards (IRBs) through members’ professional affiliations, ensuring appropriate ethical oversight and reflecting academic collaboration.
+                <br><br>
+                Each project remains under the responsibility of its designated Principal Investigator and/or its granting body and is conducted independently, with funding information specified individually for each project.
+            </div>
+
+        </div>
+
+        <div class="note-block">
+
+            <div class="note-title">
+                Disclaimer on Intellectual Ownership and Digital Record:
+            </div>
+
+            <div class="note-text">
+                All research concepts and contents presented on this website originate from Principal Investigators (PIs) within the ADET Research Group.
+                <br><br>
+                Each project remains under the full intellectual ownership of its respective PI. Information is publicly displayed to ensure academic transparency and serves as the permanent digital record of ADET Research Group’s independent research and authorship.
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="footer">
+    © 2025–2026 ADET Research Group. All rights reserved. |
+    <i>Last updated April 2026.</i>
+</div>
+
+</body>
+
+</html>
