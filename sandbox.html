@@ -184,81 +184,6 @@ body{
     font-weight:normal;
 }
 
-/* METRICS */
-
-.metrics-section{
-    width:1000px;
-    margin:38px auto 0;
-    border-top:1px solid rgba(255,255,255,0.45);
-    border-bottom:1px solid rgba(255,255,255,0.45);
-    padding:26px 0 24px;
-}
-
-.metrics-grid{
-    display:grid;
-    grid-template-columns:repeat(4, 1fr);
-    gap:16px;
-}
-
-.metric-card{
-    border:1px solid rgba(212,160,23,0.42);
-    background:rgba(255,255,255,0.035);
-    padding:16px 10px 15px;
-    text-align:center;
-    transition:transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
-}
-
-.metric-card:hover{
-    transform:translateY(-3px);
-    background:rgba(212,160,23,0.08);
-    border-color:rgba(212,160,23,0.75);
-}
-
-.metric-number{
-    color:#d4a017;
-    font-size:34px;
-    line-height:1.1;
-    font-weight:bold;
-}
-
-.metric-label{
-    color:white;
-    font-size:15px;
-    line-height:1.35;
-    margin-top:7px;
-}
-
-.flag-row{
-    color:white;
-    text-align:center;
-    font-size:24px;
-    letter-spacing:7px;
-    line-height:1.8;
-    margin-top:18px;
-    opacity:0;
-    animation:flagFade 0.9s ease forwards;
-    animation-delay:0.35s;
-}
-
-.metrics-note{
-    color:rgba(255,255,255,0.72);
-    font-size:13px;
-    line-height:1.5;
-    text-align:center;
-    margin-top:8px;
-}
-
-@keyframes flagFade{
-    from{
-        opacity:0;
-        transform:translateY(5px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
 /* FOOTER */
 
 .footer{
@@ -269,6 +194,41 @@ body{
     font-size:16px;
     line-height:1.8;
     padding-bottom:30px;
+}
+
+/* RESEARCH FOOTPRINT */
+
+.research-footprint{
+    margin-top:18px;
+    color:white;
+    font-size:16px;
+    line-height:1.8;
+    text-align:center;
+}
+
+.footprint-line{
+    color:white;
+}
+
+.separator{
+    color:white;
+    opacity:0.55;
+    margin:0 10px;
+}
+
+.footprint-flags{
+    margin-top:2px;
+    color:white;
+    font-size:16px;
+    line-height:1.8;
+    letter-spacing:3px;
+}
+
+.footprint-note{
+    color:white;
+    opacity:0.65;
+    font-size:16px;
+    line-height:1.8;
 }
 
 </style>
@@ -328,42 +288,6 @@ body{
 <b>ADET Research Group</b> — Generating evidence across health, behavioral, and care systems to guide better practice and outcomes — for lasting impact.
 </div>
 
-<div class="metrics-section">
-
-    <div class="metrics-grid">
-
-        <div class="metric-card">
-            <div class="metric-number" id="googleSearchVisits">568+</div>
-            <div class="metric-label">Google Search Visits</div>
-        </div>
-
-        <div class="metric-card">
-            <div class="metric-number" id="countriesReached">9+</div>
-            <div class="metric-label">Countries Reached</div>
-        </div>
-
-        <div class="metric-card">
-            <div class="metric-number" id="activeResearchProjects">3</div>
-            <div class="metric-label">Active Research Projects</div>
-        </div>
-
-        <div class="metric-card">
-            <div class="metric-number" id="researchNetworkCountries">5</div>
-            <div class="metric-label">Research Network Countries</div>
-        </div>
-
-    </div>
-
-    <div class="flag-row" id="flagRow">
-        🇹🇭 🇺🇸 🇲🇾 🇭🇰 🇮🇹 🇰🇷 🇵🇭 🇮🇳 🇸🇬
-    </div>
-
-    <div class="metrics-note" id="metricsNote">
-        Google Search visibility since September 2025.
-    </div>
-
-</div>
-
 <div class="footer">
 © 2025–2026 ADET Research Group. All rights reserved. |
 <i>Last updated April 2026.</i> |
@@ -371,6 +295,31 @@ Independent and self-funded initiative (no external grant support) |
 Not affiliated with any university, hospital, or organization |
 Bangkok, Thailand |
 Email: contact@adetresearch.org
+
+    <div class="research-footprint">
+
+        <div class="footprint-line">
+            <span id="googleSearchVisits">568+</span> Google Search Visits
+            <span class="separator">•</span>
+            <span id="countriesReached">9+</span> Countries Reached
+        </div>
+
+        <div class="footprint-flags" id="flagRow">
+            🇹🇭 🇺🇸 🇲🇾 🇭🇰 🇮🇹 🇰🇷 🇵🇭 🇮🇳 🇸🇬
+        </div>
+
+        <div class="footprint-line">
+            <span id="activeResearchProjects">3</span> Active Research Projects
+            <span class="separator">•</span>
+            <span id="researchNetworkCountries">5</span> Research Network Countries
+        </div>
+
+        <div class="footprint-note" id="metricsNote">
+            Google Search visibility since September 2025.
+        </div>
+
+    </div>
+
 </div>
 
 <script>
@@ -384,39 +333,22 @@ const fallbackMetrics = {
     lastUpdated: "2026-06-28"
 };
 
-function animateNumber(element, target, suffix){
-    let start = 0;
-    let duration = 900;
-    let startTime = null;
-
-    function step(timestamp){
-        if(!startTime){
-            startTime = timestamp;
-        }
-
-        let progress = Math.min((timestamp - startTime) / duration, 1);
-        let value = Math.floor(progress * target);
-
-        element.textContent = value.toLocaleString() + suffix;
-
-        if(progress < 1){
-            requestAnimationFrame(step);
-        }else{
-            element.textContent = target.toLocaleString() + suffix;
-        }
-    }
-
-    requestAnimationFrame(step);
-}
-
 function renderMetrics(data){
 
-    animateNumber(document.getElementById("googleSearchVisits"), data.googleSearchVisits, "+");
-    animateNumber(document.getElementById("countriesReached"), data.countriesReached, "+");
-    animateNumber(document.getElementById("activeResearchProjects"), data.activeResearchProjects, "");
-    animateNumber(document.getElementById("researchNetworkCountries"), data.researchNetworkCountries, "");
+    document.getElementById("googleSearchVisits").textContent =
+        data.googleSearchVisits.toLocaleString() + "+";
 
-    document.getElementById("flagRow").textContent = data.flags.join(" ");
+    document.getElementById("countriesReached").textContent =
+        data.countriesReached.toLocaleString() + "+";
+
+    document.getElementById("activeResearchProjects").textContent =
+        data.activeResearchProjects.toLocaleString();
+
+    document.getElementById("researchNetworkCountries").textContent =
+        data.researchNetworkCountries.toLocaleString();
+
+    document.getElementById("flagRow").textContent =
+        data.flags.join(" ");
 
     if(data.lastUpdated){
         document.getElementById("metricsNote").textContent =
