@@ -195,47 +195,41 @@ body{
 /* GOOGLE SEARCH FOOTPRINT */
 
 .search-footprint{
-    width:1000px;
-    margin:20px auto 0;
+    margin-top:18px;
     text-align:center;
 }
 
-.search-metrics{
-    display:flex;
-    justify-content:center;
-    gap:90px;
-    align-items:flex-start;
-}
-
-.search-metric{
-    min-width:180px;
+.search-line{
+    color:#d4a017;
+    font-size:18px;
+    line-height:1.7;
+    font-weight:normal;
 }
 
 .search-number{
-    color:#d4a017;
-    font-size:42px;
+    font-size:34px;
     font-weight:bold;
     line-height:1;
 }
 
-.search-label{
+.separator{
     color:white;
-    font-size:15px;
-    margin-top:6px;
-    line-height:1.4;
+    opacity:0.55;
+    margin:0 12px;
 }
 
 .search-flags{
-    margin-top:12px;
+    margin-top:6px;
     color:white;
-    font-size:18px;
+    font-size:17px;
+    line-height:1.7;
     letter-spacing:4px;
 }
 
 .search-note{
     color:rgba(255,255,255,0.55);
     font-size:14px;
-    margin-top:6px;
+    line-height:1.6;
 }
 
 /* RESPONSIVE */
@@ -244,8 +238,7 @@ body{
 
     .hero,
     .subtitle,
-    .footer,
-    .search-footprint{
+    .footer{
         width:92%;
     }
 
@@ -328,22 +321,12 @@ Email: contact@adetresearch.org
 
     <div class="search-footprint">
 
-        <div class="search-metrics">
-
-            <div class="search-metric">
-                <div class="search-number" id="googleSearchVisits">568+</div>
-                <div class="search-label">
-                    Google Search Visits
-                </div>
-            </div>
-
-            <div class="search-metric">
-                <div class="search-number" id="countriesReached">9+</div>
-                <div class="search-label">
-                    Countries Reached
-                </div>
-            </div>
-
+        <div class="search-line">
+            <span class="search-number" id="googleSearchVisits">568+</span>
+            Google Search Visits
+            <span class="separator">•</span>
+            <span class="search-number" id="countriesReached">9+</span>
+            Countries Reached
         </div>
 
         <div class="search-flags" id="flagRow">
@@ -351,7 +334,7 @@ Email: contact@adetresearch.org
         </div>
 
         <div class="search-note" id="metricsNote">
-            Google Search visibility since September 2025.
+            Google Search visibility since September 2025. Last updated 2026-06-28.
         </div>
 
     </div>
@@ -363,9 +346,19 @@ Email: contact@adetresearch.org
 const fallbackMetrics = {
     googleSearchVisits: 568,
     countriesReached: 9,
-    flags: ["🇹🇭", "🇺🇸", "🇲🇾", "🇭🇰", "🇮🇹", "🇰🇷", "🇵🇭", "🇮🇳", "🇸🇬"],
+    flags: ["TH", "US", "MY", "HK", "IT", "KR", "PH", "IN", "SG"],
     lastUpdated: "2026-06-28"
 };
+
+function countryCodeToFlag(code){
+    if(code.length !== 2){
+        return code;
+    }
+
+    return code.toUpperCase().replace(/./g, char =>
+        String.fromCodePoint(127397 + char.charCodeAt())
+    );
+}
 
 function renderMetrics(data){
 
@@ -376,7 +369,7 @@ function renderMetrics(data){
         data.countriesReached.toLocaleString() + "+";
 
     document.getElementById("flagRow").textContent =
-        data.flags.join(" ");
+        data.flags.map(countryCodeToFlag).join(" ");
 
     if(data.lastUpdated){
         document.getElementById("metricsNote").textContent =
