@@ -212,10 +212,9 @@ body{
     line-height:1;
 }
 
-.separator{
-    color:white;
-    opacity:0.42;
-    margin:0 8px;
+.metric-gap{
+    display:inline-block;
+    width:18px;
 }
 
 .search-flags{
@@ -326,7 +325,9 @@ Email: contact@adetresearch.org
         <div class="search-line">
             <span class="search-number" id="googleSearchVisits">568+</span>
             Google Search Visits
-            <span class="separator">•</span>
+
+            <span class="metric-gap"></span>
+
             <span class="search-number" id="countriesReached">9+</span>
             Countries Reached
         </div>
@@ -336,7 +337,7 @@ Email: contact@adetresearch.org
         </div>
 
         <div class="search-note" id="metricsNote">
-            Google Search visibility since September 2025. Last updated July 2026.
+            Google Search visibility since September 2025. Metrics through July 2026.
         </div>
 
     </div>
@@ -344,6 +345,8 @@ Email: contact@adetresearch.org
 </div>
 
 <script>
+
+const METRICS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzpzZoTS3Nh9XMJ9bfC9hy_MvK48zspziDcOmNz_NQiUwiMV10kpKNZqrO3hAJz3m2x/exec";
 
 const fallbackMetrics = {
     googleSearchVisits: 568,
@@ -412,36 +415,34 @@ function animateNumber(element, target, suffix){
 
 function renderMetrics(data){
 
+    const visits = Number(data.googleSearchVisits || fallbackMetrics.googleSearchVisits);
+    const countries = Number(data.countriesReached || fallbackMetrics.countriesReached);
+    const flags = Array.isArray(data.flags) ? data.flags : fallbackMetrics.flags;
+    const updatedMonth = formatMonthYear(data.lastUpdated || fallbackMetrics.lastUpdated);
+
     animateNumber(
         document.getElementById("googleSearchVisits"),
-        Number(data.googleSearchVisits || fallbackMetrics.googleSearchVisits),
+        visits,
         "+"
     );
 
     animateNumber(
         document.getElementById("countriesReached"),
-        Number(data.countriesReached || fallbackMetrics.countriesReached),
+        countries,
         "+"
     );
-
-    const flags = Array.isArray(data.flags) ? data.flags : fallbackMetrics.flags;
 
     document.getElementById("flagRow").textContent =
         flags.map(countryCodeToFlag).join(" ");
 
     document.getElementById("metricsNote").textContent =
-        "Google Search visibility since September 2025. Last updated " +
-        formatMonthYear(data.lastUpdated || fallbackMetrics.lastUpdated) +
+        "Google Search visibility since September 2025. Metrics through " +
+        updatedMonth +
         ".";
 }
 
-fetch("metrics.json")
-    .then(response => {
-        if(!response.ok){
-            throw new Error("metrics.json not found");
-        }
-        return response.json();
-    })
+fetch(METRICS_ENDPOINT)
+    .then(response => response.json())
     .then(data => {
         renderMetrics(data);
     })
