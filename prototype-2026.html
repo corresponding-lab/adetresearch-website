@@ -220,9 +220,9 @@ body{
 .search-flags{
     margin-top:2px;
     color:white;
-    font-size:13px;
+    font-size:14px;
     line-height:1.5;
-    letter-spacing:2px;
+    letter-spacing:1px;
     opacity:0.82;
 }
 
@@ -323,12 +323,12 @@ Email: contact@adetresearch.org
     <div class="search-footprint">
 
         <div class="search-line">
-            <span class="search-number" id="googleSearchVisits">568+</span>
+            <span class="search-number" id="googleSearchVisits">569+</span>
             Google Search Visits
 
             <span class="metric-gap"></span>
 
-            <span class="search-number" id="countriesReached">9+</span>
+            <span class="search-number" id="countriesReached">66+</span>
             Countries Reached
         </div>
 
@@ -337,7 +337,7 @@ Email: contact@adetresearch.org
         </div>
 
         <div class="search-note" id="metricsNote">
-            Google Search visibility since September 2025. Metrics through July 2026.
+            Google Search visibility since September 2025. Metrics through June 2026.
         </div>
 
     </div>
@@ -349,21 +349,33 @@ Email: contact@adetresearch.org
 const METRICS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzpzZoTS3Nh9XMJ9bfC9hy_MvK48zspziDcOmNz_NQiUwiMV10kpKNZqrO3hAJz3m2x/exec";
 
 const fallbackMetrics = {
-    googleSearchVisits: 568,
-    countriesReached: 9,
-    flags: ["TH", "US", "MY", "HK", "IT", "KR", "PH", "IN", "SG"],
-    lastUpdated: "2026-07-01"
+    googleSearchVisits: 569,
+    countriesReached: 66,
+    flags: ["THA", "USA", "MYS", "HKG", "ITA", "KOR", "PHL", "IND", "SGP"],
+    lastUpdated: "2026-06-29"
+};
+
+const iso3ToIso2 = {
+    THA:"TH", USA:"US", MYS:"MY", HKG:"HK", ITA:"IT",
+    KOR:"KR", PHL:"PH", IND:"IN", SGP:"SG",
+    GBR:"GB", DEU:"DE", FRA:"FR", JPN:"JP", AUS:"AU",
+    CAN:"CA", CHN:"CN", TWN:"TW", VNM:"VN", IDN:"ID",
+    ARE:"AE", SAU:"SA", AUT:"AT", BEL:"BE", NLD:"NL",
+    NOR:"NO", DNK:"DK", ESP:"ES", POL:"PL", RUS:"RU",
+    ZAF:"ZA", NZL:"NZ", XKK:"XK"
 };
 
 function countryCodeToFlag(code){
-    if(typeof code !== "string"){
-        return "";
+    if(typeof code !== "string") return "";
+
+    let cleanCode = code.trim().toUpperCase();
+
+    if(cleanCode.length === 3 && iso3ToIso2[cleanCode]){
+        cleanCode = iso3ToIso2[cleanCode];
     }
 
-    const cleanCode = code.trim().toUpperCase();
-
     if(cleanCode.length !== 2){
-        return code;
+        return "";
     }
 
     return cleanCode.replace(/./g, char =>
@@ -373,13 +385,13 @@ function countryCodeToFlag(code){
 
 function formatMonthYear(dateString){
     if(!dateString){
-        return "July 2026";
+        return "June 2026";
     }
 
     const date = new Date(dateString + "T00:00:00");
 
     if(isNaN(date.getTime())){
-        return "July 2026";
+        return "June 2026";
     }
 
     return date.toLocaleDateString("en-US", {
@@ -413,11 +425,29 @@ function animateNumber(element, target, suffix){
     requestAnimationFrame(step);
 }
 
+function selectDisplayFlags(flags){
+    const preferred = ["THA", "USA", "MYS", "HKG", "ITA", "KOR", "PHL", "IND", "SGP"];
+
+    const available = Array.isArray(flags) && flags.length > 0
+        ? flags.map(code => String(code).toUpperCase())
+        : fallbackMetrics.flags;
+
+    const selected = preferred.filter(code => available.includes(code));
+
+    return selected.length > 0 ? selected : available.slice(0, 9);
+}
+
 function renderMetrics(data){
 
-    const visits = Number(data.googleSearchVisits || fallbackMetrics.googleSearchVisits);
-    const countries = Number(data.countriesReached || fallbackMetrics.countriesReached);
-    const flags = Array.isArray(data.flags) ? data.flags : fallbackMetrics.flags;
+    const visits = Number(data.googleSearchVisits) > 0
+        ? Number(data.googleSearchVisits)
+        : fallbackMetrics.googleSearchVisits;
+
+    const countries = Number(data.countriesReached) > 0
+        ? Number(data.countriesReached)
+        : fallbackMetrics.countriesReached;
+
+    const displayFlags = selectDisplayFlags(data.flags);
     const updatedMonth = formatMonthYear(data.lastUpdated || fallbackMetrics.lastUpdated);
 
     animateNumber(
@@ -433,7 +463,7 @@ function renderMetrics(data){
     );
 
     document.getElementById("flagRow").textContent =
-        flags.map(countryCodeToFlag).join(" ");
+        displayFlags.map(countryCodeToFlag).filter(Boolean).join(" ");
 
     document.getElementById("metricsNote").textContent =
         "Google Search visibility since September 2025. Metrics through " +
