@@ -1,1 +1,405 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+
+<title>ADET Research Group</title>
+
+<link rel="icon" type="image/png" href="logo.png">
+
+<style>
+
+body{
+    margin:0;
+    font-family:Georgia, serif;
+    background:#031238;
+    overflow-x:visible;
+}
+
+/* NAVBAR */
+
+.navbar{
+    height:68px;
+    max-width:1280px;
+    width:95%;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:relative;
+    z-index:1000;
+}
+
+.nav-left{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.nav-left img{
+    width:28px;
+}
+
+.site-name{
+    color:white;
+    font-size:18px;
+    font-weight:500;
+    text-decoration:none;
+}
+
+.site-name:hover{
+    color:#c79b3b;
+}
+
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    font-size:16px;
+    white-space:nowrap;
+}
+
+.nav-right a{
+    color:white;
+    text-decoration:none;
+}
+
+.nav-right a:hover{
+    color:#c79b3b;
+}
+
+/* DROPDOWN */
+
+.dropdown{
+    position:relative;
+    display:flex;
+    align-items:center;
+}
+
+.dropdown > a{
+    color:white;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+.dropdown > a:hover{
+    color:#c79b3b;
+}
+
+.dropdown::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    top:100%;
+    height:18px;
+}
+
+.dropdown-menu{
+    display:none;
+    position:absolute;
+    top:34px;
+    right:0;
+    min-width:260px;
+    background:#2a241f;
+    padding:14px 16px;
+    text-align:center;
+    z-index:9999;
+}
+
+.dropdown-menu a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    font-size:16px;
+    line-height:1.6;
+}
+
+.dropdown-menu a:hover{
+    color:#c79b3b;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu,
+.dropdown-menu:hover{
+    display:block;
+}
+
+/* HERO */
+
+.hero{
+    width:1220px;
+    margin:42px auto 0;
+    display:flex;
+    align-items:flex-start;
+    justify-content:center;
+    gap:28px;
+}
+
+.logo-card{
+    width:350px;
+    height:430px;
+    overflow:hidden;
+    display:flex;
+    align-items:flex-start;
+    justify-content:center;
+}
+
+.logo-card img{
+    width:365px;
+    height:auto;
+    display:block;
+    transform:translateX(0px) translateY(-8px);
+}
+
+.hero-card{
+    width:650px;
+    height:380px;
+    overflow:hidden;
+    display:flex;
+    align-items:flex-start;
+    justify-content:center;
+}
+
+.hero-card img{
+    width:650px;
+    height:auto;
+    display:block;
+    transform:translateX(0px) translateY(-128px);
+}
+
+/* SUBTITLE */
+
+.subtitle{
+    width:1000px;
+    margin:28px auto 0;
+    color:#d4a017;
+    font-size:24px;
+    line-height:1.65;
+    text-align:left;
+    font-weight:normal;
+}
+
+/* FOOTER */
+
+.footer{
+    width:1000px;
+    margin:58px auto 0;
+    color:white;
+    text-align:center;
+    font-size:16px;
+    line-height:1.8;
+    padding-bottom:30px;
+}
+
+/* GOOGLE SEARCH FOOTPRINT */
+
+.search-footprint{
+    width:1000px;
+    margin:20px auto 0;
+    text-align:center;
+}
+
+.search-metrics{
+    display:flex;
+    justify-content:center;
+    gap:90px;
+    align-items:flex-start;
+}
+
+.search-metric{
+    min-width:180px;
+}
+
+.search-number{
+    color:#d4a017;
+    font-size:42px;
+    font-weight:bold;
+    line-height:1;
+}
+
+.search-label{
+    color:white;
+    font-size:15px;
+    margin-top:6px;
+    line-height:1.4;
+}
+
+.search-flags{
+    margin-top:12px;
+    color:white;
+    font-size:18px;
+    letter-spacing:4px;
+}
+
+.search-note{
+    color:rgba(255,255,255,0.55);
+    font-size:14px;
+    margin-top:6px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width:1100px){
+
+    .hero,
+    .subtitle,
+    .footer,
+    .search-footprint{
+        width:92%;
+    }
+
+    .hero{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .nav-right{
+        gap:10px;
+        font-size:15px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+    <div class="nav-left">
+        <img src="logo.png">
+
+        <a href="index.html" class="site-name">
+            www.adetresearch.org
+        </a>
+
+    </div>
+
+    <div class="nav-right">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="members.html">Members & Collaborators</a>
+        <a href="projects.html">Projects</a>
+
+        <div class="dropdown">
+
+            <a href="research-info.html">
+                Research Information Access ▼
+            </a>
+
+            <div class="dropdown-menu">
+                <a href="project-iii-pis-access.html">
+                    Project III – Participant Information Sheet (PIS)
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="hero">
+
+    <div class="logo-card">
+        <img src="logo.describe_2.png">
+    </div>
+
+    <div class="hero-card">
+        <img src="Original-banner.png">
+    </div>
+
+</div>
+
+<div class="subtitle">
+<b>ADET Research Group</b> — Generating evidence across health, behavioral, and care systems to guide better practice and outcomes — for lasting impact.
+</div>
+
+<div class="footer">
+© 2025–2026 ADET Research Group. All rights reserved. |
+<i>Last updated April 2026.</i> |
+Independent and self-funded initiative (no external grant support) |
+Not affiliated with any university, hospital, or organization |
+Bangkok, Thailand |
+Email: contact@adetresearch.org
+
+    <div class="search-footprint">
+
+        <div class="search-metrics">
+
+            <div class="search-metric">
+                <div class="search-number" id="googleSearchVisits">568+</div>
+                <div class="search-label">
+                    Google Search Visits
+                </div>
+            </div>
+
+            <div class="search-metric">
+                <div class="search-number" id="countriesReached">9+</div>
+                <div class="search-label">
+                    Countries Reached
+                </div>
+            </div>
+
+        </div>
+
+        <div class="search-flags" id="flagRow">
+            🇹🇭 🇺🇸 🇲🇾 🇭🇰 🇮🇹 🇰🇷 🇵🇭 🇮🇳 🇸🇬
+        </div>
+
+        <div class="search-note" id="metricsNote">
+            Google Search visibility since September 2025.
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+const fallbackMetrics = {
+    googleSearchVisits: 568,
+    countriesReached: 9,
+    flags: ["🇹🇭", "🇺🇸", "🇲🇾", "🇭🇰", "🇮🇹", "🇰🇷", "🇵🇭", "🇮🇳", "🇸🇬"],
+    lastUpdated: "2026-06-28"
+};
+
+function renderMetrics(data){
+
+    document.getElementById("googleSearchVisits").textContent =
+        data.googleSearchVisits.toLocaleString() + "+";
+
+    document.getElementById("countriesReached").textContent =
+        data.countriesReached.toLocaleString() + "+";
+
+    document.getElementById("flagRow").textContent =
+        data.flags.join(" ");
+
+    if(data.lastUpdated){
+        document.getElementById("metricsNote").textContent =
+            "Google Search visibility since September 2025. Last updated " + data.lastUpdated + ".";
+    }
+}
+
+fetch("metrics.json")
+    .then(response => {
+        if(!response.ok){
+            throw new Error("metrics.json not found");
+        }
+        return response.json();
+    })
+    .then(data => {
+        renderMetrics(data);
+    })
+    .catch(() => {
+        renderMetrics(fallbackMetrics);
+    });
+
+</script>
+
+</body>
+
+</html>
