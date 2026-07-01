@@ -340,13 +340,44 @@ const fallbackMetrics = {
     flags: ["🇹🇭", "🇺🇸", "🇲🇾", "🇭🇰", "🇮🇹", "🇰🇷", "🇵🇭", "🇮🇳", "🇸🇬"]
 };
 
+function animateNumber(element, target, suffix){
+    let duration = 900;
+    let startTime = null;
+
+    function step(timestamp){
+        if(!startTime){
+            startTime = timestamp;
+        }
+
+        let progress = Math.min((timestamp - startTime) / duration, 1);
+        let eased = 1 - Math.pow(1 - progress, 3);
+        let value = Math.floor(eased * target);
+
+        element.textContent = value.toLocaleString() + suffix;
+
+        if(progress < 1){
+            requestAnimationFrame(step);
+        }else{
+            element.textContent = target.toLocaleString() + suffix;
+        }
+    }
+
+    requestAnimationFrame(step);
+}
+
 function renderMetrics(data){
 
-    document.getElementById("googleSearchVisits").textContent =
-        data.googleSearchVisits.toLocaleString() + "+";
+    animateNumber(
+        document.getElementById("googleSearchVisits"),
+        data.googleSearchVisits,
+        "+"
+    );
 
-    document.getElementById("countriesReached").textContent =
-        data.countriesReached.toLocaleString() + "+";
+    animateNumber(
+        document.getElementById("countriesReached"),
+        data.countriesReached,
+        "+"
+    );
 
     document.getElementById("flagRow").textContent =
         data.flags.join(" ");
