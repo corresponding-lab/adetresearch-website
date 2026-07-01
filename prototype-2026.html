@@ -195,41 +195,36 @@ body{
 /* GOOGLE SEARCH FOOTPRINT */
 
 .search-footprint{
-    margin-top:18px;
+    margin-top:14px;
     text-align:center;
 }
 
 .search-line{
-    color:#d4a017;
-    font-size:18px;
-    line-height:1.7;
+    color:#c79b3b;
+    font-size:14px;
+    line-height:1.6;
     font-weight:normal;
 }
 
 .search-number{
-    font-size:34px;
-    font-weight:bold;
+    font-size:20px;
+    font-weight:600;
     line-height:1;
 }
 
 .separator{
     color:white;
-    opacity:0.55;
-    margin:0 12px;
+    opacity:0.42;
+    margin:0 8px;
 }
 
 .search-flags{
-    margin-top:6px;
+    margin-top:2px;
     color:white;
-    font-size:17px;
-    line-height:1.7;
-    letter-spacing:4px;
-}
-
-.search-note{
-    color:rgba(255,255,255,0.55);
-    font-size:14px;
-    line-height:1.6;
+    font-size:13px;
+    line-height:1.5;
+    letter-spacing:2px;
+    opacity:0.82;
 }
 
 /* RESPONSIVE */
@@ -333,10 +328,6 @@ Email: contact@adetresearch.org
             🇹🇭 🇺🇸 🇲🇾 🇭🇰 🇮🇹 🇰🇷 🇵🇭 🇮🇳 🇸🇬
         </div>
 
-        <div class="search-note" id="metricsNote">
-            Google Search visibility since September 2025. Last updated 2026-06-28.
-        </div>
-
     </div>
 
 </div>
@@ -346,19 +337,8 @@ Email: contact@adetresearch.org
 const fallbackMetrics = {
     googleSearchVisits: 568,
     countriesReached: 9,
-    flags: ["TH", "US", "MY", "HK", "IT", "KR", "PH", "IN", "SG"],
-    lastUpdated: "2026-06-28"
+    flags: ["🇹🇭", "🇺🇸", "🇲🇾", "🇭🇰", "🇮🇹", "🇰🇷", "🇵🇭", "🇮🇳", "🇸🇬"]
 };
-
-function countryCodeToFlag(code){
-    if(code.length !== 2){
-        return code;
-    }
-
-    return code.toUpperCase().replace(/./g, char =>
-        String.fromCodePoint(127397 + char.charCodeAt())
-    );
-}
 
 function renderMetrics(data){
 
@@ -369,12 +349,7 @@ function renderMetrics(data){
         data.countriesReached.toLocaleString() + "+";
 
     document.getElementById("flagRow").textContent =
-        data.flags.map(countryCodeToFlag).join(" ");
-
-    if(data.lastUpdated){
-        document.getElementById("metricsNote").textContent =
-            "Google Search visibility since September 2025. Last updated " + data.lastUpdated + ".";
-    }
+        data.flags.join(" ");
 }
 
 fetch("metrics.json")
