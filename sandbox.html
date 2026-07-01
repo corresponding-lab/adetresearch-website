@@ -136,8 +136,6 @@ body{
     gap:28px;
 }
 
-/* IMAGE 1 */
-
 .logo-card{
     width:350px;
     height:430px;
@@ -153,8 +151,6 @@ body{
     display:block;
     transform:translateX(0px) translateY(-8px);
 }
-
-/* IMAGE 2 */
 
 .hero-card{
     width:650px;
@@ -196,40 +192,50 @@ body{
     padding-bottom:30px;
 }
 
-/* GOOGLE SEARCH FOOTPRINT */
+/* SEARCH FOOTPRINT */
 
 .search-footprint{
-    margin-top:18px;
-    color:white;
-    font-size:16px;
-    line-height:1.8;
+    margin-top:22px;
     text-align:center;
 }
 
-.search-footprint-line{
+.search-metrics{
+    display:flex;
+    justify-content:center;
+    gap:46px;
+    align-items:flex-start;
+}
+
+.search-metric{
+    min-width:170px;
+}
+
+.search-number{
     color:#d4a017;
-    font-size:17px;
-    line-height:1.8;
+    font-size:30px;
+    line-height:1.1;
+    font-weight:bold;
 }
 
-.separator{
+.search-label{
     color:white;
-    opacity:0.55;
-    margin:0 10px;
-}
-
-.search-footprint-flags{
-    margin-top:2px;
-    color:white;
-    font-size:17px;
-    line-height:1.8;
-    letter-spacing:3px;
-}
-
-.search-footprint-note{
-    color:white;
-    opacity:0.72;
     font-size:15px;
+    line-height:1.4;
+    margin-top:4px;
+}
+
+.search-flags{
+    margin-top:10px;
+    color:white;
+    font-size:17px;
+    line-height:1.8;
+    letter-spacing:4px;
+}
+
+.search-note{
+    color:white;
+    opacity:0.68;
+    font-size:14px;
     line-height:1.8;
 }
 
@@ -300,17 +306,25 @@ Email: contact@adetresearch.org
 
     <div class="search-footprint">
 
-        <div class="search-footprint-line">
-            <span id="googleSearchVisits">568+</span> Google Search Visits
-            <span class="separator">•</span>
-            <span id="countriesReached">9+</span> Countries Reached
+        <div class="search-metrics">
+
+            <div class="search-metric">
+                <div class="search-number" id="googleSearchVisits">568+</div>
+                <div class="search-label">Google Search Visits</div>
+            </div>
+
+            <div class="search-metric">
+                <div class="search-number" id="countriesReached">9+</div>
+                <div class="search-label">Countries Reached</div>
+            </div>
+
         </div>
 
-        <div class="search-footprint-flags" id="flagRow">
+        <div class="search-flags" id="flagRow">
             🇹🇭 🇺🇸 🇲🇾 🇭🇰 🇮🇹 🇰🇷 🇵🇭 🇮🇳 🇸🇬
         </div>
 
-        <div class="search-footprint-note" id="metricsNote">
+        <div class="search-note" id="metricsNote">
             Google Search visibility since September 2025. Last updated 2026-06-28.
         </div>
 
