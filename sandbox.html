@@ -196,9 +196,9 @@ body{
     padding-bottom:30px;
 }
 
-/* RESEARCH FOOTPRINT */
+/* GOOGLE SEARCH FOOTPRINT */
 
-.research-footprint{
+.search-footprint{
     margin-top:18px;
     color:white;
     font-size:16px;
@@ -206,8 +206,10 @@ body{
     text-align:center;
 }
 
-.footprint-line{
-    color:white;
+.search-footprint-line{
+    color:#d4a017;
+    font-size:17px;
+    line-height:1.8;
 }
 
 .separator{
@@ -216,18 +218,18 @@ body{
     margin:0 10px;
 }
 
-.footprint-flags{
+.search-footprint-flags{
     margin-top:2px;
     color:white;
-    font-size:16px;
+    font-size:17px;
     line-height:1.8;
     letter-spacing:3px;
 }
 
-.footprint-note{
+.search-footprint-note{
     color:white;
-    opacity:0.65;
-    font-size:16px;
+    opacity:0.72;
+    font-size:15px;
     line-height:1.8;
 }
 
@@ -296,26 +298,20 @@ Not affiliated with any university, hospital, or organization |
 Bangkok, Thailand |
 Email: contact@adetresearch.org
 
-    <div class="research-footprint">
+    <div class="search-footprint">
 
-        <div class="footprint-line">
+        <div class="search-footprint-line">
             <span id="googleSearchVisits">568+</span> Google Search Visits
             <span class="separator">•</span>
             <span id="countriesReached">9+</span> Countries Reached
         </div>
 
-        <div class="footprint-flags" id="flagRow">
+        <div class="search-footprint-flags" id="flagRow">
             🇹🇭 🇺🇸 🇲🇾 🇭🇰 🇮🇹 🇰🇷 🇵🇭 🇮🇳 🇸🇬
         </div>
 
-        <div class="footprint-line">
-            <span id="activeResearchProjects">3</span> Active Research Projects
-            <span class="separator">•</span>
-            <span id="researchNetworkCountries">5</span> Research Network Countries
-        </div>
-
-        <div class="footprint-note" id="metricsNote">
-            Google Search visibility since September 2025.
+        <div class="search-footprint-note" id="metricsNote">
+            Google Search visibility since September 2025. Last updated 2026-06-28.
         </div>
 
     </div>
@@ -327,8 +323,6 @@ Email: contact@adetresearch.org
 const fallbackMetrics = {
     googleSearchVisits: 568,
     countriesReached: 9,
-    activeResearchProjects: 3,
-    researchNetworkCountries: 5,
     flags: ["🇹🇭", "🇺🇸", "🇲🇾", "🇭🇰", "🇮🇹", "🇰🇷", "🇵🇭", "🇮🇳", "🇸🇬"],
     lastUpdated: "2026-06-28"
 };
@@ -340,12 +334,6 @@ function renderMetrics(data){
 
     document.getElementById("countriesReached").textContent =
         data.countriesReached.toLocaleString() + "+";
-
-    document.getElementById("activeResearchProjects").textContent =
-        data.activeResearchProjects.toLocaleString();
-
-    document.getElementById("researchNetworkCountries").textContent =
-        data.researchNetworkCountries.toLocaleString();
 
     document.getElementById("flagRow").textContent =
         data.flags.join(" ");
