@@ -131,7 +131,7 @@ body{
 .projects-container{
     max-width:1120px;
     width:92%;
-    margin:34px auto 0;
+    margin:38px auto 0;
 }
 
 .landscape-title{
@@ -139,13 +139,33 @@ body{
     font-size:42px;
     font-weight:bold;
     text-align:center;
-    margin-bottom:8px;
+    margin-bottom:14px;
     letter-spacing:0.3px;
 }
 
-.landscape-subtitle{
-    max-width:720px;
+.title-ornament{
+    width:180px;
+    height:1px;
     margin:0 auto 18px;
+    background:linear-gradient(90deg, transparent, rgba(212,160,23,0.85), transparent);
+    position:relative;
+}
+
+.title-ornament::after{
+    content:"✦";
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    color:#d4a017;
+    background:#031238;
+    padding:0 10px;
+    font-size:14px;
+}
+
+.landscape-subtitle{
+    max-width:760px;
+    margin:0 auto 30px;
     color:white;
     text-align:center;
     font-size:16px;
@@ -158,14 +178,16 @@ body{
     position:relative;
     height:455px;
     background:
-        linear-gradient(135deg, rgba(255,255,255,0.035) 0%, transparent 28%),
-        radial-gradient(circle at 20% 20%, rgba(212,160,23,0.08), transparent 24%),
-        radial-gradient(circle at 78% 26%, rgba(255,255,255,0.045), transparent 22%),
-        radial-gradient(circle at 55% 75%, rgba(212,160,23,0.055), transparent 26%),
-        #041742;
-    border:1px solid rgba(255,255,255,0.12);
-    overflow:visible;
-    box-shadow:0 14px 38px rgba(0,0,0,0.24);
+        radial-gradient(circle at 20% 18%, rgba(212,160,23,0.055), transparent 23%),
+        radial-gradient(circle at 78% 28%, rgba(212,160,23,0.045), transparent 23%),
+        radial-gradient(circle at 50% 60%, rgba(255,255,255,0.035), transparent 36%),
+        linear-gradient(180deg, rgba(255,255,255,0.035), transparent 45%),
+        #071a30;
+    border:1px solid rgba(212,160,23,0.42);
+    overflow:hidden;
+    box-shadow:
+        inset 0 0 70px rgba(0,0,0,0.35),
+        0 14px 34px rgba(0,0,0,0.24);
 }
 
 .research-map::before{
@@ -173,9 +195,10 @@ body{
     position:absolute;
     inset:0;
     background:
-        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-    background-size:48px 48px;
+        radial-gradient(circle at 18% 20%, rgba(255,255,255,0.035) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 72% 28%, rgba(212,160,23,0.055) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 35% 82%, rgba(212,160,23,0.045) 0 1px, transparent 1.5px);
+    background-size:46px 46px, 58px 58px, 64px 64px;
     opacity:0.55;
     pointer-events:none;
 }
@@ -183,54 +206,57 @@ body{
 .research-map::after{
     content:"";
     position:absolute;
-    inset:34px;
-    border:1px solid rgba(255,255,255,0.055);
-    border-radius:44% 56% 49% 51% / 47% 42% 58% 53%;
+    inset:0;
+    background:
+        linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px);
+    background-size:70px 70px;
+    opacity:0.38;
     pointer-events:none;
 }
 
 .field{
     position:absolute;
     color:rgba(205,218,238,0.22);
-    font-size:27px;
-    font-weight:bold;
+    font-size:24px;
+    font-weight:500;
     text-align:center;
     pointer-events:none;
-    letter-spacing:0.7px;
-    text-transform:uppercase;
+    letter-spacing:0.2px;
     z-index:1;
+    text-shadow:0 0 12px rgba(0,0,0,0.35);
 }
 
 .field-clinical{
-    top:54px;
+    top:58px;
     left:50%;
     transform:translateX(-50%);
 }
 
 .field-behavior{
-    top:132px;
-    left:116px;
+    top:140px;
+    left:120px;
 }
 
 .field-measurement{
-    top:222px;
-    left:50%;
+    top:216px;
+    left:48%;
     transform:translateX(-50%);
 }
 
 .field-work{
-    top:300px;
-    right:185px;
+    top:292px;
+    right:150px;
 }
 
 .field-critical{
-    bottom:62px;
-    left:164px;
+    bottom:74px;
+    left:165px;
 }
 
 .field-family{
-    bottom:52px;
-    right:132px;
+    bottom:66px;
+    right:110px;
 }
 
 /* MARKERS */
@@ -243,40 +269,40 @@ body{
 .marker-label{
     display:flex;
     align-items:center;
-    gap:10px;
+    gap:9px;
     color:#d4a017;
-    font-size:21px;
+    font-size:18px;
     font-weight:bold;
     cursor:pointer;
     position:relative;
     z-index:22;
-    background:rgba(3,18,56,0.50);
+    background:rgba(3,18,56,0.62);
     padding:4px 8px;
     border-radius:999px;
 }
 
 .marker-dot{
-    width:17px;
-    height:17px;
+    width:11px;
+    height:11px;
     border-radius:50%;
     background:#d4a017;
     border:2px solid white;
     box-shadow:
-        0 0 8px rgba(212,160,23,0.95),
-        0 0 20px rgba(212,160,23,0.7);
+        0 0 6px rgba(212,160,23,0.65),
+        0 0 12px rgba(212,160,23,0.35);
 }
 
 .planned-marker .marker-dot{
     background:transparent;
-    border:2px solid rgba(212,160,23,0.95);
-    box-shadow:0 0 14px rgba(212,160,23,0.38);
+    border:2px solid #d4a017;
+    box-shadow:0 0 10px rgba(212,160,23,0.28);
 }
 
 .planned-marker .marker-label{
     font-size:0;
     gap:0;
     padding:5px;
-    background:rgba(3,18,56,0.35);
+    background:rgba(3,18,56,0.48);
 }
 
 .p1{
@@ -285,23 +311,23 @@ body{
 }
 
 .p2{
-    top:255px;
-    left:535px;
+    top:252px;
+    left:540px;
 }
 
 .p3{
-    top:310px;
-    left:700px;
+    top:316px;
+    left:708px;
 }
 
 .p4{
-    bottom:84px;
-    left:235px;
+    bottom:92px;
+    left:250px;
 }
 
 .p5{
-    bottom:74px;
-    right:310px;
+    bottom:84px;
+    right:320px;
 }
 
 /* LEGEND */
@@ -325,17 +351,17 @@ body{
 }
 
 .legend-active{
-    width:12px;
-    height:12px;
+    width:11px;
+    height:11px;
     border-radius:50%;
     background:#d4a017;
     border:2px solid white;
-    box-shadow:0 0 10px rgba(212,160,23,0.65);
+    box-shadow:0 0 8px rgba(212,160,23,0.5);
 }
 
 .legend-planned{
-    width:12px;
-    height:12px;
+    width:11px;
+    height:11px;
     border-radius:50%;
     background:transparent;
     border:2px solid #d4a017;
@@ -344,8 +370,6 @@ body{
 /* METRICS */
 
 .metrics-panel{
-    border-top:1px solid rgba(255,255,255,0.72);
-    border-bottom:1px solid rgba(255,255,255,0.72);
     padding:18px 0 20px;
     margin-bottom:38px;
 }
@@ -368,13 +392,14 @@ body{
 .metric-card{
     text-align:center;
     padding:13px 8px;
-    border:1px solid rgba(255,255,255,0.14);
+    border:1px solid rgba(255,255,255,0.16);
     background:rgba(255,255,255,0.025);
     animation:fadeUp 0.9s ease both;
     min-height:78px;
     display:flex;
     flex-direction:column;
     justify-content:center;
+    box-shadow:inset 0 0 22px rgba(0,0,0,0.08);
 }
 
 .metric-card:nth-child(2){animation-delay:0.08s;}
@@ -432,7 +457,7 @@ body{
     display:none;
     position:fixed;
     inset:0;
-    background:rgba(1,8,26,0.74);
+    background:rgba(1,8,26,0.76);
     z-index:9998;
     align-items:center;
     justify-content:center;
@@ -508,12 +533,11 @@ body{
 
 /* NOTE */
 
-.note-divider{
+.note-separator{
     width:100%;
-    height:2px;
-    background:white;
-    opacity:0.85;
-    margin:10px auto 18px;
+    height:1px;
+    background:rgba(255,255,255,0.72);
+    margin:18px auto 28px;
 }
 
 .note{
@@ -532,6 +556,11 @@ body{
     font-weight:bold;
     margin-bottom:8px;
     line-height:1.5;
+}
+
+.note-title::before{
+    content:"✦ ";
+    color:#d4a017;
 }
 
 .note-text{
@@ -561,7 +590,7 @@ body{
     }
 
     .field{
-        font-size:24px;
+        font-size:22px;
     }
 
     .field-behavior{
@@ -569,11 +598,11 @@ body{
     }
 
     .field-work{
-        right:120px;
+        right:110px;
     }
 
     .field-family{
-        right:80px;
+        right:78px;
     }
 
     .p1{
@@ -581,15 +610,15 @@ body{
     }
 
     .p2{
-        left:495px;
+        left:500px;
     }
 
     .p3{
-        left:610px;
+        left:620px;
     }
 
     .p5{
-        right:245px;
+        right:250px;
     }
 
 }
@@ -625,12 +654,16 @@ body{
         font-size:30px;
     }
 
+    .landscape-subtitle{
+        margin-bottom:24px;
+    }
+
     .research-map{
         height:620px;
     }
 
     .field{
-        font-size:19px;
+        font-size:18px;
     }
 
     .field-clinical{
@@ -687,7 +720,7 @@ body{
     }
 
     .marker-label{
-        font-size:18px;
+        font-size:17px;
     }
 
     .map-legend{
@@ -751,6 +784,7 @@ body{
 <div class="projects-container">
 
     <div class="landscape-title">ADET Research Landscape</div>
+    <div class="title-ornament"></div>
 
     <div class="landscape-subtitle">
         Hover or tap a project marker to explore active IRB-approved research programs.
@@ -861,7 +895,7 @@ body{
 
     </div>
 
-    <div class="note-divider"></div>
+    <div class="note-separator"></div>
 
     <div class="note">
 
@@ -901,7 +935,7 @@ body{
 
 <div class="footer">
     © 2025–2026 ADET Research Group. All rights reserved. |
-    <i>Last updated June 2026.</i>
+    <i>Last updated April 2026.</i>
 </div>
 
 <!-- MODALS -->
