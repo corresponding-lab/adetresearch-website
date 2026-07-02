@@ -131,12 +131,12 @@ body{
 .projects-container{
     max-width:1120px;
     width:92%;
-    margin:56px auto 0;
+    margin:44px auto 0;
 }
 
 .page-title{
     color:#d4a017;
-    font-size:48px;
+    font-size:46px;
     text-align:center;
     margin-bottom:16px;
     font-weight:bold;
@@ -149,32 +149,32 @@ body{
     height:2px;
     background:white;
     opacity:0.85;
-    margin-bottom:46px;
+    margin-bottom:34px;
 }
 
 /* LANDSCAPE */
 
 .landscape-title{
     color:#d4a017;
-    font-size:34px;
+    font-size:32px;
     font-weight:bold;
     text-align:center;
-    margin-bottom:12px;
+    margin-bottom:10px;
     letter-spacing:0.3px;
 }
 
 .landscape-subtitle{
-    max-width:700px;
-    margin:0 auto 30px;
+    max-width:720px;
+    margin:0 auto 22px;
     color:white;
     text-align:center;
-    font-size:17px;
-    line-height:1.6;
+    font-size:16px;
+    line-height:1.55;
 }
 
 .research-map{
     position:relative;
-    height:660px;
+    height:455px;
     background:
         radial-gradient(circle at 20% 18%, rgba(255,255,255,0.04), transparent 22%),
         radial-gradient(circle at 78% 25%, rgba(212,160,23,0.05), transparent 24%),
@@ -187,7 +187,7 @@ body{
 .research-map::before{
     content:"";
     position:absolute;
-    inset:44px;
+    inset:32px;
     border:1px dashed rgba(255,255,255,0.07);
     border-radius:43% 57% 49% 51% / 48% 42% 58% 52%;
     pointer-events:none;
@@ -196,7 +196,7 @@ body{
 .research-map::after{
     content:"";
     position:absolute;
-    inset:118px 130px;
+    inset:80px 116px;
     border:1px dashed rgba(212,160,23,0.07);
     border-radius:58% 42% 52% 48% / 44% 56% 44% 56%;
     pointer-events:none;
@@ -204,44 +204,45 @@ body{
 
 .field{
     position:absolute;
-    color:rgba(255,255,255,0.27);
-    font-size:30px;
+    color:rgba(255,255,255,0.25);
+    font-size:27px;
     font-weight:bold;
     text-align:center;
     pointer-events:none;
     letter-spacing:0.2px;
+    z-index:1;
 }
 
 .field-clinical{
-    top:70px;
+    top:56px;
     left:50%;
     transform:translateX(-50%);
 }
 
 .field-behavior{
-    top:185px;
-    left:120px;
+    top:132px;
+    left:118px;
 }
 
 .field-measurement{
-    top:280px;
+    top:222px;
     left:50%;
     transform:translateX(-50%);
 }
 
 .field-work{
-    top:405px;
-    left:57%;
+    top:300px;
+    right:190px;
 }
 
 .field-critical{
-    bottom:90px;
+    bottom:62px;
     left:165px;
 }
 
 .field-family{
-    bottom:74px;
-    right:110px;
+    bottom:52px;
+    right:135px;
 }
 
 /* PROJECT MARKERS */
@@ -256,14 +257,16 @@ body{
     align-items:center;
     gap:10px;
     color:#d4a017;
-    font-size:22px;
+    font-size:21px;
     font-weight:bold;
     cursor:pointer;
+    position:relative;
+    z-index:22;
 }
 
 .marker-dot{
-    width:18px;
-    height:18px;
+    width:17px;
+    height:17px;
     border-radius:50%;
     background:#d4a017;
     border:2px solid white;
@@ -274,29 +277,33 @@ body{
 
 .planned-marker .marker-dot{
     background:transparent;
-    border:2px solid rgba(212,160,23,0.9);
+    border:2px solid rgba(212,160,23,0.95);
     box-shadow:0 0 14px rgba(212,160,23,0.38);
 }
 
 .planned-marker .marker-label{
-    color:rgba(212,160,23,0.82);
-    font-size:18px;
+    font-size:0;
+    gap:0;
 }
 
 .project-popup{
     display:none;
     position:absolute;
-    width:440px;
-    max-height:520px;
+    width:430px;
+    max-height:410px;
     overflow-y:auto;
     background:#071a49;
-    border:1px solid rgba(212,160,23,0.75);
+    opacity:1;
+    border:1px solid rgba(212,160,23,0.85);
     padding:18px 20px;
     color:#d4a017;
     font-size:15px;
     line-height:1.58;
-    box-shadow:0 0 24px rgba(0,0,0,0.45);
-    z-index:50;
+    box-shadow:
+        0 0 0 1px rgba(212,160,23,0.35),
+        0 14px 44px rgba(0,0,0,0.72);
+    z-index:9999;
+    isolation:isolate;
 }
 
 .project-popup b{
@@ -333,75 +340,105 @@ body{
 }
 
 .p1{
-    top:175px;
+    top:140px;
     left:430px;
 }
 
 .p2{
-    top:318px;
+    top:255px;
     left:535px;
 }
 
 .p3{
-    top:388px;
-    left:690px;
+    top:310px;
+    left:700px;
 }
 
 .p4{
-    bottom:118px;
-    left:225px;
+    bottom:84px;
+    left:235px;
 }
 
 .p5{
-    bottom:96px;
-    right:150px;
+    bottom:74px;
+    right:310px;
 }
 
 .p1 .project-popup{
-    top:36px;
-    left:-160px;
+    top:34px;
+    left:-150px;
 }
 
 .p2 .project-popup{
-    top:36px;
-    left:-220px;
+    top:34px;
+    left:-215px;
 }
 
 .p3 .project-popup{
-    top:36px;
+    top:34px;
     left:-300px;
 }
 
-.map-instruction{
+.map-legend{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:32px;
     color:white;
-    text-align:center;
     font-size:15px;
     line-height:1.6;
-    margin:18px auto 44px;
-    opacity:0.92;
+    margin:14px auto 18px;
+    opacity:0.96;
+}
+
+.legend-item{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.legend-active{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:#d4a017;
+    border:2px solid white;
+    box-shadow:0 0 10px rgba(212,160,23,0.65);
+}
+
+.legend-planned{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:transparent;
+    border:2px solid #d4a017;
 }
 
 /* METRICS */
 
 .metrics-panel{
-    border-top:1px solid rgba(255,255,255,0.75);
-    border-bottom:1px solid rgba(255,255,255,0.75);
-    padding:30px 0;
-    margin-bottom:44px;
+    border-top:1px solid rgba(255,255,255,0.72);
+    border-bottom:1px solid rgba(255,255,255,0.72);
+    padding:18px 0;
+    margin-bottom:38px;
 }
 
 .metrics-grid{
     display:grid;
-    grid-template-columns:repeat(4, 1fr);
-    gap:18px;
+    grid-template-columns:repeat(7, 1fr);
+    gap:10px;
 }
 
 .metric-card{
     text-align:center;
-    padding:18px 10px;
+    padding:13px 8px;
     border:1px solid rgba(255,255,255,0.14);
     background:rgba(255,255,255,0.025);
     animation:fadeUp 0.9s ease both;
+    min-height:82px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
 }
 
 .metric-card:nth-child(2){animation-delay:0.08s;}
@@ -413,16 +450,16 @@ body{
 
 .metric-number{
     color:#d4a017;
-    font-size:32px;
+    font-size:28px;
     font-weight:bold;
-    margin-bottom:8px;
+    margin-bottom:6px;
     animation:softPulse 2.8s ease-in-out infinite;
 }
 
 .metric-label{
     color:white;
-    font-size:15px;
-    line-height:1.45;
+    font-size:13.5px;
+    line-height:1.35;
 }
 
 .metric-card:hover{
@@ -489,7 +526,7 @@ body{
 .footer{
     max-width:1000px;
     width:92%;
-    margin:64px auto 0;
+    margin:54px auto 0;
     color:white;
     text-align:center;
     font-size:16px;
@@ -507,23 +544,39 @@ body{
     }
 
     .field{
-        font-size:26px;
+        font-size:24px;
+    }
+
+    .field-behavior{
+        left:78px;
+    }
+
+    .field-work{
+        right:120px;
+    }
+
+    .field-family{
+        right:80px;
     }
 
     .p1{
-        left:365px;
+        left:355px;
     }
 
     .p2{
-        left:500px;
+        left:495px;
     }
 
     .p3{
-        left:620px;
+        left:610px;
+    }
+
+    .p5{
+        right:245px;
     }
 
     .metrics-grid{
-        grid-template-columns:repeat(2, 1fr);
+        grid-template-columns:repeat(4, 1fr);
     }
 
 }
@@ -551,87 +604,86 @@ body{
         text-align:left;
     }
 
+    .projects-container{
+        margin-top:34px;
+    }
+
     .page-title{
-        font-size:34px;
+        font-size:31px;
     }
 
     .landscape-title{
-        font-size:28px;
+        font-size:27px;
     }
 
     .research-map{
-        height:760px;
+        height:620px;
     }
 
     .field{
-        font-size:21px;
+        font-size:20px;
     }
 
     .field-clinical{
-        top:62px;
+        top:48px;
     }
 
     .field-behavior{
-        top:178px;
-        left:24px;
+        top:132px;
+        left:22px;
     }
 
     .field-measurement{
-        top:290px;
+        top:245px;
     }
 
     .field-work{
-        top:420px;
-        left:auto;
+        top:365px;
         right:28px;
     }
 
     .field-critical{
-        bottom:158px;
+        bottom:130px;
         left:34px;
     }
 
     .field-family{
-        bottom:92px;
+        bottom:70px;
         right:30px;
     }
 
     .p1{
-        top:218px;
+        top:184px;
         left:38%;
     }
 
     .p2{
-        top:340px;
+        top:295px;
         left:44%;
     }
 
     .p3{
-        top:455px;
+        top:410px;
         left:52%;
     }
 
     .p4{
-        bottom:190px;
-        left:80px;
+        bottom:160px;
+        left:82px;
     }
 
     .p5{
-        bottom:120px;
-        right:60px;
+        bottom:96px;
+        right:62px;
     }
 
     .marker-label{
         font-size:18px;
     }
 
-    .planned-marker .marker-label{
-        font-size:15px;
-    }
-
     .project-popup{
         width:260px;
-        max-height:420px;
+        max-height:390px;
         font-size:14px;
     }
 
@@ -640,6 +692,11 @@ body{
     .p3 .project-popup{
         top:34px;
         left:-90px;
+    }
+
+    .map-legend{
+        flex-direction:column;
+        gap:6px;
     }
 
     .metrics-grid{
@@ -872,27 +929,31 @@ body{
         <!-- PLANNED PROJECTS -->
 
         <div class="project-marker planned-marker p4">
-
             <div class="marker-label">
                 <div class="marker-dot"></div>
-                <div>Planned Project</div>
             </div>
-
         </div>
 
         <div class="project-marker planned-marker p5">
-
             <div class="marker-label">
                 <div class="marker-dot"></div>
-                <div>Planned Project</div>
             </div>
-
         </div>
 
     </div>
 
-    <div class="map-instruction">
-        Project markers indicate active IRB-approved studies. Open-circle markers indicate planned research areas.
+    <div class="map-legend">
+
+        <div class="legend-item">
+            <div class="legend-active"></div>
+            <div>Active IRB-approved project</div>
+        </div>
+
+        <div class="legend-item">
+            <div class="legend-planned"></div>
+            <div>Planned research area</div>
+        </div>
+
     </div>
 
     <div class="metrics-panel">
