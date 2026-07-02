@@ -172,13 +172,11 @@ body{
 
 .project-block{
     margin-bottom:16px;
-    position:relative;
 }
 
 .project-layout{
     display:grid;
     grid-template-columns:92px 1fr 1fr;
-    gap:0;
     align-items:stretch;
     background:white;
     border:1px solid rgba(3,18,56,0.12);
@@ -189,14 +187,17 @@ body{
 }
 
 .project-layout:hover{
-    border-color:rgba(212,160,23,0.65);
-    box-shadow:0 18px 42px rgba(3,18,56,0.17);
+    border-color:rgba(212,160,23,0.55);
+    box-shadow:0 18px 42px rgba(3,18,56,0.16);
 }
 
 .icon-cell{
-    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    padding-top:28px;
     background:linear-gradient(180deg,#ffffff 0%,#fbf8ef 100%);
-    border-right:2px solid #d4a017;
+    border-right:1px solid rgba(212,160,23,0.55);
 }
 
 .section-icon{
@@ -209,40 +210,32 @@ body{
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:25px;
-    position:absolute;
-    top:30px;
-    left:50%;
-    transform:translateX(-50%);
-    box-shadow:0 10px 22px rgba(3,18,56,0.25);
+    font-size:26px;
+    box-shadow:0 8px 18px rgba(3,18,56,0.22);
 }
 
 .project-content{
+    display:flex;
+    flex-direction:column;
     font-size:16.5px;
     line-height:1.62;
     color:#031238;
-    padding:30px 30px;
+    padding:34px 34px 36px 34px;
 }
 
 .project-content:nth-child(2){
     border-right:1px solid rgba(3,18,56,0.16);
 }
 
-.access-card{
-    display:flex;
-    flex-direction:column;
-    height:100%;
-}
-
 .instrument-title{
     color:#c99712;
     font-size:24px;
     font-weight:bold;
-    line-height:1.35;
-    margin:0 0 18px 0;
+    line-height:1.25;
+    height:78px;
+    margin:0 0 22px 0;
     display:flex;
     align-items:center;
-    min-height:88px;
 }
 
 .project-list{
@@ -252,6 +245,12 @@ body{
 
 .project-list li{
     margin-bottom:0;
+}
+
+.access-card{
+    display:flex;
+    flex-direction:column;
+    height:100%;
 }
 
 .link-center{
@@ -299,8 +298,8 @@ body{
 
 .project-block.featured .project-layout{
     background:
-        radial-gradient(circle at 8% 20%, rgba(212,160,23,0.18), transparent 25%),
-        radial-gradient(circle at 95% 75%, rgba(212,160,23,0.16), transparent 30%),
+        radial-gradient(circle at 8% 20%, rgba(212,160,23,0.13), transparent 25%),
+        radial-gradient(circle at 95% 75%, rgba(212,160,23,0.11), transparent 30%),
         linear-gradient(135deg,#031238 0%,#071b4a 100%);
     border:1px solid rgba(212,160,23,0.95);
     box-shadow:0 0 0 1px rgba(212,160,23,0.18), 0 16px 40px rgba(3,18,56,0.24);
@@ -312,7 +311,12 @@ body{
 
 .project-block.featured .icon-cell{
     background:rgba(3,18,56,0.28);
-    border-right:2px solid #d4a017;
+    border-right:1px solid rgba(212,160,23,0.65);
+}
+
+.project-block.featured .section-icon{
+    background:#031238;
+    border:1px solid #d4a017;
 }
 
 .project-block.featured .project-content{
@@ -378,6 +382,11 @@ body{
         border-bottom:1px solid rgba(212,160,23,0.45);
     }
 
+    .instrument-title{
+        height:auto;
+        min-height:0;
+    }
+
 }
 
 @media (max-width:780px){
@@ -422,7 +431,7 @@ body{
 
     .instrument-title{
         font-size:21px;
-        min-height:auto;
+        height:auto;
     }
 
     .link-center{
@@ -535,7 +544,7 @@ body{
         <div class="project-layout">
 
             <div class="icon-cell">
-                <div class="section-icon">◇</div>
+                <div class="section-icon">♢</div>
             </div>
 
             <div class="project-content">
@@ -569,7 +578,7 @@ body{
         <div class="project-layout">
 
             <div class="icon-cell">
-                <div class="section-icon">□</div>
+                <div class="section-icon">▧</div>
             </div>
 
             <div class="project-content access-card">
