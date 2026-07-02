@@ -24,17 +24,16 @@ body{
 /* NAVBAR */
 
 .navbar{
-    height:70px;
+    height:68px;
     width:100%;
-    padding:0 4%;
+    padding:0 3%;
     display:flex;
     align-items:center;
     justify-content:space-between;
-    background:white;
-    border-bottom:1px solid rgba(212,160,23,0.75);
+    background:#031238;
+    border-bottom:1px solid rgba(212,160,23,0.55);
     position:relative;
     z-index:1000;
-    box-shadow:0 2px 12px rgba(3,18,56,0.08);
 }
 
 .nav-left{
@@ -44,13 +43,13 @@ body{
 }
 
 .nav-left img{
-    width:34px;
+    width:28px;
 }
 
 .site-name{
-    color:#031238;
-    font-size:20px;
-    font-weight:bold;
+    color:white;
+    font-size:18px;
+    font-weight:500;
     text-decoration:none;
 }
 
@@ -61,22 +60,30 @@ body{
 .nav-right{
     display:flex;
     align-items:center;
-    gap:26px;
+    gap:14px;
     font-size:16px;
     white-space:nowrap;
 }
 
 .nav-right a{
-    color:#031238;
+    color:white;
     text-decoration:none;
-    padding:24px 0 20px;
-    border-bottom:3px solid transparent;
+    position:relative;
     transition:0.2s;
 }
 
 .nav-right a:hover{
     color:#d4a017;
-    border-bottom-color:#d4a017;
+}
+
+.nav-active::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:100%;
+    height:2px;
+    background:#d4a017;
 }
 
 /* DROPDOWN */
@@ -88,10 +95,13 @@ body{
 }
 
 .dropdown > a{
-    color:#d4a017;
+    color:white;
     text-decoration:none;
     cursor:pointer;
-    border-bottom:3px solid #d4a017;
+}
+
+.dropdown > a:hover{
+    color:#d4a017;
 }
 
 .dropdown::after{
@@ -106,26 +116,22 @@ body{
 .dropdown-menu{
     display:none;
     position:absolute;
-    top:58px;
+    top:34px;
     right:0;
-    min-width:350px;
-    background:white;
+    min-width:360px;
+    background:#2a241f;
     padding:14px 16px;
     text-align:center;
     z-index:9999;
-    border:1px solid rgba(212,160,23,0.75);
-    border-radius:0 0 8px 8px;
-    box-shadow:0 10px 24px rgba(3,18,56,0.18);
+    border:1px solid rgba(212,160,23,0.45);
 }
 
 .dropdown-menu a{
     display:block;
-    color:#031238;
+    color:white;
     text-decoration:none;
     font-size:16px;
     line-height:1.6;
-    padding:6px 4px;
-    border-bottom:0;
 }
 
 .dropdown-menu a:hover{
@@ -287,9 +293,11 @@ body{
     color:#b88400;
     font-size:24px;
     font-weight:bold;
-    margin:0 0 14px;
     line-height:1.35;
-    text-align:left;
+    margin:0 0 18px 0;
+    display:flex;
+    align-items:center;
+    min-height:64px;
 }
 
 .project-list{
@@ -403,7 +411,7 @@ body{
 @media (max-width:1100px){
 
     .nav-right{
-        gap:14px;
+        gap:10px;
         font-size:15px;
     }
 
@@ -443,14 +451,9 @@ body{
         gap:16px;
     }
 
-    .nav-right a{
-        padding:4px 0;
-    }
-
     .dropdown-menu{
         right:auto;
         left:0;
-        top:30px;
         min-width:300px;
     }
 
@@ -474,6 +477,7 @@ body{
 
     .instrument-title{
         font-size:21px;
+        min-height:auto;
     }
 
     .link-center{
@@ -512,7 +516,7 @@ body{
 
         <div class="dropdown">
 
-            <a href="research-info.html">
+            <a href="research-info.html" class="nav-active">
                 Research Information Access ▼
             </a>
 
