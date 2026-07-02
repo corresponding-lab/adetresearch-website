@@ -131,97 +131,85 @@ body{
 .projects-container{
     max-width:1120px;
     width:92%;
-    margin:44px auto 0;
+    margin:34px auto 0;
 }
-
-.page-title{
-    color:#d4a017;
-    font-size:46px;
-    text-align:center;
-    margin-bottom:16px;
-    font-weight:bold;
-    text-transform:uppercase;
-    letter-spacing:0.5px;
-}
-
-.page-line{
-    width:100%;
-    height:2px;
-    background:white;
-    opacity:0.85;
-    margin-bottom:34px;
-}
-
-/* LANDSCAPE */
 
 .landscape-title{
     color:#d4a017;
-    font-size:32px;
+    font-size:42px;
     font-weight:bold;
     text-align:center;
-    margin-bottom:10px;
+    margin-bottom:8px;
     letter-spacing:0.3px;
 }
 
 .landscape-subtitle{
     max-width:720px;
-    margin:0 auto 22px;
+    margin:0 auto 18px;
     color:white;
     text-align:center;
     font-size:16px;
     line-height:1.55;
 }
 
+/* RESEARCH MAP */
+
 .research-map{
     position:relative;
     height:455px;
     background:
-        radial-gradient(circle at 20% 18%, rgba(255,255,255,0.04), transparent 22%),
-        radial-gradient(circle at 78% 25%, rgba(212,160,23,0.05), transparent 24%),
-        radial-gradient(circle at 48% 78%, rgba(255,255,255,0.035), transparent 28%),
+        linear-gradient(135deg, rgba(255,255,255,0.035) 0%, transparent 28%),
+        radial-gradient(circle at 20% 20%, rgba(212,160,23,0.08), transparent 24%),
+        radial-gradient(circle at 78% 26%, rgba(255,255,255,0.045), transparent 22%),
+        radial-gradient(circle at 55% 75%, rgba(212,160,23,0.055), transparent 26%),
         #041742;
-    border:1px solid rgba(255,255,255,0.10);
+    border:1px solid rgba(255,255,255,0.12);
     overflow:visible;
+    box-shadow:0 14px 38px rgba(0,0,0,0.24);
 }
 
 .research-map::before{
     content:"";
     position:absolute;
-    inset:32px;
-    border:1px dashed rgba(255,255,255,0.07);
-    border-radius:43% 57% 49% 51% / 48% 42% 58% 52%;
+    inset:0;
+    background:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size:48px 48px;
+    opacity:0.55;
     pointer-events:none;
 }
 
 .research-map::after{
     content:"";
     position:absolute;
-    inset:80px 116px;
-    border:1px dashed rgba(212,160,23,0.07);
-    border-radius:58% 42% 52% 48% / 44% 56% 44% 56%;
+    inset:34px;
+    border:1px solid rgba(255,255,255,0.055);
+    border-radius:44% 56% 49% 51% / 47% 42% 58% 53%;
     pointer-events:none;
 }
 
 .field{
     position:absolute;
-    color:rgba(255,255,255,0.25);
+    color:rgba(205,218,238,0.22);
     font-size:27px;
     font-weight:bold;
     text-align:center;
     pointer-events:none;
-    letter-spacing:0.2px;
+    letter-spacing:0.7px;
+    text-transform:uppercase;
     z-index:1;
 }
 
 .field-clinical{
-    top:56px;
+    top:54px;
     left:50%;
     transform:translateX(-50%);
 }
 
 .field-behavior{
     top:132px;
-    left:118px;
+    left:116px;
 }
 
 .field-measurement{
@@ -232,20 +220,20 @@ body{
 
 .field-work{
     top:300px;
-    right:190px;
+    right:185px;
 }
 
 .field-critical{
     bottom:62px;
-    left:165px;
+    left:164px;
 }
 
 .field-family{
     bottom:52px;
-    right:135px;
+    right:132px;
 }
 
-/* PROJECT MARKERS */
+/* MARKERS */
 
 .project-marker{
     position:absolute;
@@ -262,6 +250,9 @@ body{
     cursor:pointer;
     position:relative;
     z-index:22;
+    background:rgba(3,18,56,0.50);
+    padding:4px 8px;
+    border-radius:999px;
 }
 
 .marker-dot{
@@ -284,59 +275,8 @@ body{
 .planned-marker .marker-label{
     font-size:0;
     gap:0;
-}
-
-.project-popup{
-    display:none;
-    position:absolute;
-    width:430px;
-    max-height:410px;
-    overflow-y:auto;
-    background:#071a49;
-    opacity:1;
-    border:1px solid rgba(212,160,23,0.85);
-    padding:18px 20px;
-    color:#d4a017;
-    font-size:15px;
-    line-height:1.58;
-    box-shadow:
-        0 0 0 1px rgba(212,160,23,0.35),
-        0 14px 44px rgba(0,0,0,0.72);
-    z-index:9999;
-    isolation:isolate;
-}
-
-.project-popup b{
-    color:white;
-}
-
-.project-popup-title{
-    color:#d4a017;
-    font-size:22px;
-    font-weight:bold;
-    margin-bottom:12px;
-}
-
-.popup-section-title{
-    color:white;
-    font-size:18px;
-    font-weight:bold;
-    margin-top:20px;
-    margin-bottom:10px;
-}
-
-.project-popup a{
-    color:white !important;
-    text-decoration:underline;
-}
-
-.project-popup a:hover{
-    color:#c79b3b !important;
-}
-
-.project-marker:hover .project-popup,
-.project-marker:focus-within .project-popup{
-    display:block;
+    padding:5px;
+    background:rgba(3,18,56,0.35);
 }
 
 .p1{
@@ -364,20 +304,7 @@ body{
     right:310px;
 }
 
-.p1 .project-popup{
-    top:34px;
-    left:-150px;
-}
-
-.p2 .project-popup{
-    top:34px;
-    left:-215px;
-}
-
-.p3 .project-popup{
-    top:34px;
-    left:-300px;
-}
+/* LEGEND */
 
 .map-legend{
     display:flex;
@@ -419,14 +346,23 @@ body{
 .metrics-panel{
     border-top:1px solid rgba(255,255,255,0.72);
     border-bottom:1px solid rgba(255,255,255,0.72);
-    padding:18px 0;
+    padding:18px 0 20px;
     margin-bottom:38px;
 }
 
-.metrics-grid{
+.metrics-grid-top{
     display:grid;
-    grid-template-columns:repeat(7, 1fr);
-    gap:10px;
+    grid-template-columns:repeat(4, 1fr);
+    gap:12px;
+    margin-bottom:12px;
+}
+
+.metrics-grid-bottom{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:12px;
+    max-width:760px;
+    margin:auto;
 }
 
 .metric-card{
@@ -435,7 +371,7 @@ body{
     border:1px solid rgba(255,255,255,0.14);
     background:rgba(255,255,255,0.025);
     animation:fadeUp 0.9s ease both;
-    min-height:82px;
+    min-height:78px;
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -444,9 +380,10 @@ body{
 .metric-card:nth-child(2){animation-delay:0.08s;}
 .metric-card:nth-child(3){animation-delay:0.16s;}
 .metric-card:nth-child(4){animation-delay:0.24s;}
-.metric-card:nth-child(5){animation-delay:0.32s;}
-.metric-card:nth-child(6){animation-delay:0.40s;}
-.metric-card:nth-child(7){animation-delay:0.48s;}
+
+.metrics-grid-bottom .metric-card:nth-child(1){animation-delay:0.32s;}
+.metrics-grid-bottom .metric-card:nth-child(2){animation-delay:0.40s;}
+.metrics-grid-bottom .metric-card:nth-child(3){animation-delay:0.48s;}
 
 .metric-number{
     color:#d4a017;
@@ -487,6 +424,86 @@ body{
         transform:scale(1.04);
         text-shadow:0 0 12px rgba(212,160,23,0.38);
     }
+}
+
+/* MODAL */
+
+.modal-overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(1,8,26,0.74);
+    z-index:9998;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+}
+
+.modal-overlay.active{
+    display:flex;
+}
+
+.project-modal{
+    width:min(760px, 92vw);
+    max-height:82vh;
+    overflow-y:auto;
+    background:#071a49;
+    border:1px solid rgba(212,160,23,0.88);
+    box-shadow:
+        0 0 0 1px rgba(212,160,23,0.35),
+        0 18px 56px rgba(0,0,0,0.78);
+    padding:24px 26px;
+    color:#d4a017;
+    font-size:16px;
+    line-height:1.62;
+    position:relative;
+}
+
+.modal-close{
+    position:sticky;
+    top:0;
+    float:right;
+    background:#2a241f;
+    color:white;
+    border:1px solid rgba(212,160,23,0.75);
+    font-size:22px;
+    width:34px;
+    height:34px;
+    line-height:28px;
+    cursor:pointer;
+    z-index:10000;
+}
+
+.modal-close:hover{
+    color:#d4a017;
+}
+
+.project-modal b{
+    color:white;
+}
+
+.project-popup-title{
+    color:#d4a017;
+    font-size:26px;
+    font-weight:bold;
+    margin-bottom:12px;
+}
+
+.popup-section-title{
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    margin-top:22px;
+    margin-bottom:10px;
+}
+
+.project-modal a{
+    color:white !important;
+    text-decoration:underline;
+}
+
+.project-modal a:hover{
+    color:#c79b3b !important;
 }
 
 /* NOTE */
@@ -575,10 +592,6 @@ body{
         right:245px;
     }
 
-    .metrics-grid{
-        grid-template-columns:repeat(4, 1fr);
-    }
-
 }
 
 @media (max-width:780px){
@@ -605,15 +618,11 @@ body{
     }
 
     .projects-container{
-        margin-top:34px;
-    }
-
-    .page-title{
-        font-size:31px;
+        margin-top:30px;
     }
 
     .landscape-title{
-        font-size:27px;
+        font-size:30px;
     }
 
     .research-map{
@@ -621,7 +630,7 @@ body{
     }
 
     .field{
-        font-size:20px;
+        font-size:19px;
     }
 
     .field-clinical{
@@ -681,26 +690,20 @@ body{
         font-size:18px;
     }
 
-    .project-popup{
-        width:260px;
-        max-height:390px;
-        font-size:14px;
-    }
-
-    .p1 .project-popup,
-    .p2 .project-popup,
-    .p3 .project-popup{
-        top:34px;
-        left:-90px;
-    }
-
     .map-legend{
         flex-direction:column;
         gap:6px;
     }
 
-    .metrics-grid{
+    .metrics-grid-top,
+    .metrics-grid-bottom{
         grid-template-columns:1fr;
+        max-width:100%;
+    }
+
+    .project-modal{
+        padding:20px 18px;
+        font-size:14px;
     }
 
 }
@@ -747,10 +750,6 @@ body{
 
 <div class="projects-container">
 
-    <div class="page-title">Active Research Programs</div>
-
-    <div class="page-line"></div>
-
     <div class="landscape-title">ADET Research Landscape</div>
 
     <div class="landscape-subtitle">
@@ -766,167 +765,26 @@ body{
         <div class="field field-critical">Critical Care</div>
         <div class="field field-family">Family Health</div>
 
-        <!-- PROJECT I -->
-
-        <div class="project-marker p1" tabindex="0">
-
-            <div class="marker-label">
+        <div class="project-marker p1">
+            <div class="marker-label" onclick="openProject('project1')">
                 <div class="marker-dot"></div>
                 <div>Project I</div>
             </div>
-
-            <div class="project-popup">
-
-                <div class="project-popup-title">Project I</div>
-
-                <b>Focus:</b> Thai CHB-21, Thai HLS-14; n=1,048 post-CAG.
-                <br>
-                <b>Goals:</b> Cut-off for cardiac outcomes; predictive accuracy vs risk scores.
-                <br>
-                <b>Status:</b> IRB-approved (2023–ongoing).
-                <br>
-                <b>Current Progress:</b> 462/1,048 participants enrolled; longitudinal outcome follow-up ongoing.
-                <br>
-                <b>Principal Investigator:</b> Aeckapholpholladet Detkaew.
-                <br>
-                <b>Funding:</b> Self-funded (no external grant support).
-
-                <div class="popup-section-title">— Research Instruments —</div>
-
-                <b>1. CHB-21 – Cardiac Health Behavior Scale (Thai Version).</b>
-                <br>
-                Translated under academic permission by Aeckapholpholladet Detkaew <span class="thesis-wrapper">(</span><a class="thesis-link" href="https://ir.buu.ac.th/dspace/bitstream/1513/325/1/61910044.pdf" target="_blank">Master’s Thesis, Burapha University, 2021 – Thai language</a><span class="thesis-wrapper">)</span> in collaboration with one of the original developers (co-authorship planned).
-                <br>
-                - Back-translation reviewed and face-validated by the original developer. Included in Project I (IRB 2023).
-                <br><br>
-
-                <b>2. HLS-14 – Health Literacy Scale (Thai & Cardiac-Adapted Versions).</b>
-                <br>
-                Translated under academic permission by Aeckapholpholladet Detkaew (2022) in collaboration with one of the original developers (co-authorship planned).
-                <br>
-                - Back-translation reviewed and face-validated by the original developer. Included in Project I (IRB 2023).
-
-            </div>
-
         </div>
 
-        <!-- PROJECT II -->
-
-        <div class="project-marker p2" tabindex="0">
-
-            <div class="marker-label">
+        <div class="project-marker p2">
+            <div class="marker-label" onclick="openProject('project2')">
                 <div class="marker-dot"></div>
                 <div>Project II</div>
             </div>
-
-            <div class="project-popup">
-
-                <div class="project-popup-title">Project II</div>
-
-                <b>Focus:</b> Thai PSQI, Thai Mini-MASQ, Thai PSS-10, Thai DMI, C-MRCI; n=1,040 post-CAG.
-                <br>
-                <b>Goals:</b> Cut-off for AF, mortality, major cardiac events.
-                <br>
-                <b>Status:</b> IRB-approved (2024–ongoing).
-                <br>
-                <b>Current Progress:</b> 211/1,040 participants enrolled; recruitment and psychometric validation ongoing.
-                <br>
-                <b>Principal Investigator:</b> Aeckapholpholladet Detkaew.
-                <br>
-                <b>Funding:</b> Self-funded (no external grant support).
-
-                <div class="popup-section-title">— Research Instruments —</div>
-
-                <b>1. Mini-MASQ – Mini-Mood and Anxiety Questionnaire (Thai Version).</b>
-                <br>
-                Translated under academic permission by Aeckapholpholladet Detkaew (2023), based on the original Mini-MASQ.
-                <br>
-                - Back-translation reviewed and face-validated by the original developers. Included in Project II (IRB 2024).
-                <br><br>
-
-                <b>2. DMI – Detkaew Medication-Adherence Index.</b>
-                <br>
-                Developed by Aeckapholpholladet Detkaew (2024) as an original research instrument for evaluating real-world medication-taking behavior.
-                <br>
-                - Currently under validation in Project II (IRB 2024).
-                <br><br>
-
-                <b>3. C-MRCI – Clinical and Medication Regimen Complexity Index.</b>
-                <br>
-                Developed by Aeckapholpholladet Detkaew (2025) as a new research instrument conceptually derived from the MRCI framework to assess overall treatment complexity.
-                <br>
-                - Currently under validation in Project II (IRB 2024; Amendment 2025).
-                <br><br>
-
-                <b>4. PSQI – Pittsburgh Sleep Quality Index (Thai Version).</b>
-                <br>
-                Thai version by Sitasuwan T et al. (2014), used under academic permission from the University of Pittsburgh (2023).
-                <br>
-                - Included in Project II (IRB 2024).
-                <br><br>
-
-                <b>5. PSS-10 – Perceived Stress Scale (Thai Version).</b>
-                <br>
-                Thai version authorized for academic use via MAPI Research Trust (RST Assessments LLC, 2023), with permission acknowledged from Sheldon Cohen.
-                <br>
-                - Included in Project II (IRB 2024).
-
-            </div>
-
         </div>
 
-        <!-- PROJECT III -->
-
-        <div class="project-marker p3" tabindex="0">
-
-            <div class="marker-label">
+        <div class="project-marker p3">
+            <div class="marker-label" onclick="openProject('project3')">
                 <div class="marker-dot"></div>
                 <div>Project III</div>
             </div>
-
-            <div class="project-popup">
-
-                <div class="project-popup-title">Project III</div>
-
-                <b>Focus:</b> Thai IWPQ, Thai RQ, Thai POS Scale; n=400 working-age adults.
-                <br>
-                <b>Goals:</b> Exploratory cut-off determination in Thai working-age adults; cross-cultural comparison of the POS Scale with Italy (n=302).
-                <br>
-                <b>Status:</b> Dual-IRB approved (2025–2026; ongoing).
-                <br>
-                <b>Current Progress:</b> Site approval completed; field data collection pending initiation.
-                <br>
-                <b>Principal Investigator:</b> Aeckapholpholladet Detkaew.
-                <br>
-                <b>Funding:</b> Self-funded (no external grant support).
-
-                <div class="popup-section-title">— Research Instruments —</div>
-
-                <b>1. IWPQ – Individual Work Performance Questionnaire (Thai Version).</b>
-                <br>
-                Translated under academic permission by Aeckapholpholladet Detkaew (2023) in collaboration with one of the original developers (co-authorship planned).
-                <br>
-                - Back-translation reviewed and face-validated by the original developers. Included in Project III (IRB 2025).
-                <br><br>
-
-                <b>2. RQ – Responsibility Questionnaire (Thai Version).</b>
-                <br>
-                Translated under academic permission by Aeckapholpholladet Detkaew (2024), based on the original RQ.
-                <br>
-                - Back-translation reviewed and face-validated by the original developers. Included in Project III (IRB 2025).
-                <br><br>
-
-                <b>3. POS Scale – Perceived Occupational Stress Scale (Thai Version).</b>
-                <br>
-                Translated under academic permission by Aeckapholpholladet Detkaew (2025) in collaboration with one of the original developers (listed as IRB co-investigator; co-authorship planned).
-                <br>
-                - Back-translation reviewed and face-validated by the original developer. Included in Project III (IRB 2025).
-
-            </div>
-
         </div>
-
-        <!-- PLANNED PROJECTS -->
 
         <div class="project-marker planned-marker p4">
             <div class="marker-label">
@@ -946,34 +804,43 @@ body{
 
         <div class="legend-item">
             <div class="legend-active"></div>
-            <div>Active IRB-approved project</div>
+            <div>Active IRB-Approved Project</div>
         </div>
 
         <div class="legend-item">
             <div class="legend-planned"></div>
-            <div>Planned research area</div>
+            <div>Planned Research Area</div>
         </div>
 
     </div>
 
     <div class="metrics-panel">
 
-        <div class="metrics-grid">
+        <div class="metrics-grid-top">
 
             <div class="metric-card">
                 <div class="metric-number">3</div>
-                <div class="metric-label">Active Projects</div>
+                <div class="metric-label">Active<br>Projects</div>
             </div>
 
             <div class="metric-card">
                 <div class="metric-number">2</div>
-                <div class="metric-label">Planned Projects</div>
+                <div class="metric-label">Planned<br>Projects</div>
             </div>
 
             <div class="metric-card">
                 <div class="metric-number">2,488+</div>
-                <div class="metric-label">Target Participants</div>
+                <div class="metric-label">Target<br>Participants</div>
             </div>
+
+            <div class="metric-card">
+                <div class="metric-number">1</div>
+                <div class="metric-label">Principal<br>Investigator</div>
+            </div>
+
+        </div>
+
+        <div class="metrics-grid-bottom">
 
             <div class="metric-card">
                 <div class="metric-number">6</div>
@@ -988,11 +855,6 @@ body{
             <div class="metric-card">
                 <div class="metric-number">2</div>
                 <div class="metric-label">Investigator-developed<br>Instruments</div>
-            </div>
-
-            <div class="metric-card">
-                <div class="metric-number">1</div>
-                <div class="metric-label">Principal Investigator</div>
             </div>
 
         </div>
@@ -1041,6 +903,169 @@ body{
     © 2025–2026 ADET Research Group. All rights reserved. |
     <i>Last updated June 2026.</i>
 </div>
+
+<!-- MODALS -->
+
+<div class="modal-overlay" id="project1">
+    <div class="project-modal">
+        <button class="modal-close" onclick="closeProject('project1')">×</button>
+
+        <div class="project-popup-title">Project I</div>
+
+        <b>Focus:</b> Thai CHB-21, Thai HLS-14; n=1,048 post-CAG.
+        <br>
+        <b>Goals:</b> Cut-off for cardiac outcomes; predictive accuracy vs risk scores.
+        <br>
+        <b>Status:</b> IRB-approved (2023–ongoing).
+        <br>
+        <b>Current Progress:</b> 462/1,048 participants enrolled; longitudinal outcome follow-up ongoing.
+        <br>
+        <b>Principal Investigator:</b> Aeckapholpholladet Detkaew.
+        <br>
+        <b>Funding:</b> Self-funded (no external grant support).
+
+        <div class="popup-section-title">— Research Instruments —</div>
+
+        <b>1. CHB-21 – Cardiac Health Behavior Scale (Thai Version).</b>
+        <br>
+        Translated under academic permission by Aeckapholpholladet Detkaew <span class="thesis-wrapper">(</span><a class="thesis-link" href="https://ir.buu.ac.th/dspace/bitstream/1513/325/1/61910044.pdf" target="_blank">Master’s Thesis, Burapha University, 2021 – Thai language</a><span class="thesis-wrapper">)</span> in collaboration with one of the original developers (co-authorship planned).
+        <br>
+        - Back-translation reviewed and face-validated by the original developer. Included in Project I (IRB 2023).
+        <br><br>
+
+        <b>2. HLS-14 – Health Literacy Scale (Thai & Cardiac-Adapted Versions).</b>
+        <br>
+        Translated under academic permission by Aeckapholpholladet Detkaew (2022) in collaboration with one of the original developers (co-authorship planned).
+        <br>
+        - Back-translation reviewed and face-validated by the original developer. Included in Project I (IRB 2023).
+    </div>
+</div>
+
+<div class="modal-overlay" id="project2">
+    <div class="project-modal">
+        <button class="modal-close" onclick="closeProject('project2')">×</button>
+
+        <div class="project-popup-title">Project II</div>
+
+        <b>Focus:</b> Thai PSQI, Thai Mini-MASQ, Thai PSS-10, Thai DMI, C-MRCI; n=1,040 post-CAG.
+        <br>
+        <b>Goals:</b> Cut-off for AF, mortality, major cardiac events.
+        <br>
+        <b>Status:</b> IRB-approved (2024–ongoing).
+        <br>
+        <b>Current Progress:</b> 211/1,040 participants enrolled; recruitment and psychometric validation ongoing.
+        <br>
+        <b>Principal Investigator:</b> Aeckapholpholladet Detkaew.
+        <br>
+        <b>Funding:</b> Self-funded (no external grant support).
+
+        <div class="popup-section-title">— Research Instruments —</div>
+
+        <b>1. Mini-MASQ – Mini-Mood and Anxiety Questionnaire (Thai Version).</b>
+        <br>
+        Translated under academic permission by Aeckapholpholladet Detkaew (2023), based on the original Mini-MASQ.
+        <br>
+        - Back-translation reviewed and face-validated by the original developers. Included in Project II (IRB 2024).
+        <br><br>
+
+        <b>2. DMI – Detkaew Medication-Adherence Index.</b>
+        <br>
+        Developed by Aeckapholpholladet Detkaew (2024) as an original research instrument for evaluating real-world medication-taking behavior.
+        <br>
+        - Currently under validation in Project II (IRB 2024).
+        <br><br>
+
+        <b>3. C-MRCI – Clinical and Medication Regimen Complexity Index.</b>
+        <br>
+        Developed by Aeckapholpholladet Detkaew (2025) as a new research instrument conceptually derived from the MRCI framework to assess overall treatment complexity.
+        <br>
+        - Currently under validation in Project II (IRB 2024; Amendment 2025).
+        <br><br>
+
+        <b>4. PSQI – Pittsburgh Sleep Quality Index (Thai Version).</b>
+        <br>
+        Thai version by Sitasuwan T et al. (2014), used under academic permission from the University of Pittsburgh (2023).
+        <br>
+        - Included in Project II (IRB 2024).
+        <br><br>
+
+        <b>5. PSS-10 – Perceived Stress Scale (Thai Version).</b>
+        <br>
+        Thai version authorized for academic use via MAPI Research Trust (RST Assessments LLC, 2023), with permission acknowledged from Sheldon Cohen.
+        <br>
+        - Included in Project II (IRB 2024).
+    </div>
+</div>
+
+<div class="modal-overlay" id="project3">
+    <div class="project-modal">
+        <button class="modal-close" onclick="closeProject('project3')">×</button>
+
+        <div class="project-popup-title">Project III</div>
+
+        <b>Focus:</b> Thai IWPQ, Thai RQ, Thai POS Scale; n=400 working-age adults.
+        <br>
+        <b>Goals:</b> Exploratory cut-off determination in Thai working-age adults; cross-cultural comparison of the POS Scale with Italy (n=302).
+        <br>
+        <b>Status:</b> Dual-IRB approved (2025–2026; ongoing).
+        <br>
+        <b>Current Progress:</b> Site approval completed; field data collection pending initiation.
+        <br>
+        <b>Principal Investigator:</b> Aeckapholpholladet Detkaew.
+        <br>
+        <b>Funding:</b> Self-funded (no external grant support).
+
+        <div class="popup-section-title">— Research Instruments —</div>
+
+        <b>1. IWPQ – Individual Work Performance Questionnaire (Thai Version).</b>
+        <br>
+        Translated under academic permission by Aeckapholpholladet Detkaew (2023) in collaboration with one of the original developers (co-authorship planned).
+        <br>
+        - Back-translation reviewed and face-validated by the original developers. Included in Project III (IRB 2025).
+        <br><br>
+
+        <b>2. RQ – Responsibility Questionnaire (Thai Version).</b>
+        <br>
+        Translated under academic permission by Aeckapholpholladet Detkaew (2024), based on the original RQ.
+        <br>
+        - Back-translation reviewed and face-validated by the original developers. Included in Project III (IRB 2025).
+        <br><br>
+
+        <b>3. POS Scale – Perceived Occupational Stress Scale (Thai Version).</b>
+        <br>
+        Translated under academic permission by Aeckapholpholladet Detkaew (2025) in collaboration with one of the original developers (listed as IRB co-investigator; co-authorship planned).
+        <br>
+        - Back-translation reviewed and face-validated by the original developer. Included in Project III (IRB 2025).
+    </div>
+</div>
+
+<script>
+
+function openProject(id){
+    document.getElementById(id).classList.add("active");
+}
+
+function closeProject(id){
+    document.getElementById(id).classList.remove("active");
+}
+
+document.querySelectorAll(".modal-overlay").forEach(function(overlay){
+    overlay.addEventListener("click", function(event){
+        if(event.target === overlay){
+            overlay.classList.remove("active");
+        }
+    });
+});
+
+document.addEventListener("keydown", function(event){
+    if(event.key === "Escape"){
+        document.querySelectorAll(".modal-overlay").forEach(function(overlay){
+            overlay.classList.remove("active");
+        });
+    }
+});
+
+</script>
 
 </body>
 
