@@ -9,9 +9,7 @@
 
 <style>
 
-*{
-    box-sizing:border-box;
-}
+*{box-sizing:border-box;}
 
 body{
     margin:0;
@@ -53,9 +51,7 @@ body{
     text-decoration:none;
 }
 
-.site-name:hover{
-    color:#d4a017;
-}
+.site-name:hover{color:#d4a017;}
 
 .nav-right{
     display:flex;
@@ -71,9 +67,7 @@ body{
     transition:0.2s;
 }
 
-.nav-right a:hover{
-    color:#d4a017;
-}
+.nav-right a:hover{color:#d4a017;}
 
 /* DROPDOWN */
 
@@ -89,9 +83,7 @@ body{
     cursor:pointer;
 }
 
-.dropdown > a:hover{
-    color:#d4a017;
-}
+.dropdown > a:hover{color:#d4a017;}
 
 .dropdown::after{
     content:"";
@@ -123,9 +115,7 @@ body{
     line-height:1.6;
 }
 
-.dropdown-menu a:hover{
-    color:#d4a017;
-}
+.dropdown-menu a:hover{color:#d4a017;}
 
 .dropdown:hover .dropdown-menu,
 .dropdown:focus-within .dropdown-menu,
@@ -241,10 +231,14 @@ body{
     font-size:24px;
     font-weight:bold;
     line-height:1.25;
-    height:70px;
+    height:62px;
     margin:0 0 18px 0;
     display:flex;
     align-items:center;
+}
+
+.project-block.featured .instrument-title{
+    height:86px;
 }
 
 .project-list{
@@ -299,9 +293,7 @@ body{
     text-decoration:underline;
 }
 
-.inquiry-link:hover{
-    color:#d4a017;
-}
+.inquiry-link:hover{color:#d4a017;}
 
 /* FEATURED PROJECT BLOCK */
 
@@ -386,7 +378,8 @@ body{
         border-bottom:1px solid rgba(212,160,23,0.45);
     }
 
-    .instrument-title{
+    .instrument-title,
+    .project-block.featured .instrument-title{
         height:auto;
         min-height:0;
     }
@@ -515,10 +508,6 @@ body{
                         <circle cx="12" cy="12" r="8"></circle>
                         <circle cx="12" cy="12" r="4"></circle>
                         <circle cx="12" cy="12" r="1.5"></circle>
-                        <path d="M12 4V2"></path>
-                        <path d="M12 22v-2"></path>
-                        <path d="M4 12H2"></path>
-                        <path d="M22 12h-2"></path>
                         <path d="M15 9l4-4"></path>
                         <path d="M19 5h-3"></path>
                         <path d="M19 5v3"></path>
@@ -565,7 +554,6 @@ body{
                     <svg viewBox="0 0 24 24">
                         <path d="M12 3l7 3v5c0 4.6-2.9 8.6-7 10c-4.1-1.4-7-5.4-7-10V6l7-3z"></path>
                         <path d="M12 7v10"></path>
-                        <path d="M8.5 10.5h7"></path>
                     </svg>
                 </div>
             </div>
