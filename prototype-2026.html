@@ -3,7 +3,7 @@
 
 <head>
 
-<title>Research Information Access | ADET Research Group</title>
+<title>Project III – Participant Information Sheet (PIS) | ADET Research Group</title>
 
 <link rel="icon" type="image/png" href="logo.png">
 
@@ -142,12 +142,12 @@ body{
 
 .page-title{
     color:#d4a017;
-    font-size:56px;
+    font-size:50px;
     font-weight:700;
-    line-height:1.15;
+    line-height:1.18;
     text-align:center;
     margin:0;
-    letter-spacing:0.4px;
+    letter-spacing:0.2px;
 }
 
 /* CONTENT */
@@ -166,7 +166,7 @@ body{
 
 .project-layout{
     display:grid;
-    grid-template-columns:92px 1fr 1fr;
+    grid-template-columns:1fr 1fr;
     align-items:stretch;
     background:white;
     border:1px solid rgba(3,18,56,0.10);
@@ -181,37 +181,6 @@ body{
     box-shadow:0 18px 42px rgba(3,18,56,0.16);
 }
 
-.icon-cell{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:linear-gradient(180deg,#ffffff 0%,#fbf8ef 100%);
-    border-right:1px solid rgba(212,160,23,0.55);
-}
-
-.section-icon{
-    width:58px;
-    height:58px;
-    border-radius:50%;
-    background:#031238;
-    border:1px solid #d4a017;
-    color:#d4a017;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    box-shadow:0 8px 18px rgba(3,18,56,0.22);
-}
-
-.section-icon svg{
-    width:32px;
-    height:32px;
-    stroke:#d4a017;
-    fill:none;
-    stroke-width:1.8;
-    stroke-linecap:round;
-    stroke-linejoin:round;
-}
-
 .project-content{
     display:flex;
     flex-direction:column;
@@ -221,14 +190,14 @@ body{
     padding:34px 34px 36px 34px;
 }
 
-.project-content:nth-child(2){
+.project-content:first-child{
     border-right:1px solid rgba(3,18,56,0.14);
 }
 
 /* HEADING */
 
 .instrument-title{
-    color:#9c6b00;
+    color:#b8860b;
     font-size:23px;
     font-weight:bold;
     line-height:1.28;
@@ -242,33 +211,7 @@ body{
     max-width:100%;
 }
 
-.project-content:nth-child(3) .instrument-title{
-    font-size:22px;
-    line-height:1.34;
-    max-width:420px;
-    margin-left:auto;
-    margin-right:auto;
-}
-
-.project-block.featured .instrument-title{
-    min-height:96px;
-    color:#d4a017;
-}
-
-.project-block.featured .project-content:nth-child(3) .instrument-title{
-    max-width:360px;
-}
-
 /* END HEADING */
-
-.project-list{
-    margin:0;
-    padding-left:20px;
-}
-
-.project-list li{
-    margin-bottom:0;
-}
 
 .access-card{
     display:flex;
@@ -282,11 +225,11 @@ body{
     padding-top:22px;
 }
 
-.access-button{
+.pis-button{
     display:inline-flex;
     align-items:center;
     justify-content:center;
-    min-width:220px;
+    min-width:180px;
     height:44px;
     border:1px solid #d4a017;
     background:#031238;
@@ -300,7 +243,7 @@ body{
     font-weight:bold;
 }
 
-.access-button:hover{
+.pis-button:hover{
     background:#d4a017;
     color:#031238;
     transform:translateY(-1px);
@@ -314,44 +257,6 @@ body{
 }
 
 .inquiry-link:hover{color:#d4a017;}
-
-/* FEATURED PROJECT BLOCK */
-
-.project-block.featured .project-layout{
-    background:
-        radial-gradient(circle at 8% 20%, rgba(212,160,23,0.13), transparent 25%),
-        radial-gradient(circle at 95% 75%, rgba(212,160,23,0.11), transparent 30%),
-        linear-gradient(135deg,#031238 0%,#071b4a 100%);
-    border:1px solid rgba(212,160,23,0.95);
-    box-shadow:0 0 0 1px rgba(212,160,23,0.16), 0 16px 40px rgba(3,18,56,0.24);
-}
-
-.project-block.featured .project-layout:hover{
-    box-shadow:0 0 24px rgba(212,160,23,0.34), 0 20px 48px rgba(3,18,56,0.30);
-}
-
-.project-block.featured .icon-cell{
-    background:rgba(3,18,56,0.28);
-    border-right:1px solid rgba(212,160,23,0.65);
-}
-
-.project-block.featured .project-content{
-    color:white;
-}
-
-.project-block.featured .project-content:nth-child(2){
-    border-right:1px solid rgba(212,160,23,0.55);
-}
-
-.project-block.featured .access-button{
-    background:transparent;
-    color:#d4a017;
-}
-
-.project-block.featured .access-button:hover{
-    background:#d4a017;
-    color:#031238;
-}
 
 /* FOOTER */
 
@@ -380,22 +285,12 @@ body{
         grid-template-columns:1fr;
     }
 
-    .icon-cell{
-        display:none;
-    }
-
-    .project-content:nth-child(2){
+    .project-content:first-child{
         border-right:0;
         border-bottom:1px solid rgba(3,18,56,0.14);
     }
 
-    .project-block.featured .project-content:nth-child(2){
-        border-right:0;
-        border-bottom:1px solid rgba(212,160,23,0.45);
-    }
-
-    .instrument-title,
-    .project-block.featured .instrument-title{
+    .instrument-title{
         min-height:auto;
     }
 
@@ -428,7 +323,7 @@ body{
     }
 
     .page-title{
-        font-size:38px;
+        font-size:34px;
     }
 
     .projects-container{
@@ -446,12 +341,7 @@ body{
         min-height:auto;
     }
 
-    .project-content:nth-child(3) .instrument-title{
-        font-size:21px;
-        max-width:100%;
-    }
-
-    .access-button{
+    .pis-button{
         width:100%;
         min-width:0;
     }
@@ -503,7 +393,7 @@ body{
     <div class="hero-inner">
 
         <div class="page-title">
-            Research Information Access
+            Project III – Participant Information Sheet (PIS)
         </div>
 
     </div>
@@ -512,46 +402,41 @@ body{
 
 <div class="projects-container">
 
-    <!-- PURPOSE -->
+    <!-- ABOUT -->
 
     <div class="project-block">
 
         <div class="project-layout">
 
-            <div class="icon-cell">
-                <div class="section-icon">
-                    <svg viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="8"></circle>
-                        <circle cx="12" cy="12" r="4"></circle>
-                        <circle cx="12" cy="12" r="1.5"></circle>
-                        <path d="M15 9l4-4"></path>
-                        <path d="M19 5h-3"></path>
-                        <path d="M19 5v3"></path>
-                    </svg>
-                </div>
-            </div>
-
             <div class="project-content">
 
                 <div class="instrument-title">
-                    Purpose of This Webpage
+                    About This Page
                 </div>
 
-                This webpage serves as an access platform for Participant Information Sheets (PIS) of research projects conducted by the principal investigator. These documents will be made available only after approval has been granted by the relevant Human Research Ethics Committee (HREC).
+                This page contains the Participant Information Sheet (PIS) for the research project titled:
                 <br><br>
-                All documents on this webpage are intended solely for individuals who have been invited to participate in the respective research projects.
+
+                “An Investigation of Psychometric Properties: the Individual Work Performance Questionnaire, the Responsibility Questionnaire, and the Perceived Occupational Stress Scale in Working Age Adults.”
+                <br><br>
+
+                The PIS is provided exclusively for individuals who have been invited to consider participation in this study.
 
             </div>
 
             <div class="project-content">
 
                 <div class="instrument-title">
-                    วัตถุประสงค์ของหน้าเว็บไซต์
+                    เว็บไซต์หน้านี้จัดทำขึ้นเพื่อ
                 </div>
 
-                หน้าเว็บไซต์นี้จัดทำขึ้นเพื่อเป็นสื่อกลางสำหรับการเข้าถึงเอกสารชี้แจงผู้เข้าร่วมการวิจัยของโครงการต่าง ๆ ที่หัวหน้าโครงการวิจัยดำเนินการ โดยเอกสารดังกล่าวจะเผยแพร่หลังจากได้รับการรับรองจากคณะกรรมการจริยธรรมการวิจัยในคนที่เกี่ยวข้องแล้วเท่านั้น
+                หน้าเว็บไซต์นี้จัดทำขึ้นเพื่อแสดงเอกสารชี้แจงผู้เข้าร่วมของโครงการวิจัย:
                 <br><br>
-                เอกสารทั้งหมดบนหน้าเว็บไซต์นี้จัดทำขึ้นเฉพาะสำหรับผู้ที่ได้รับการเชิญชวนเข้าร่วมโครงการวิจัย
+
+                “การตรวจสอบคุณสมบัติเครื่องมือวิจัย: แบบสอบถามประสิทธิภาพการทำงานส่วนบุคคล แบบสอบถามความรับผิดชอบหน้าที่ และแบบประเมินการรับรู้ความเครียดจากการทำงาน ในผู้ใหญ่วัยทำงาน”
+                <br><br>
+
+                เอกสารนี้จัดทำขึ้นสำหรับผู้ที่ได้รับการเชิญชวนให้พิจารณาเข้าร่วมโครงการวิจัยเท่านั้น
 
             </div>
 
@@ -559,38 +444,35 @@ body{
 
     </div>
 
-    <!-- ACCESS CONDITIONS -->
+    <!-- ETHICS -->
 
     <div class="project-block">
 
         <div class="project-layout">
 
-            <div class="icon-cell">
-                <div class="section-icon">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 3l7 3v5c0 4.6-2.9 8.6-7 10c-4.1-1.4-7-5.4-7-10V6l7-3z"></path>
-                        <path d="M12 7v10"></path>
-                    </svg>
-                </div>
-            </div>
-
             <div class="project-content">
 
                 <div class="instrument-title">
-                    Access Conditions
+                    Ethics Approval Status
                 </div>
 
-                PIS documents for each project are displayed only after the corresponding study has received approval from the relevant ethics committee.
+                The research project has been fully approved by the Human Research Ethics Committee (HREC).
+                <br><br>
+
+                The approved PIS is now available for access at the link below.
 
             </div>
 
             <div class="project-content">
 
                 <div class="instrument-title">
-                    ข้อกำหนดการเข้าถึงข้อมูล
+                    สถานะการรับรองจริยธรรมของโครงการ
                 </div>
 
-                เอกสารชี้แจงผู้เข้าร่วมการวิจัยของแต่ละโครงการ จะเผยแพร่หลังจากโครงการนั้นได้รับการรับรองจากคณะกรรมการจริยธรรมการวิจัยในคนที่เกี่ยวข้องแล้วเท่านั้น
+                โครงการวิจัยได้รับการรับรองจากคณะกรรมการจริยธรรมการวิจัยในคนเรียบร้อยแล้ว
+                <br><br>
+
+                เอกสารชี้แจงผู้เข้าร่วม ฉบับที่ได้รับการรับรอง สามารถเข้าดูได้จากลิงก์ด้านล่าง
 
             </div>
 
@@ -598,39 +480,25 @@ body{
 
     </div>
 
-    <!-- PROJECT -->
+    <!-- PIS -->
 
-    <div class="project-block featured">
+    <div class="project-block">
 
         <div class="project-layout">
-
-            <div class="icon-cell">
-                <div class="section-icon">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M7 3h7l3 3v15H7V3z"></path>
-                        <path d="M14 3v4h4"></path>
-                        <path d="M9.5 11h5"></path>
-                        <path d="M9.5 14h5"></path>
-                        <path d="M9.5 17h3"></path>
-                    </svg>
-                </div>
-            </div>
 
             <div class="project-content access-card">
 
                 <div class="instrument-title">
-                    Projects Eligible for PIS Access
+                    Participant Information Sheet
                 </div>
 
-                <ul class="project-list">
-                    <li>
-                        An Investigation of Psychometric Properties: the Individual Work Performance Questionnaire, the Responsibility Questionnaire, and the Perceived Occupational Stress Scale in Working Age Adults.
-                    </li>
-                </ul>
+                Please click the button below to view the approved PIS:
 
                 <div class="link-center">
-                    <a class="access-button" href="project-iii-pis-access.html">
-                        View Project Page
+                    <a class="pis-button"
+                       href="https://drive.google.com/file/d/15qqLzb4bt3WGPrHy5W0mOEQ9KYAvmZGu/view"
+                       target="_blank">
+                        View PIS
                     </a>
                 </div>
 
@@ -639,18 +507,16 @@ body{
             <div class="project-content access-card">
 
                 <div class="instrument-title">
-                    โครงการที่สามารถเข้าถึงเอกสารชี้แจงผู้เข้าร่วม
+                    เอกสารชี้แจงผู้เข้าร่วมการวิจัย
                 </div>
 
-                <ul class="project-list">
-                    <li>
-                        การตรวจสอบคุณสมบัติเครื่องมือวิจัย: แบบสอบถามประสิทธิภาพการทำงานส่วนบุคคล แบบสอบถามความรับผิดชอบหน้าที่ และแบบประเมินการรับรู้ความเครียดจากการทำงาน ในผู้ใหญ่วัยทำงาน
-                    </li>
-                </ul>
+                โปรดกดปุ่มด้านล่างเพื่อเข้าดูเอกสารที่ได้รับการรับรองแล้ว:
 
                 <div class="link-center">
-                    <a class="access-button" href="project-iii-pis-access.html">
-                        ดูหน้าโครงการ
+                    <a class="pis-button"
+                       href="https://drive.google.com/file/d/15qqLzb4bt3WGPrHy5W0mOEQ9KYAvmZGu/view"
+                       target="_blank">
+                        ดูเอกสาร
                     </a>
                 </div>
 
@@ -666,25 +532,18 @@ body{
 
         <div class="project-layout">
 
-            <div class="icon-cell">
-                <div class="section-icon">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M4 6.5C4 4.6 5.7 3 7.8 3h5.4C15.3 3 17 4.6 17 6.5v3C17 11.4 15.3 13 13.2 13H9l-4 3v-3.8c-.6-.6-1-1.5-1-2.4v-3.3z"></path>
-                        <path d="M10 14.5c.6.9 1.8 1.5 3.1 1.5H15l4 3v-3.8c.6-.6 1-1.5 1-2.4v-2.3c0-1.4-.9-2.6-2.2-3.2"></path>
-                    </svg>
-                </div>
-            </div>
-
             <div class="project-content">
 
                 <div class="instrument-title">
                     Further Inquiries
                 </div>
 
-                For any questions regarding the research project, please contact the project’s Official LINE account at
+                For questions regarding this research project, please contact the project’s Official LINE account:
 
                 <div class="link-center">
-                    <a class="inquiry-link" href="https://line.me/R/ti/p/@270nxtlw?ts=12081336&oat_content=url" target="_blank">
+                    <a class="inquiry-link"
+                       href="https://line.me/R/ti/p/@270nxtlw?ts=12081336&oat_content=url"
+                       target="_blank">
                         [Link to the Official LINE OA]
                     </a>
                 </div>
@@ -700,13 +559,15 @@ body{
             <div class="project-content">
 
                 <div class="instrument-title">
-                    สอบถามข้อมูลโครงการ
+                    สอบถามข้อมูลเพิ่มเติม
                 </div>
 
-                หากมีข้อสงสัยเกี่ยวกับโครงการวิจัย สามารถติดต่อผ่านบัญชีไลน์ทางการของโครงการวิจัยได้ที่
+                หากมีข้อสงสัยเกี่ยวกับโครงการวิจัย สามารถติดต่อผ่านบัญชีไลน์ทางการของโครงการได้ที่:
 
                 <div class="link-center">
-                    <a class="inquiry-link" href="https://line.me/R/ti/p/@270nxtlw?ts=12081336&oat_content=url" target="_blank">
+                    <a class="inquiry-link"
+                       href="https://line.me/R/ti/p/@270nxtlw?ts=12081336&oat_content=url"
+                       target="_blank">
                         [ลิงก์ไปยังบัญชีไลน์ทางการของโครงการ]
                     </a>
                 </div>
