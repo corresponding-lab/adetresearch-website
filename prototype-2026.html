@@ -184,8 +184,7 @@ body{
 .icon-cell{
     display:flex;
     justify-content:center;
-    align-items:flex-start;
-    padding-top:30px;
+    align-items:center;
     background:linear-gradient(180deg,#ffffff 0%,#fbf8ef 100%);
     border-right:1px solid rgba(212,160,23,0.55);
 }
@@ -228,17 +227,20 @@ body{
 
 .instrument-title{
     color:#c99712;
-    font-size:24px;
+    font-size:23px;
     font-weight:bold;
-    line-height:1.25;
-    height:62px;
-    margin:0 0 18px 0;
+    line-height:1.28;
+    min-height:86px;
+    margin:0 0 20px 0;
     display:flex;
     align-items:center;
+    justify-content:center;
+    text-align:center;
+    text-wrap:balance;
 }
 
 .project-block.featured .instrument-title{
-    height:86px;
+    min-height:112px;
 }
 
 .project-list{
@@ -257,7 +259,7 @@ body{
 }
 
 .link-center{
-    text-align:left;
+    text-align:center;
     margin-top:auto;
     padding-top:22px;
 }
@@ -380,8 +382,7 @@ body{
 
     .instrument-title,
     .project-block.featured .instrument-title{
-        height:auto;
-        min-height:0;
+        min-height:auto;
     }
 
 }
@@ -428,11 +429,7 @@ body{
 
     .instrument-title{
         font-size:21px;
-        height:auto;
-    }
-
-    .link-center{
-        text-align:center;
+        min-height:auto;
     }
 
     .access-button{
