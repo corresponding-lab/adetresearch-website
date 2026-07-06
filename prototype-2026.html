@@ -168,7 +168,7 @@ body{
 .adet-shield{
     width:230px;
     height:255px;
-    margin:0 auto 24px;
+    margin:0 auto 22px;
     position:relative;
     display:flex;
     align-items:center;
@@ -187,14 +187,14 @@ body{
 .adet-shield::after{
     content:"";
     position:absolute;
-    inset:17px;
+    inset:12px;
     background:#031238;
     clip-path:polygon(0 0,100% 0,100% 68%,50% 100%,0 68%);
 }
 
 .shield-inner{
     position:absolute;
-    inset:28px;
+    inset:32px;
     background:linear-gradient(145deg,#e0af2b 0%,#c79017 100%);
     clip-path:polygon(0 0,100% 0,100% 67%,50% 100%,0 67%);
     display:flex;
@@ -214,11 +214,23 @@ body{
 
 .logo-fullname{
     color:#d4a017;
-    font-size:19px;
+    font-size:18px;
     font-weight:bold;
-    line-height:1.42;
-    letter-spacing:0.4px;
+    line-height:1.38;
+    letter-spacing:0.35px;
+    text-align:center;
+    white-space:nowrap;
+}
+
+.logo-major{
     text-transform:uppercase;
+    font-weight:bold;
+}
+
+.logo-minor{
+    text-transform:none;
+    font-size:0.82em;
+    font-weight:500;
 }
 
 /* HERO CENTER */
@@ -384,7 +396,7 @@ body{
     }
 
     .logo-fullname{
-        font-size:16px;
+        font-size:15.5px;
     }
 
     .hero-title{
@@ -501,7 +513,9 @@ body{
     }
 
     .logo-fullname{
-        font-size:15px;
+        font-size:13.5px;
+        line-height:1.45;
+        white-space:normal;
     }
 
     .mission-text{
@@ -580,8 +594,13 @@ body{
             </div>
 
             <div class="logo-fullname">
-                Alliance for Development in<br>
-                Evidence and Transformation
+                <span class="logo-major">Alliance</span>
+                <span class="logo-minor">for</span>
+                <span class="logo-major">Development</span>
+                <span class="logo-minor">in</span><br>
+                <span class="logo-major">Evidence</span>
+                <span class="logo-minor">and</span>
+                <span class="logo-major">Transformation</span>
             </div>
 
         </div>
