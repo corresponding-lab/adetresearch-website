@@ -7,26 +7,30 @@
 
 <link rel="icon" type="image/png" href="logo.png">
 
+
 <style>
+
+*{box-sizing:border-box;}
 
 body{
     margin:0;
     font-family:Georgia, serif;
-    background:#031238;
+    background:#f7f3ea;
     overflow-x:hidden;
-    color:white;
+    color:#031238;
 }
 
 /* NAVBAR */
 
 .navbar{
     height:68px;
-    max-width:1280px;
-    width:95%;
-    margin:auto;
+    width:100%;
+    padding:0 3%;
     display:flex;
     align-items:center;
     justify-content:space-between;
+    background:#031238;
+    border-bottom:1px solid rgba(212,160,23,0.45);
     position:relative;
     z-index:1000;
 }
@@ -49,7 +53,7 @@ body{
 }
 
 .site-name:hover{
-    color:#c79b3b;
+    color:#d4a017;
 }
 
 .nav-right{
@@ -63,10 +67,11 @@ body{
 .nav-right a{
     color:white;
     text-decoration:none;
+    transition:0.2s;
 }
 
 .nav-right a:hover{
-    color:#c79b3b;
+    color:#d4a017;
 }
 
 /* DROPDOWN */
@@ -84,7 +89,7 @@ body{
 }
 
 .dropdown > a:hover{
-    color:#c79b3b;
+    color:#d4a017;
 }
 
 .dropdown::after{
@@ -106,6 +111,7 @@ body{
     padding:14px 16px;
     text-align:center;
     z-index:9999;
+    border:1px solid rgba(212,160,23,0.45);
 }
 
 .dropdown-menu a{
@@ -117,7 +123,7 @@ body{
 }
 
 .dropdown-menu a:hover{
-    color:#c79b3b;
+    color:#d4a017;
 }
 
 .dropdown:hover .dropdown-menu,
@@ -131,15 +137,15 @@ body{
 .projects-container{
     max-width:1120px;
     width:92%;
-    margin:38px auto 0;
+    margin:42px auto 0;
 }
 
 .landscape-title{
-    color:#d4a017;
-    font-size:42px;
+    color:#9c6b00;
+    font-size:48px;
     font-weight:bold;
     text-align:center;
-    margin-bottom:34px;
+    margin:0 0 32px;
     letter-spacing:0.3px;
 }
 
@@ -149,18 +155,19 @@ body{
     position:relative;
     height:455px;
     background:#020b22;
-    border:1px solid rgba(212,160,23,0.46);
+    border:1px solid rgba(212,160,23,0.88);
+    border-radius:12px;
     overflow:hidden;
     box-shadow:
-        inset 0 0 72px rgba(0,0,0,0.42),
-        0 14px 34px rgba(0,0,0,0.24);
+        0 14px 34px rgba(3,18,56,0.18),
+        inset 0 0 72px rgba(0,0,0,0.36);
 }
 
 .research-map::before{
     content:"";
     position:absolute;
     inset:0;
-    background-image:url("data:image/svg+xml,%3Csvg width='1120' height='455' viewBox='0 0 1120 455' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='1120' height='455' fill='%23020b22'/%3E%3Cg fill='none' stroke='%2398a8bf' stroke-width='1.35' stroke-opacity='0.20'%3E%3Cpath d='M96 42 C172 18 276 28 335 83 C396 140 374 211 303 247 C230 284 122 265 76 199 C29 132 34 63 96 42Z'/%3E%3Cpath d='M128 79 C185 55 266 63 306 105 C349 150 332 204 275 228 C217 253 139 238 105 191 C70 143 78 99 128 79Z'/%3E%3Cpath d='M158 111 C203 95 256 99 283 127 C310 155 301 191 260 208 C218 226 166 215 142 184 C118 153 126 123 158 111Z'/%3E%3Cpath d='M438 55 C531 21 646 42 700 112 C754 183 704 262 609 271 C514 281 421 224 401 150 C388 103 400 70 438 55Z'/%3E%3Cpath d='M476 92 C543 69 623 84 660 132 C698 181 660 236 590 241 C520 246 457 207 442 156 C431 124 445 103 476 92Z'/%3E%3Cpath d='M511 124 C555 110 610 120 635 151 C660 184 635 221 586 224 C537 228 492 200 482 166 C475 144 489 131 511 124Z'/%3E%3Cpath d='M748 192 C848 145 974 171 1020 251 C1068 333 989 416 881 409 C773 402 691 326 708 251 C714 224 729 204 748 192Z'/%3E%3Cpath d='M790 232 C861 203 950 221 983 277 C1017 334 961 390 884 384 C807 378 750 326 762 275 C767 254 778 238 790 232Z'/%3E%3Cpath d='M826 264 C875 247 932 259 954 297 C976 335 940 372 888 369 C836 365 798 330 806 295 C810 281 817 270 826 264Z'/%3E%3Cpath d='M199 300 C287 258 396 279 433 354 C470 431 397 492 300 477 C203 462 145 390 169 333 C176 316 187 306 199 300Z'/%3E%3Cpath d='M240 332 C303 304 377 319 402 368 C428 418 379 458 307 447 C235 436 195 388 211 352 C216 342 226 336 240 332Z'/%3E%3Cpath d='M565 307 C647 265 752 284 800 352 C848 421 797 492 703 494 C609 497 527 439 512 371 C505 340 526 320 565 307Z'/%3E%3Cpath d='M601 341 C661 313 735 326 769 373 C803 421 765 468 699 469 C633 470 574 431 563 383 C558 362 574 348 601 341Z'/%3E%3C/g%3E%3Cg fill='none' stroke='%2398a8bf' stroke-width='1.05' stroke-opacity='0.13'%3E%3Cpath d='M-70 88 C56 44 150 58 232 119 C306 174 378 171 458 120 C543 67 638 63 718 117 C797 170 874 168 954 123 C1038 76 1104 75 1190 104'/%3E%3Cpath d='M-74 188 C58 142 161 155 252 211 C340 263 418 261 505 204 C595 147 691 146 781 203 C864 256 940 253 1027 205 C1100 165 1155 164 1194 182'/%3E%3Cpath d='M-78 296 C50 246 161 257 258 319 C350 377 436 371 528 309 C626 243 724 250 810 306 C897 363 971 358 1057 307 C1119 271 1166 273 1196 294'/%3E%3Cpath d='M-66 392 C62 347 174 361 271 412 C360 459 444 452 533 406 C631 355 739 356 835 408 C930 460 1016 452 1111 399 C1154 375 1182 378 1196 386'/%3E%3Cpath d='M112 -70 C70 39 82 136 138 222 C191 302 182 381 128 525'/%3E%3Cpath d='M342 -72 C294 48 311 147 375 230 C436 309 425 389 365 526'/%3E%3Cpath d='M606 -72 C551 44 573 151 642 231 C708 307 696 388 632 526'/%3E%3Cpath d='M865 -72 C818 43 836 144 900 224 C962 302 952 389 890 526'/%3E%3Cpath d='M1072 -72 C1032 39 1047 139 1100 222 C1151 303 1148 390 1090 526'/%3E%3C/g%3E%3Cg fill='none' stroke='%2398a8bf' stroke-width='0.75' stroke-opacity='0.08'%3E%3Cpath d='M34 117 C134 78 228 93 302 144 C384 200 467 198 552 142 C641 83 727 92 804 143 C890 199 969 194 1052 148 C1102 121 1146 123 1188 139'/%3E%3Cpath d='M30 238 C132 199 236 214 323 263 C412 313 498 309 584 255 C681 195 771 204 855 258 C945 315 1024 309 1106 262 C1144 240 1172 241 1190 250'/%3E%3Cpath d='M29 348 C129 312 237 322 327 373 C414 422 499 421 592 368 C689 312 780 319 869 373 C952 423 1034 420 1114 376 C1155 353 1180 354 1194 361'/%3E%3C/g%3E%3C/svg%3E");
+    background-image:url("data:image/svg+xml,%0A%3Csvg%20width%3D%271120%27%20height%3D%27455%27%20viewBox%3D%270%200%201120%20455%27%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%3E%0A%3Crect%20width%3D%271120%27%20height%3D%27455%27%20fill%3D%27%23020b22%27/%3E%0A%0A%3Cg%20fill%3D%27none%27%20stroke%3D%27%2398a8bf%27%20stroke-linecap%3D%27round%27%3E%0A%0A%20%20%20%20%3C%21--%20Clinical%20Outcomes%20--%3E%0A%20%20%20%20%3Cellipse%20cx%3D%27560%27%20cy%3D%2774%27%20rx%3D%2772%27%20ry%3D%2738%27%20stroke-width%3D%271.1%27%20stroke-opacity%3D%270.23%27/%3E%0A%20%20%20%20%3Cellipse%20cx%3D%27560%27%20cy%3D%2774%27%20rx%3D%27108%27%20ry%3D%2758%27%20stroke-width%3D%271.0%27%20stroke-opacity%3D%270.19%27/%3E%0A%20%20%20%20%3Cellipse%20cx%3D%27560%27%20cy%3D%2774%27%20rx%3D%27150%27%20ry%3D%2782%27%20stroke-width%3D%270.9%27%20stroke-opacity%3D%270.14%27/%3E%0A%20%20%20%20%3Cellipse%20cx%3D%27560%27%20cy%3D%2774%27%20rx%3D%27198%27%20ry%3D%27110%27%20stroke-width%3D%270.8%27%20stroke-opacity%3D%270.095%27/%3E%0A%20%20%20%20%3Cellipse%20cx%3D%27560%27%20cy%3D%2774%27%20rx%3D%27254%27%20ry%3D%27142%27%20stroke-width%3D%270.7%27%20stroke-opacity%3D%270.060%27/%3E%0A%0A%20%20%20%20%3C%21--%20Health%20Behavior%20--%3E%0A%20%20%20%20%3Cellipse%20cx%3D%27178%27%20cy%3D%27154%27%20rx%3D%2766%27%20ry%3D%2736%27%20stroke-width%3D%271.1%27%20stroke-opacity%3D%270.23%27/%3E%0A%20%20%20%20%3Cellipse%20cx%3D%27178%27%20cy%3D%27154%27%20rx%3D%2798%27%20ry%3D%2754%27%20stroke-width%3D%271.0%27%20stroke-opacity%3D%270.19%27/%3E%0A%20%20%20%20%3Cellipse%20cx%3D%27178%27%20cy%3D%27154%27%20rx%3D%27136%27%20ry%3D%2776%27%20stroke-width%3D%270.9%27%20stroke-opacity%3D%270.14%27/%3E%0A%20%20%20%20%3Cellipse%20cx%3D%27178%27%20cy%3D%27154%27%20rx%3D%27182%27%20ry%3D%27104%27%20stroke-width%3D%270.8%27%20stroke-opacity%3D%270.095%27/%3E%0A%20%20%20%20%3Cellipse%20cx%3D%27178%27%20cy%3D%27154%27%20rx%3D%27236%27%20ry%3D%27136%27%20stroke-width%3D%270.7%27%20stroke-opacity%3D%270.060%27/%3E%0A%0A%20%20%20%20%3C%21--%20Measurement%20--%3E%0A%20%20%20%20%3Cellipse%20cx%3D%27542%27%20cy%3D%27229%27%20rx%3D%2774%27%20ry%3D%2740%27%20stroke-width%3D%271.1%27%20stroke-opacity%3D%270.23%27/%3E%0A%20%20%20%20%3Cellipse%20cx%3D%27542%27%20cy%3D%27229%27%20rx%3D%27112%27%20ry%3D%2762%27%20stroke-width%3D%271.0%27%20stroke-opacity%3D%270.19%27/%3E%0A%20%20%20%20%3Cellipse%20cx%3D%27542%27%20cy%3D%27229%27%20rx%3D%27158%27%20ry%3D%2788%27%20stroke-width%3D%270.9%27%20stroke-opacity%3D%270.14%27/%3E%0A%20%20%20%20%3Cellipse%20cx%3D%27542%27%20cy%3D%27229%27%20rx%3D%27212%27%20ry%3D%27118%27%20stroke-width%3D%270.8%27%20stroke-opacity%3D%270.095%27/%3E%0A%20%20%20%20%3Cellipse%20cx%3D%27542%27%20cy%3D%27229%27%20rx%3D%27276%27%20ry%3D%27154%27%20stroke-width%3D%270.7%27%20stroke-opacity%3D%270.060%27/%3E%0A%0A%20%20%20%20%3C%21--%20Work%20and%20Health%20--%3E%0A%20%20%20%20%3Cellipse%20cx%3D%27924%27%20cy%3D%27306%27%20rx%3D%2778%27%20ry%3D%2744%27%20stroke-width%3D%271.1%27%20stroke-opacity%3D%270.23%27/%3E%0A%20%20%20%20%3Cellipse%20cx%3D%27924%27%20cy%3D%27306%27%20rx%3D%27118%27%20ry%3D%2768%27%20stroke-width%3D%271.0%27%20stroke-opacity%3D%270.19%27/%3E%0A%20%20%20%20%3Cellipse%20cx%3D%27924%27%20cy%3D%27306%27%20rx%3D%27166%27%20ry%3D%2796%27%20stroke-width%3D%270.9%27%20stroke-opacity%3D%270.14%27/%3E%0A%20%20%20%20%3Cellipse%20cx%3D%27924%27%20cy%3D%27306%27%20rx%3D%27222%27%20ry%3D%27128%27%20stroke-width%3D%270.8%27%20stroke-opacity%3D%270.095%27/%3E%0A%20%20%20%20%3Cellipse%20cx%3D%27924%27%20cy%3D%27306%27%20rx%3D%27286%27%20ry%3D%27164%27%20stroke-width%3D%270.7%27%20stroke-opacity%3D%270.060%27/%3E%0A%0A%20%20%20%20%3C%21--%20Critical%20Care%20--%3E%0A%20%20%20%20%3Cellipse%20cx%3D%27219%27%20cy%3D%27382%27%20rx%3D%2774%27%20ry%3D%2742%27%20stroke-width%3D%271.1%27%20stroke-opacity%3D%270.23%27/%3E%0A%20%20%20%20%3Cellipse%20cx%3D%27219%27%20cy%3D%27382%27%20rx%3D%27112%27%20ry%3D%2764%27%20stroke-width%3D%271.0%27%20stroke-opacity%3D%270.19%27/%3E%0A%20%20%20%20%3Cellipse%20cx%3D%27219%27%20cy%3D%27382%27%20rx%3D%27160%27%20ry%3D%2792%27%20stroke-width%3D%270.9%27%20stroke-opacity%3D%270.14%27/%3E%0A%20%20%20%20%3Cellipse%20cx%3D%27219%27%20cy%3D%27382%27%20rx%3D%27220%27%20ry%3D%27126%27%20stroke-width%3D%270.8%27%20stroke-opacity%3D%270.095%27/%3E%0A%20%20%20%20%3Cellipse%20cx%3D%27219%27%20cy%3D%27382%27%20rx%3D%27286%27%20ry%3D%27162%27%20stroke-width%3D%270.7%27%20stroke-opacity%3D%270.060%27/%3E%0A%0A%20%20%20%20%3C%21--%20Family%20Health%20--%3E%0A%20%20%20%20%3Cellipse%20cx%3D%27850%27%20cy%3D%27386%27%20rx%3D%2774%27%20ry%3D%2742%27%20stroke-width%3D%271.1%27%20stroke-opacity%3D%270.23%27/%3E%0A%20%20%20%20%3Cellipse%20cx%3D%27850%27%20cy%3D%27386%27%20rx%3D%27112%27%20ry%3D%2764%27%20stroke-width%3D%271.0%27%20stroke-opacity%3D%270.19%27/%3E%0A%20%20%20%20%3Cellipse%20cx%3D%27850%27%20cy%3D%27386%27%20rx%3D%27160%27%20ry%3D%2792%27%20stroke-width%3D%270.9%27%20stroke-opacity%3D%270.14%27/%3E%0A%20%20%20%20%3Cellipse%20cx%3D%27850%27%20cy%3D%27386%27%20rx%3D%27220%27%20ry%3D%27126%27%20stroke-width%3D%270.8%27%20stroke-opacity%3D%270.095%27/%3E%0A%20%20%20%20%3Cellipse%20cx%3D%27850%27%20cy%3D%27386%27%20rx%3D%27286%27%20ry%3D%27162%27%20stroke-width%3D%270.7%27%20stroke-opacity%3D%270.060%27/%3E%0A%0A%3C/g%3E%0A%0A%3Cg%20fill%3D%27none%27%20stroke%3D%27%2398a8bf%27%20stroke-linecap%3D%27round%27%20stroke-dasharray%3D%272%206%27%3E%0A%20%20%20%20%3Cellipse%20cx%3D%27560%27%20cy%3D%2774%27%20rx%3D%27304%27%20ry%3D%27170%27%20stroke-width%3D%270.7%27%20stroke-opacity%3D%270.045%27/%3E%0A%20%20%20%20%3Cellipse%20cx%3D%27178%27%20cy%3D%27154%27%20rx%3D%27282%27%20ry%3D%27162%27%20stroke-width%3D%270.7%27%20stroke-opacity%3D%270.045%27/%3E%0A%20%20%20%20%3Cellipse%20cx%3D%27542%27%20cy%3D%27229%27%20rx%3D%27340%27%20ry%3D%27190%27%20stroke-width%3D%270.7%27%20stroke-opacity%3D%270.045%27/%3E%0A%20%20%20%20%3Cellipse%20cx%3D%27924%27%20cy%3D%27306%27%20rx%3D%27340%27%20ry%3D%27194%27%20stroke-width%3D%270.7%27%20stroke-opacity%3D%270.045%27/%3E%0A%20%20%20%20%3Cellipse%20cx%3D%27219%27%20cy%3D%27382%27%20rx%3D%27340%27%20ry%3D%27194%27%20stroke-width%3D%270.7%27%20stroke-opacity%3D%270.045%27/%3E%0A%20%20%20%20%3Cellipse%20cx%3D%27850%27%20cy%3D%27386%27%20rx%3D%27340%27%20ry%3D%27194%27%20stroke-width%3D%270.7%27%20stroke-opacity%3D%270.045%27/%3E%0A%3C/g%3E%0A%0A%3C/svg%3E%0A");
     background-size:100% 100%;
     background-repeat:no-repeat;
     opacity:1;
@@ -172,27 +179,34 @@ body{
     position:absolute;
     inset:0;
     background:
-        radial-gradient(circle at 26% 34%, rgba(122,139,166,0.09), transparent 20%),
-        radial-gradient(circle at 51% 47%, rgba(122,139,166,0.075), transparent 19%),
-        radial-gradient(circle at 77% 62%, rgba(122,139,166,0.07), transparent 21%),
-        radial-gradient(circle at 22% 78%, rgba(122,139,166,0.06), transparent 18%),
-        radial-gradient(circle at 50% 50%, transparent 45%, rgba(0,0,0,0.20) 100%);
+        radial-gradient(circle at 26% 34%, rgba(255,255,255,0.035), transparent 19%),
+        radial-gradient(circle at 51% 47%, rgba(255,255,255,0.03), transparent 18%),
+        radial-gradient(circle at 77% 62%, rgba(255,255,255,0.03), transparent 20%),
+        radial-gradient(circle at 50% 50%, transparent 48%, rgba(0,0,0,0.22) 100%);
     opacity:1;
     pointer-events:none;
+}
+
+.map-hint{
+    color:rgba(3,18,56,0.58);
+    font-size:14px;
+    text-align:center;
+    margin:10px auto 28px;
+    font-style:italic;
 }
 
 /* FIELD LABELS */
 
 .field{
     position:absolute;
-    color:rgba(205,218,238,0.22);
+    color:rgba(255,255,255,0.88);
     font-size:24px;
     font-weight:500;
     text-align:center;
     pointer-events:none;
     letter-spacing:0.2px;
     z-index:1;
-    text-shadow:0 0 12px rgba(0,0,0,0.35);
+    text-shadow:0 2px 12px rgba(0,0,0,0.55);
 }
 
 .field-clinical{
@@ -244,33 +258,34 @@ body{
     cursor:pointer;
     position:relative;
     z-index:22;
-    background:rgba(3,18,56,0.62);
+    background:rgba(3,18,56,0.56);
     padding:4px 8px;
     border-radius:999px;
+    text-shadow:0 2px 8px rgba(0,0,0,0.42);
 }
 
 .marker-dot{
-    width:11px;
-    height:11px;
+    width:15px;
+    height:15px;
     border-radius:50%;
     background:#d4a017;
-    border:2px solid white;
+    border:1px solid rgba(255,255,255,0.88);
     box-shadow:
-        0 0 6px rgba(212,160,23,0.65),
-        0 0 12px rgba(212,160,23,0.35);
+        0 0 8px rgba(212,160,23,0.68),
+        0 0 16px rgba(212,160,23,0.32);
 }
 
 .planned-marker .marker-dot{
     background:transparent;
     border:2px solid #d4a017;
-    box-shadow:0 0 10px rgba(212,160,23,0.28);
+    box-shadow:0 0 10px rgba(212,160,23,0.30);
 }
 
 .planned-marker .marker-label{
     font-size:0;
     gap:0;
     padding:5px;
-    background:rgba(3,18,56,0.48);
+    background:rgba(3,18,56,0.30);
 }
 
 .p1{
@@ -305,11 +320,10 @@ body{
     justify-content:center;
     align-items:center;
     gap:32px;
-    color:white;
+    color:#031238;
     font-size:16px;
     line-height:1.6;
-    margin:16px auto 26px;
-    opacity:0.96;
+    margin:14px auto 26px;
 }
 
 .legend-item{
@@ -319,17 +333,17 @@ body{
 }
 
 .legend-active{
-    width:11px;
-    height:11px;
+    width:15px;
+    height:15px;
     border-radius:50%;
     background:#d4a017;
-    border:2px solid white;
-    box-shadow:0 0 8px rgba(212,160,23,0.5);
+    border:1px solid rgba(3,18,56,0.22);
+    box-shadow:0 0 8px rgba(212,160,23,0.36);
 }
 
 .legend-planned{
-    width:11px;
-    height:11px;
+    width:15px;
+    height:15px;
     border-radius:50%;
     background:transparent;
     border:2px solid #d4a017;
@@ -338,66 +352,85 @@ body{
 /* METRICS */
 
 .metrics-panel{
-    padding:0 0 32px;
-    margin-bottom:32px;
+    background:white;
+    border:1px solid rgba(212,160,23,0.28);
+    border-radius:14px;
+    box-shadow:0 14px 34px rgba(3,18,56,0.10);
+    padding:28px 30px 30px;
+    margin:26px auto 32px;
 }
 
 .metrics-grid-top{
     display:grid;
     grid-template-columns:repeat(4, 1fr);
-    gap:10px;
-    margin-bottom:18px;
+    gap:0;
+    margin-bottom:24px;
 }
 
 .instruments-heading{
-    color:#d4a017;
-    font-size:18px;
+    color:#9c6b00;
+    font-size:24px;
     font-weight:bold;
     text-align:center;
-    margin:2px auto 12px;
+    margin:8px auto 18px;
     line-height:1.5;
+    display:flex;
+    align-items:center;
+    gap:24px;
+}
+
+.instruments-heading::before,
+.instruments-heading::after{
+    content:"";
+    height:1px;
+    background:rgba(212,160,23,0.55);
+    flex:1;
 }
 
 .metrics-grid-bottom{
     display:grid;
     grid-template-columns:repeat(3, 1fr);
-    gap:10px;
-    max-width:720px;
+    gap:18px;
+    max-width:100%;
     margin:auto;
 }
 
 .metric-card{
     text-align:center;
-    padding:12px 8px;
-    border:1px solid rgba(212,160,23,0.55);
-    background:rgba(255,255,255,0.018);
-    animation:fadeUp 0.9s ease both;
-    min-height:72px;
+    padding:8px 16px;
+    min-height:88px;
     display:flex;
     flex-direction:column;
     justify-content:center;
-    box-shadow:inset 0 0 18px rgba(0,0,0,0.10);
 }
 
-.metric-card:nth-child(2){animation-delay:0.08s;}
-.metric-card:nth-child(3){animation-delay:0.16s;}
-.metric-card:nth-child(4){animation-delay:0.24s;}
+.metrics-grid-top .metric-card{
+    border-right:1px solid rgba(212,160,23,0.36);
+}
 
-.metrics-grid-bottom .metric-card:nth-child(1){animation-delay:0.32s;}
-.metrics-grid-bottom .metric-card:nth-child(2){animation-delay:0.40s;}
-.metrics-grid-bottom .metric-card:nth-child(3){animation-delay:0.48s;}
+.metrics-grid-top .metric-card:last-child{
+    border-right:none;
+}
+
+.metrics-grid-bottom .metric-card{
+    background:rgba(255,255,255,0.72);
+    border:1px solid rgba(212,160,23,0.30);
+    border-radius:10px;
+    box-shadow:0 8px 18px rgba(3,18,56,0.05);
+}
 
 .metric-number{
-    color:#d4a017;
-    font-size:28px;
+    color:#b88400;
+    font-size:40px;
     font-weight:bold;
-    margin-bottom:5px;
+    line-height:1.05;
+    margin-bottom:8px;
 }
 
 .metric-label{
-    color:white;
-    font-size:14px;
-    line-height:1.32;
+    color:#031238;
+    font-size:18px;
+    line-height:1.28;
 }
 
 .metric-card:hover{
@@ -413,17 +446,6 @@ body{
     to{
         opacity:1;
         transform:translateY(0);
-    }
-}
-
-@keyframes softPulse{
-    0%,100%{
-        transform:scale(1);
-        text-shadow:0 0 0 rgba(212,160,23,0);
-    }
-    50%{
-        transform:scale(1.04);
-        text-shadow:0 0 12px rgba(212,160,23,0.38);
     }
 }
 
@@ -448,13 +470,12 @@ body{
     width:min(760px, 92vw);
     max-height:82vh;
     overflow-y:auto;
-    background:#071a49;
-    border:1px solid rgba(212,160,23,0.88);
-    box-shadow:
-        0 0 0 1px rgba(212,160,23,0.35),
-        0 18px 56px rgba(0,0,0,0.78);
+    background:white;
+    border:1px solid rgba(212,160,23,0.55);
+    border-radius:14px;
+    box-shadow:0 18px 56px rgba(3,18,56,0.35);
     padding:24px 26px;
-    color:#d4a017;
+    color:#031238;
     font-size:16px;
     line-height:1.62;
     position:relative;
@@ -464,9 +485,10 @@ body{
     position:sticky;
     top:0;
     float:right;
-    background:#2a241f;
+    background:#031238;
     color:white;
     border:1px solid rgba(212,160,23,0.75);
+    border-radius:4px;
     font-size:22px;
     width:34px;
     height:34px;
@@ -480,18 +502,18 @@ body{
 }
 
 .project-modal b{
-    color:white;
+    color:#031238;
 }
 
 .project-popup-title{
-    color:#d4a017;
-    font-size:26px;
+    color:#9c6b00;
+    font-size:28px;
     font-weight:bold;
     margin-bottom:12px;
 }
 
 .popup-section-title{
-    color:white;
+    color:#9c6b00;
     font-size:18px;
     font-weight:bold;
     margin-top:22px;
@@ -499,56 +521,76 @@ body{
 }
 
 .project-modal a{
-    color:white !important;
+    color:#031238 !important;
     text-decoration:underline;
 }
 
 .project-modal a:hover{
-    color:#c79b3b !important;
+    color:#9c6b00 !important;
 }
 
 /* NOTE */
 
 .note-separator{
-    width:100%;
-    height:1px;
-    background:rgba(255,255,255,0.72);
-    margin:18px auto 28px;
+    display:none;
 }
 
 .note{
-    font-size:17px;
-    line-height:1.68;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0;
+    background:white;
+    border:1px solid rgba(212,160,23,0.28);
+    border-radius:14px;
+    box-shadow:0 14px 34px rgba(3,18,56,0.10);
+    padding:28px 30px;
+    margin-bottom:36px;
+    font-size:16px;
+    line-height:1.62;
     text-align:left;
 }
 
 .note-block{
-    margin-bottom:18px;
+    margin-bottom:0;
+    padding:0 28px;
+}
+
+.note-block:first-child{
+    padding-left:0;
+    border-right:1px solid rgba(212,160,23,0.36);
+}
+
+.note-block:last-child{
+    padding-right:0;
 }
 
 .note-title{
-    color:#d4a017;
+    color:#9c6b00;
     font-size:18px;
     font-weight:bold;
-    margin-bottom:8px;
-    line-height:1.5;
+    margin-bottom:14px;
+    line-height:1.45;
 }
 
 .note-text{
-    color:white;
+    color:#031238;
+    font-size:15.5px;
+    line-height:1.62;
 }
 
 /* FOOTER */
 
 .footer{
-    max-width:1000px;
-    width:92%;
-    margin:54px auto 0;
+    width:100%;
+    max-width:none;
+    margin:0;
+    background:#031238;
     color:white;
     text-align:center;
     font-size:16px;
     line-height:1.8;
-    padding-bottom:42px;
+    padding:24px 20px;
+    border-top:1px solid #d4a017;
 }
 
 /* RESPONSIVE */
@@ -598,16 +640,17 @@ body{
 
     .navbar{
         height:auto;
-        padding:18px 0;
+        padding:18px 5%;
         align-items:flex-start;
         flex-direction:column;
-        gap:14px;
+        gap:16px;
     }
 
     .nav-right{
         flex-wrap:wrap;
         white-space:normal;
         line-height:1.6;
+        gap:16px;
     }
 
     .dropdown-menu{
@@ -618,11 +661,12 @@ body{
     }
 
     .projects-container{
-        margin-top:30px;
+        width:92%;
+        margin-top:32px;
     }
 
     .landscape-title{
-        font-size:30px;
+        font-size:34px;
         margin-bottom:28px;
     }
 
@@ -696,10 +740,48 @@ body{
         gap:6px;
     }
 
+    .metrics-panel{
+        padding:24px 22px;
+    }
+
     .metrics-grid-top,
     .metrics-grid-bottom{
         grid-template-columns:1fr;
         max-width:100%;
+        gap:14px;
+    }
+
+    .metrics-grid-top .metric-card{
+        border-right:none;
+        border-bottom:1px solid rgba(212,160,23,0.28);
+        padding-bottom:18px;
+    }
+
+    .metrics-grid-top .metric-card:last-child{
+        border-bottom:none;
+    }
+
+    .instruments-heading{
+        font-size:22px;
+        gap:14px;
+    }
+
+    .note{
+        grid-template-columns:1fr;
+        padding:24px 22px;
+    }
+
+    .note-block,
+    .note-block:first-child,
+    .note-block:last-child{
+        padding:0;
+        border-right:none;
+    }
+
+    .note-block:first-child{
+        border-bottom:1px solid rgba(212,160,23,0.28);
+        padding-bottom:22px;
+        margin-bottom:22px;
     }
 
     .project-modal{
@@ -710,6 +792,7 @@ body{
 }
 
 </style>
+
 
 </head>
 
@@ -795,6 +878,10 @@ body{
             </div>
         </div>
 
+    </div>
+
+    <div class="map-hint">
+        Click each project label on the landscape map to view project details.
     </div>
 
     <div class="map-legend">
