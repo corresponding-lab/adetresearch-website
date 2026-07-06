@@ -212,7 +212,7 @@ body{
     font-weight:bold;
     letter-spacing:1px;
     line-height:1;
-    margin-top:-30px;
+    margin-top:-38px;
 }
 
 .logo-fullname{
@@ -286,14 +286,16 @@ body{
     color:#031238;
     font-size:12px;
     line-height:1.45;
-    text-align:left;
-    max-width:680px;
-    margin-top:26px;
-    margin-left:auto;
+    width:100%;
+    max-width:none;
+    margin-top:28px;
+    margin-left:0;
+    text-align:center;
 }
 
 .search-mainline{
     display:flex;
+    justify-content:center;
     align-items:center;
     flex-wrap:wrap;
     gap:8px;
@@ -338,8 +340,8 @@ body{
     color:#031238;
     font-size:12px;
     line-height:1.45;
-    margin-top:14px;
-    text-align:center;
+    display:inline;
+    margin-top:0;
 }
 
 /* FOOTER */
@@ -394,6 +396,7 @@ body{
 
     .shield-text{
         font-size:42px;
+        margin-top:-32px;
     }
 
     .logo-fullname{
@@ -460,6 +463,7 @@ body{
 
     .shield-text{
         font-size:41px;
+        margin-top:-32px;
     }
 
     .hero-title{
@@ -481,13 +485,13 @@ body{
     }
 
     .search-footprint{
-        text-align:left;
+        text-align:center;
         max-width:none;
         margin-left:0;
     }
 
-    .search-note{
-        text-align:left;
+    .search-mainline{
+        justify-content:center;
     }
 
     .footer{
@@ -659,10 +663,12 @@ body{
                     <span class="more-countries">+61 more countries</span>
                 </span>
 
-            </div>
+                <span class="search-divider">|</span>
 
-            <div class="search-note" id="metricsNote">
-                Google Search visibility since September 2025. Metrics updated through June 2026.
+                <span class="search-note" id="metricsNote">
+                    Google Search visibility since September 2025. Metrics updated through June 2026.
+                </span>
+
             </div>
 
         </div>
