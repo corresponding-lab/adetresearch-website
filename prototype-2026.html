@@ -1,1 +1,868 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+
+<title>ADET Research Group</title>
+
+<link rel="icon" type="image/png" href="logo.png">
+
+<style>
+
+*{box-sizing:border-box;}
+
+body{
+    margin:0;
+    font-family:Georgia, serif;
+    background:#031238;
+    color:#031238;
+    overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+.navbar{
+    height:68px;
+    width:100%;
+    padding:0 3%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:#031238;
+    border-bottom:1px solid rgba(212,160,23,0.45);
+    position:relative;
+    z-index:1000;
+}
+
+.nav-left{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.nav-left img{
+    width:28px;
+}
+
+.site-name{
+    color:white;
+    font-size:18px;
+    font-weight:500;
+    text-decoration:none;
+}
+
+.site-name:hover{
+    color:#d4a017;
+}
+
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    font-size:16px;
+    white-space:nowrap;
+}
+
+.nav-right a{
+    color:white;
+    text-decoration:none;
+    transition:0.2s;
+}
+
+.nav-right a:hover{
+    color:#d4a017;
+}
+
+/* DROPDOWN */
+
+.dropdown{
+    position:relative;
+    display:flex;
+    align-items:center;
+}
+
+.dropdown > a{
+    color:white;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+.dropdown > a:hover{
+    color:#d4a017;
+}
+
+.dropdown::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    top:100%;
+    height:18px;
+}
+
+.dropdown-menu{
+    display:none;
+    position:absolute;
+    top:34px;
+    right:0;
+    min-width:360px;
+    background:#2a241f;
+    padding:14px 16px;
+    text-align:center;
+    z-index:9999;
+    border:1px solid rgba(212,160,23,0.45);
+}
+
+.dropdown-menu a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    font-size:16px;
+    line-height:1.6;
+}
+
+.dropdown-menu a:hover{
+    color:#d4a017;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu,
+.dropdown-menu:hover{
+    display:block;
+}
+
+/* HERO */
+
+.hero{
+    background:
+        radial-gradient(circle at 15% 48%, rgba(212,160,23,0.08), transparent 30%),
+        radial-gradient(circle at 72% 42%, rgba(212,160,23,0.07), transparent 34%),
+        linear-gradient(135deg,#031238 0%,#061a4d 100%);
+    padding:70px 0 72px;
+}
+
+.hero-inner{
+    max-width:1280px;
+    width:92%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:310px 1fr 420px;
+    align-items:center;
+    gap:44px;
+}
+
+/* CSS LOGO */
+
+.logo-panel{
+    text-align:center;
+}
+
+.adet-shield{
+    width:230px;
+    height:255px;
+    margin:0 auto 24px;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    filter:drop-shadow(0 12px 22px rgba(0,0,0,0.28));
+}
+
+.adet-shield::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:#d4a017;
+    clip-path:polygon(0 0,100% 0,100% 70%,50% 100%,0 70%);
+}
+
+.adet-shield::after{
+    content:"";
+    position:absolute;
+    inset:17px;
+    background:#031238;
+    clip-path:polygon(0 0,100% 0,100% 68%,50% 100%,0 68%);
+}
+
+.shield-inner{
+    position:absolute;
+    inset:28px;
+    background:linear-gradient(145deg,#e0af2b 0%,#c79017 100%);
+    clip-path:polygon(0 0,100% 0,100% 67%,50% 100%,0 67%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:3;
+}
+
+.shield-text{
+    color:#031238;
+    font-size:52px;
+    font-weight:bold;
+    letter-spacing:1px;
+    line-height:1;
+    margin-top:-18px;
+}
+
+.logo-fullname{
+    color:#d4a017;
+    font-size:19px;
+    font-weight:bold;
+    line-height:1.42;
+    letter-spacing:0.4px;
+    text-transform:uppercase;
+}
+
+/* HERO CENTER */
+
+.hero-title-panel{
+    text-align:center;
+}
+
+.hero-title{
+    color:#d4a017;
+    font-size:68px;
+    font-weight:bold;
+    line-height:1.08;
+    letter-spacing:1px;
+    margin:0;
+}
+
+.hero-title span{
+    display:block;
+}
+
+.hero-motto{
+    color:#d4a017;
+    font-size:34px;
+    font-style:italic;
+    line-height:1.25;
+    margin-top:26px;
+}
+
+/* WORLD NETWORK */
+
+.world-panel{
+    height:310px;
+    position:relative;
+    opacity:0.92;
+}
+
+.world-map{
+    position:absolute;
+    inset:0;
+    background-image:
+        radial-gradient(circle, rgba(212,160,23,0.72) 1.1px, transparent 1.3px);
+    background-size:9px 9px;
+    opacity:0.28;
+    mask-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 900 440' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='black' d='M91 123h95l24 24l-18 35l24 28l-22 58l-45 7l-32-43l-41-22l-25-48zM259 72h99l30 22l-14 32l33 18l-25 42l-62 4l-51-32l-41-41zM420 116h83l26 24l-10 43l31 29l-38 33l-76-10l-42-44zM586 83h111l55 31l-17 47l42 29l-35 53l-86-8l-70-38l-40-58zM718 247h73l44 45l-22 48l-76 14l-45-44zM516 272h79l37 48l-25 51l-74 2l-45-44zM294 254h66l31 37l-24 47l-56 18l-40-38z'/%3E%3C/svg%3E");
+    mask-size:100% 100%;
+    mask-repeat:no-repeat;
+    mask-position:center;
+    -webkit-mask-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 900 440' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='black' d='M91 123h95l24 24l-18 35l24 28l-22 58l-45 7l-32-43l-41-22l-25-48zM259 72h99l30 22l-14 32l33 18l-25 42l-62 4l-51-32l-41-41zM420 116h83l26 24l-10 43l31 29l-38 33l-76-10l-42-44zM586 83h111l55 31l-17 47l42 29l-35 53l-86-8l-70-38l-40-58zM718 247h73l44 45l-22 48l-76 14l-45-44zM516 272h79l37 48l-25 51l-74 2l-45-44zM294 254h66l31 37l-24 47l-56 18l-40-38z'/%3E%3C/svg%3E");
+    -webkit-mask-size:100% 100%;
+    -webkit-mask-repeat:no-repeat;
+    -webkit-mask-position:center;
+}
+
+.arc{
+    position:absolute;
+    height:130px;
+    border-top:1.4px solid rgba(212,160,23,0.66);
+    border-radius:50% 50% 0 0;
+    transform-origin:center bottom;
+}
+
+.arc-1{
+    width:300px;
+    left:42px;
+    top:96px;
+    transform:rotate(6deg);
+}
+
+.arc-2{
+    width:260px;
+    right:10px;
+    top:92px;
+    transform:rotate(-7deg);
+}
+
+.arc-3{
+    width:230px;
+    left:210px;
+    top:150px;
+    transform:rotate(-11deg);
+}
+
+.arc-4{
+    width:260px;
+    right:18px;
+    top:184px;
+    transform:rotate(9deg);
+}
+
+.node{
+    position:absolute;
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:#d4a017;
+    box-shadow:
+        0 0 8px rgba(212,160,23,0.95),
+        0 0 18px rgba(212,160,23,0.55);
+}
+
+.node-1{left:70px; top:120px;}
+.node-2{left:185px; top:180px;}
+.node-3{left:278px; top:130px;}
+.node-4{right:126px; top:138px;}
+.node-5{right:34px; top:222px;}
+
+/* WHITE STRIP */
+
+.content-strip{
+    background:#f7f3ea;
+    border-top:1px solid rgba(212,160,23,0.24);
+    border-bottom:1px solid rgba(212,160,23,0.36);
+    padding:52px 0 46px;
+}
+
+.content-inner{
+    max-width:1180px;
+    width:88%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1.08fr;
+    gap:52px;
+    align-items:center;
+}
+
+.mission-text{
+    color:#031238;
+    font-size:28px;
+    line-height:1.58;
+    font-weight:normal;
+}
+
+.mission-accent{
+    width:52px;
+    height:2px;
+    background:#d4a017;
+    margin-top:24px;
+}
+
+/* SEARCH FOOTPRINT */
+
+.search-footprint{
+    color:#031238;
+    font-size:13.5px;
+    line-height:1.6;
+    text-align:left;
+}
+
+.search-mainline{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+    color:#031238;
+    white-space:normal;
+}
+
+.search-number{
+    color:#d4a017;
+    font-size:20px;
+    font-weight:bold;
+    line-height:1;
+}
+
+.search-divider{
+    color:#b88400;
+    margin:0 4px;
+}
+
+.search-flags{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    flex-wrap:wrap;
+}
+
+.search-flags img{
+    width:20px;
+    height:15px;
+    border-radius:2px;
+    box-shadow:0 0 2px rgba(3,18,56,0.18);
+}
+
+.more-countries{
+    color:#031238;
+    font-size:13.5px;
+    margin-left:4px;
+}
+
+.search-note{
+    color:#031238;
+    font-size:13.5px;
+    line-height:1.55;
+    margin-top:12px;
+}
+
+/* FOOTER */
+
+.footer{
+    width:100%;
+    background:#031238;
+    color:white;
+    text-align:center;
+    font-size:14.5px;
+    line-height:1.7;
+    padding:24px 4% 26px;
+    border-top:1px solid #d4a017;
+}
+
+.footer span{
+    color:white;
+}
+
+.footer-divider{
+    color:#d4a017;
+    padding:0 14px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width:1100px){
+
+    .nav-right{
+        gap:10px;
+        font-size:15px;
+    }
+
+    .hero-inner{
+        grid-template-columns:260px 1fr 330px;
+        gap:28px;
+    }
+
+    .adet-shield{
+        width:190px;
+        height:212px;
+    }
+
+    .shield-text{
+        font-size:42px;
+    }
+
+    .logo-fullname{
+        font-size:16px;
+    }
+
+    .hero-title{
+        font-size:56px;
+    }
+
+    .hero-motto{
+        font-size:29px;
+    }
+
+    .world-panel{
+        height:280px;
+    }
+
+    .mission-text{
+        font-size:25px;
+    }
+
+}
+
+@media (max-width:900px){
+
+    .navbar{
+        height:auto;
+        padding:18px 5%;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:16px;
+    }
+
+    .nav-right{
+        flex-wrap:wrap;
+        white-space:normal;
+        gap:16px;
+        line-height:1.5;
+    }
+
+    .dropdown-menu{
+        right:auto;
+        left:0;
+        min-width:300px;
+    }
+
+    .hero{
+        padding:46px 0 54px;
+    }
+
+    .hero-inner{
+        width:90%;
+        grid-template-columns:1fr;
+        gap:34px;
+        text-align:center;
+    }
+
+    .adet-shield{
+        width:188px;
+        height:210px;
+    }
+
+    .shield-text{
+        font-size:41px;
+    }
+
+    .hero-title{
+        font-size:46px;
+    }
+
+    .hero-motto{
+        font-size:26px;
+        margin-top:18px;
+    }
+
+    .world-panel{
+        height:220px;
+        max-width:420px;
+        width:100%;
+        margin:auto;
+    }
+
+    .content-inner{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .mission-text{
+        font-size:23px;
+        text-align:left;
+    }
+
+    .search-footprint{
+        text-align:left;
+    }
+
+    .footer{
+        font-size:13.5px;
+    }
+
+    .footer-divider{
+        display:inline-block;
+        padding:0 8px;
+    }
+
+}
+
+@media (max-width:560px){
+
+    .site-name{
+        font-size:17px;
+    }
+
+    .hero-title{
+        font-size:38px;
+    }
+
+    .logo-fullname{
+        font-size:15px;
+    }
+
+    .mission-text{
+        font-size:20px;
+    }
+
+    .search-mainline{
+        display:block;
+    }
+
+    .search-divider{
+        display:none;
+    }
+
+    .search-number{
+        display:inline-block;
+        margin-top:6px;
+    }
+
+    .search-flags{
+        margin-top:8px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+    <div class="nav-left">
+        <img src="logo.png">
+
+        <a href="index.html" class="site-name">
+            www.adetresearch.org
+        </a>
+    </div>
+
+    <div class="nav-right">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="members.html">Members & Collaborators</a>
+        <a href="projects.html">Projects</a>
+
+        <div class="dropdown">
+            <a href="research-info.html">
+                Research Information Access ▼
+            </a>
+
+            <div class="dropdown-menu">
+                <a href="project-iii-pis-access.html">
+                    Project III – Participant Information Sheet (PIS)
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<section class="hero">
+
+    <div class="hero-inner">
+
+        <div class="logo-panel">
+
+            <div class="adet-shield">
+                <div class="shield-inner">
+                    <div class="shield-text">ADET</div>
+                </div>
+            </div>
+
+            <div class="logo-fullname">
+                Alliance for Development in<br>
+                Evidence and Transformation
+            </div>
+
+        </div>
+
+        <div class="hero-title-panel">
+
+            <h1 class="hero-title">
+                <span>ADET</span>
+                <span>RESEARCH</span>
+                <span>GROUP</span>
+            </h1>
+
+            <div class="hero-motto">
+                “For the greater good”
+            </div>
+
+        </div>
+
+        <div class="world-panel">
+
+            <div class="world-map"></div>
+
+            <div class="arc arc-1"></div>
+            <div class="arc arc-2"></div>
+            <div class="arc arc-3"></div>
+            <div class="arc arc-4"></div>
+
+            <div class="node node-1"></div>
+            <div class="node node-2"></div>
+            <div class="node node-3"></div>
+            <div class="node node-4"></div>
+            <div class="node node-5"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="content-strip">
+
+    <div class="content-inner">
+
+        <div class="mission-block">
+
+            <div class="mission-text">
+                Generating evidence across health, behavioral, and care systems to guide better practice and outcomes — for lasting impact.
+            </div>
+
+            <div class="mission-accent"></div>
+
+        </div>
+
+        <div class="search-footprint">
+
+            <div class="search-mainline">
+
+                <span class="search-number" id="googleSearchVisits">569</span>
+                <span>Google Search Clicks</span>
+
+                <span class="search-divider">|</span>
+
+                <span class="search-number" id="countriesReached">66</span>
+                <span>Countries Reached</span>
+
+                <span class="search-divider">|</span>
+
+                <span class="search-flags" id="flagRow">
+                    <img src="https://flagcdn.com/24x18/th.png" alt="Thailand">
+                    <img src="https://flagcdn.com/24x18/it.png" alt="Italy">
+                    <img src="https://flagcdn.com/24x18/kr.png" alt="South Korea">
+                    <img src="https://flagcdn.com/24x18/sg.png" alt="Singapore">
+                    <img src="https://flagcdn.com/24x18/us.png" alt="United States">
+                    <span class="more-countries">+61 more countries</span>
+                </span>
+
+            </div>
+
+            <div class="search-note" id="metricsNote">
+                Google Search visibility since September 2025. Metrics updated through June 2026.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<div class="footer">
+
+    <span>© 2025–2026 ADET Research Group. All rights reserved.</span>
+    <span class="footer-divider">|</span>
+    <span>Independent and self-funded initiative (no external grant support)</span>
+    <span class="footer-divider">|</span>
+    <span>Not affiliated with any university, hospital, or organization</span>
+    <span class="footer-divider">|</span>
+    <span>Bangkok, Thailand</span>
+    <span class="footer-divider">|</span>
+    <span>Email: contact@adetresearch.org</span>
+
+</div>
+
+<script>
+
+const METRICS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzpzZoTS3Nh9XMJ9bfC9hy_MvK48zspziDcOmNz_NQiUwiMV10kpKNZqrO3hAJz3m2x/exec";
+
+const fallbackMetrics = {
+    googleSearchVisits: 569,
+    countriesReached: 66,
+    lastUpdated: "2026-06-29"
+};
+
+function formatMonthYear(dateString){
+    if(!dateString){
+        return "June 2026";
+    }
+
+    const date = new Date(dateString + "T00:00:00");
+
+    if(isNaN(date.getTime())){
+        return "June 2026";
+    }
+
+    return date.toLocaleDateString("en-US", {
+        month:"long",
+        year:"numeric"
+    });
+}
+
+function animateNumber(element, target){
+    let duration = 900;
+    let startTime = null;
+
+    function step(timestamp){
+        if(!startTime){
+            startTime = timestamp;
+        }
+
+        let progress = Math.min((timestamp - startTime) / duration, 1);
+        let eased = 1 - Math.pow(1 - progress, 3);
+        let value = Math.floor(eased * target);
+
+        element.textContent = value.toLocaleString();
+
+        if(progress < 1){
+            requestAnimationFrame(step);
+        }else{
+            element.textContent = target.toLocaleString();
+        }
+    }
+
+    requestAnimationFrame(step);
+}
+
+function renderFlagRow(countries){
+    const featuredCountries = [
+        {code:"th", name:"Thailand"},
+        {code:"it", name:"Italy"},
+        {code:"kr", name:"South Korea"},
+        {code:"sg", name:"Singapore"},
+        {code:"us", name:"United States"}
+    ];
+
+    const remaining = Math.max(countries - featuredCountries.length, 0);
+
+    document.getElementById("flagRow").innerHTML =
+        featuredCountries.map(country =>
+            `<img src="https://flagcdn.com/24x18/${country.code}.png" alt="${country.name}">`
+        ).join("") +
+        `<span class="more-countries">+${remaining} more countries</span>`;
+}
+
+function renderMetrics(data){
+    const visits = Number(data.googleSearchVisits) > 0
+        ? Number(data.googleSearchVisits)
+        : fallbackMetrics.googleSearchVisits;
+
+    const countries = Number(data.countriesReached) > 0
+        ? Number(data.countriesReached)
+        : fallbackMetrics.countriesReached;
+
+    const updatedMonth = formatMonthYear(
+        data.lastUpdated || fallbackMetrics.lastUpdated
+    );
+
+    animateNumber(
+        document.getElementById("googleSearchVisits"),
+        visits
+    );
+
+    animateNumber(
+        document.getElementById("countriesReached"),
+        countries
+    );
+
+    renderFlagRow(countries);
+
+    document.getElementById("metricsNote").textContent =
+        "Google Search visibility since September 2025. Metrics updated through " +
+        updatedMonth +
+        ".";
+}
+
+fetch(METRICS_ENDPOINT)
+    .then(response => response.json())
+    .then(data => {
+        renderMetrics(data);
+    })
+    .catch(() => {
+        renderMetrics(fallbackMetrics);
+    });
+
+</script>
+
+</body>
+
+</html>
