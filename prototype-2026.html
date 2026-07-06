@@ -131,7 +131,7 @@ body{
         radial-gradient(circle at 16% 42%, rgba(212,160,23,0.11), transparent 34%),
         radial-gradient(circle at 84% 52%, rgba(212,160,23,0.07), transparent 32%),
         linear-gradient(135deg,#031238 0%,#061a4d 100%);
-    padding:46px 0 70px;
+    padding:46px 0 58px;
     border-bottom:1px solid rgba(212,160,23,0.32);
 }
 
@@ -155,7 +155,7 @@ body{
     font-size:18px;
     line-height:1.4;
     font-style:italic;
-    margin-bottom:24px;
+    margin-bottom:22px;
 }
 
 /* STATS */
@@ -165,7 +165,7 @@ body{
     grid-template-columns:repeat(3,1fr);
     gap:18px;
     max-width:650px;
-    margin:0 auto 22px;
+    margin:0 auto 20px;
 }
 
 .stat-card{
@@ -173,13 +173,13 @@ body{
     border:1px solid rgba(212,160,23,0.75);
     background:rgba(3,18,56,0.34);
     border-radius:8px;
-    padding:18px 12px;
+    padding:16px 12px;
     box-shadow:0 10px 28px rgba(0,0,0,0.22);
 }
 
 .stat-number{
     color:#d4a017;
-    font-size:38px;
+    font-size:36px;
     font-weight:bold;
     line-height:1;
 }
@@ -245,7 +245,7 @@ body{
 
 #map{
     width:100%;
-    height:390px;
+    height:310px;
     background:#020b22;
 }
 
@@ -307,7 +307,7 @@ body{
 .members-container{
     max-width:1120px;
     width:88%;
-    margin:-42px auto 0;
+    margin:-34px auto 0;
     position:relative;
     z-index:5;
 }
@@ -317,50 +317,53 @@ body{
     border:1px solid rgba(3,18,56,0.10);
     border-radius:14px;
     box-shadow:0 14px 34px rgba(3,18,56,0.13);
-    padding:24px 28px 26px;
+    padding:28px 34px 32px;
     margin-bottom:18px;
 }
 
 .section-heading{
-    display:grid;
-    grid-template-columns:auto auto 1fr;
+    display:flex;
     align-items:center;
-    gap:12px;
-    margin-bottom:22px;
+    justify-content:center;
+    gap:14px;
+    margin-bottom:28px;
 }
 
 .section-heading-icon{
-    width:34px;
-    height:34px;
+    width:54px;
+    height:54px;
+    border-radius:50%;
+    background:#031238;
+    border:1px solid #d4a017;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 8px 18px rgba(3,18,56,0.20);
+    flex-shrink:0;
 }
 
 .section-heading-icon svg{
-    width:34px;
-    height:34px;
-    stroke:#b88400;
+    width:30px;
+    height:30px;
+    stroke:#d4a017;
     fill:none;
-    stroke-width:1.6;
+    stroke-width:1.65;
     stroke-linecap:round;
     stroke-linejoin:round;
 }
 
 .section-title{
     color:#031238;
-    font-size:28px;
+    font-size:30px;
     line-height:1.2;
     font-weight:bold;
-    white-space:nowrap;
+    text-align:center;
 }
 
-.section-line{
-    height:1px;
-    background:rgba(212,160,23,0.42);
-}
-
-/* SUBGROUPS */
+/* SUBGROUP */
 
 .member-subgroup{
-    margin-bottom:24px;
+    margin-bottom:34px;
 }
 
 .member-subgroup:last-child{
@@ -369,71 +372,55 @@ body{
 
 .subgroup-title{
     color:#9c6b00;
-    font-size:19px;
+    font-size:20px;
     font-weight:bold;
     line-height:1.3;
-    margin:0 0 12px;
-    display:flex;
-    align-items:center;
-    gap:12px;
+    text-align:center;
+    margin:0 0 18px;
 }
 
-.subgroup-title::after{
-    content:"";
-    height:1px;
-    background:rgba(212,160,23,0.32);
-    flex:1;
-}
-
-/* CARDS */
+/* PEOPLE */
 
 .people-grid{
     display:grid;
-    gap:14px;
+    gap:22px 36px;
 }
 
 .people-grid.one{
-    grid-template-columns:430px;
+    grid-template-columns:minmax(280px, 520px);
     justify-content:center;
 }
 
 .people-grid.two{
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:repeat(2, minmax(260px, 1fr));
 }
 
 .people-grid.three{
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(3, minmax(220px, 1fr));
 }
 
 .people-grid.single-left{
-    grid-template-columns:360px;
+    grid-template-columns:minmax(280px, 430px);
+    justify-content:center;
 }
 
-.person-card{
-    background:linear-gradient(180deg,#ffffff 0%,#fbf8ef 100%);
-    border:1px solid rgba(212,160,23,0.28);
-    border-radius:10px;
-    padding:18px 22px;
-    box-shadow:0 8px 20px rgba(3,18,56,0.08);
-    min-height:92px;
-}
-
-.person-card.compact{
-    min-height:84px;
+.person-entry{
+    text-align:center;
+    padding:0 10px;
 }
 
 .person-name{
     color:#031238;
-    font-size:17px;
+    font-size:17.5px;
     font-weight:bold;
     line-height:1.35;
-    margin-bottom:5px;
+    margin-bottom:6px;
 }
 
 .person-affiliation{
     color:#9c6b00;
-    font-size:14.5px;
-    line-height:1.42;
+    font-size:14.8px;
+    line-height:1.46;
 }
 
 /* NOTES */
@@ -459,12 +446,18 @@ body{
 .note-icon{
     width:48px;
     height:48px;
+    border-radius:50%;
+    background:#031238;
+    border:1px solid #d4a017;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
 .note-icon svg{
-    width:48px;
-    height:48px;
-    stroke:#b88400;
+    width:28px;
+    height:28px;
+    stroke:#d4a017;
     fill:none;
     stroke-width:1.55;
     stroke-linecap:round;
@@ -538,7 +531,7 @@ body{
     }
 
     .network-hero{
-        padding:34px 0 58px;
+        padding:34px 0 52px;
     }
 
     .network-inner{
@@ -555,20 +548,25 @@ body{
     }
 
     #map{
-        height:420px;
+        height:300px;
     }
 
     .members-container{
         width:92%;
-        margin-top:-30px;
+        margin-top:-26px;
     }
 
     .directory-section{
-        padding:22px 18px;
+        padding:24px 20px 28px;
+    }
+
+    .section-heading{
+        flex-direction:column;
+        gap:10px;
     }
 
     .section-title{
-        font-size:24px;
+        font-size:25px;
     }
 
     .people-grid.one,
@@ -579,6 +577,10 @@ body{
     }
 
     .notes-grid{
+        grid-template-columns:1fr;
+    }
+
+    .note-card{
         grid-template-columns:1fr;
     }
 
@@ -684,7 +686,6 @@ body{
                 </svg>
             </div>
             <div class="section-title">ADET Members</div>
-            <div class="section-line"></div>
         </div>
 
         <div class="member-subgroup">
@@ -692,7 +693,7 @@ body{
             <div class="subgroup-title">Founder & Director</div>
 
             <div class="people-grid one">
-                <div class="person-card">
+                <div class="person-entry">
                     <div class="person-name">Aeckapholpholladet Detkaew</div>
                     <div class="person-affiliation">
                         Faculty of Medicine Siriraj Hospital, Mahidol University, Bangkok, Thailand.
@@ -708,12 +709,12 @@ body{
 
             <div class="people-grid two">
 
-                <div class="person-card">
+                <div class="person-entry">
                     <div class="person-name">Chanandchidadussadee Toonsiri</div>
                     <div class="person-affiliation">Burapha University, Chonburi, Thailand.</div>
                 </div>
 
-                <div class="person-card">
+                <div class="person-entry">
                     <div class="person-name">Areeya Somroop</div>
                     <div class="person-affiliation">Panyapiwat Institute of Management, Chonburi, Thailand.</div>
                 </div>
@@ -728,14 +729,14 @@ body{
 
             <div class="people-grid two">
 
-                <div class="person-card">
+                <div class="person-entry">
                     <div class="person-name">Wannisa Jampathet</div>
                     <div class="person-affiliation">
                         Somdech Phra Nangchao Sirikit Hospital, Naval Medical Department, Royal Thai Navy, Chonburi, Thailand.
                     </div>
                 </div>
 
-                <div class="person-card">
+                <div class="person-entry">
                     <div class="person-name">Witsupha Soison</div>
                     <div class="person-affiliation">
                         King Chulalongkorn Memorial Hospital, Thai Red Cross Society, Bangkok, Thailand.
@@ -752,21 +753,21 @@ body{
 
             <div class="people-grid three">
 
-                <div class="person-card">
+                <div class="person-entry">
                     <div class="person-name">Ketsarin Khamwangchan</div>
                     <div class="person-affiliation">
                         Queen Savang Vadhana Memorial Hospital, Thai Red Cross Society, Chonburi, Thailand.
                     </div>
                 </div>
 
-                <div class="person-card">
+                <div class="person-entry">
                     <div class="person-name">Methinee Pimprasri</div>
                     <div class="person-affiliation">
                         Faculty of Medicine Ramathibodi Hospital, Mahidol University, Bangkok, Thailand.
                     </div>
                 </div>
 
-                <div class="person-card">
+                <div class="person-entry">
                     <div class="person-name">Thamonnat Srisawat</div>
                     <div class="person-affiliation">
                         Faculty of Medicine Siriraj Hospital, Mahidol University, Bangkok, Thailand.
@@ -790,22 +791,21 @@ body{
                 </svg>
             </div>
             <div class="section-title">Collaborators</div>
-            <div class="section-line"></div>
         </div>
 
         <div class="people-grid three">
 
-            <div class="person-card compact">
+            <div class="person-entry">
                 <div class="person-name">Francesco Marcatto</div>
                 <div class="person-affiliation">University of Trieste, Italy.</div>
             </div>
 
-            <div class="person-card compact">
+            <div class="person-entry">
                 <div class="person-name">Mooly Mei-Ching Wong</div>
                 <div class="person-affiliation">University of British Columbia, Canada.</div>
             </div>
 
-            <div class="person-card compact">
+            <div class="person-entry">
                 <div class="person-name">Hyunkyoung Oh</div>
                 <div class="person-affiliation">University of Wisconsin–Milwaukee School of Nursing, USA.</div>
             </div>
@@ -819,17 +819,19 @@ body{
         <div class="section-heading">
             <div class="section-heading-icon">
                 <svg viewBox="0 0 24 24">
-                    <circle cx="12" cy="7" r="3"></circle>
-                    <path d="M6 20v-2c0-2.8 2.7-5 6-5s6 2.2 6 5v2"></path>
+                    <path d="M7 4h10"></path>
+                    <path d="M12 4v12"></path>
+                    <path d="M8 8h8"></path>
+                    <path d="M7 20h10"></path>
+                    <path d="M9 16h6"></path>
                 </svg>
             </div>
             <div class="section-title">Contributors</div>
-            <div class="section-line"></div>
         </div>
 
         <div class="people-grid single-left">
 
-            <div class="person-card compact">
+            <div class="person-entry">
                 <div class="person-name">Machi Suka</div>
                 <div class="person-affiliation">The Jikei University School of Medicine, Japan.</div>
             </div>
@@ -843,13 +845,16 @@ body{
         <div class="section-heading">
             <div class="section-heading-icon">
                 <svg viewBox="0 0 24 24">
-                    <path d="M6 19c3-1 5-3.5 6-7c1 3.5 3 6 6 7"></path>
-                    <path d="M5 10c2 0 4 1 5 3"></path>
-                    <path d="M19 10c-2 0-4 1-5 3"></path>
+                    <path d="M4 20h16"></path>
+                    <path d="M5 9h14"></path>
+                    <path d="M6 9l6-5l6 5"></path>
+                    <path d="M7 9v9"></path>
+                    <path d="M11 9v9"></path>
+                    <path d="M15 9v9"></path>
+                    <path d="M19 9v9"></path>
                 </svg>
             </div>
             <div class="section-title">ADET Advisory Board</div>
-            <div class="section-line"></div>
         </div>
 
         <div class="member-subgroup">
@@ -857,7 +862,7 @@ body{
             <div class="subgroup-title">Honorary Scientific Advisor</div>
 
             <div class="people-grid one">
-                <div class="person-card">
+                <div class="person-entry">
                     <div class="person-name">Chairat Permpikul</div>
                     <div class="person-affiliation">
                         Faculty of Medicine Siriraj Hospital, Mahidol University, Bangkok, Thailand.
