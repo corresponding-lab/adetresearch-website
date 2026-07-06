@@ -19,6 +19,13 @@ body{
     overflow-x:hidden;
 }
 
+/* TOP WHITE BAND */
+
+.top-white-band{
+    height:18px;
+    background:#f7f3ea;
+}
+
 /* NAVBAR */
 
 .navbar{
@@ -29,7 +36,7 @@ body{
     align-items:center;
     justify-content:space-between;
     background:#031238;
-    border-bottom:1px solid rgba(212,160,23,0.45);
+    border-bottom:1px solid rgba(212,160,23,0.28);
     position:relative;
     z-index:1000;
 }
@@ -138,18 +145,18 @@ body{
         radial-gradient(circle at 18% 50%, rgba(212,160,23,0.08), transparent 32%),
         radial-gradient(circle at 82% 50%, rgba(212,160,23,0.06), transparent 34%),
         linear-gradient(135deg,#031238 0%,#061a4d 100%);
-    padding:64px 0 66px;
+    padding:58px 0 62px;
 }
 
 .hero-inner{
-    max-width:980px;
+    max-width:1020px;
     width:90%;
     margin:auto;
     display:grid;
     grid-template-columns:280px 1fr;
     align-items:center;
     justify-content:center;
-    gap:70px;
+    gap:78px;
 }
 
 /* CSS LOGO */
@@ -222,9 +229,9 @@ body{
 
 .hero-title{
     color:#d4a017;
-    font-size:68px;
+    font-size:76px;
     font-weight:bold;
-    line-height:1.08;
+    line-height:1.04;
     letter-spacing:1px;
     margin:0;
 }
@@ -235,44 +242,49 @@ body{
 
 .hero-motto{
     color:#d4a017;
-    font-size:34px;
+    font-size:42px;
     font-style:italic;
-    line-height:1.25;
-    margin-top:26px;
+    line-height:1.22;
+    margin-top:30px;
 }
 
 /* WHITE STRIP */
 
 .content-strip{
     background:#f7f3ea;
-    border-top:1px solid rgba(212,160,23,0.24);
-    border-bottom:1px solid rgba(212,160,23,0.36);
-    padding:38px 0 34px;
+    border-top:1px solid rgba(212,160,23,0.22);
+    border-bottom:1px solid rgba(212,160,23,0.30);
+    padding:34px 0 32px;
 }
 
 .content-inner{
     max-width:1180px;
-    width:88%;
+    width:92%;
     margin:auto;
     display:grid;
-    grid-template-columns:1fr 1.08fr;
-    gap:52px;
+    grid-template-columns:1fr 1.18fr;
+    gap:54px;
     align-items:center;
 }
 
 .mission-text{
     color:#031238;
-    font-size:28px;
-    line-height:1.58;
+    font-size:23px;
+    line-height:1.48;
     font-weight:normal;
+    text-align:left;
+}
+
+.mission-text strong{
+    font-weight:bold;
 }
 
 /* SEARCH FOOTPRINT */
 
 .search-footprint{
     color:#031238;
-    font-size:13.5px;
-    line-height:1.6;
+    font-size:12px;
+    line-height:1.45;
     text-align:left;
 }
 
@@ -280,21 +292,22 @@ body{
     display:flex;
     align-items:center;
     flex-wrap:wrap;
-    gap:10px;
+    gap:8px;
     color:#031238;
     white-space:normal;
 }
 
 .search-number{
-    color:#d4a017;
-    font-size:20px;
-    font-weight:bold;
+    color:#031238;
+    font-size:17px;
+    font-weight:600;
     line-height:1;
 }
 
 .search-divider{
     color:#b88400;
-    margin:0 4px;
+    margin:0 6px;
+    font-size:14px;
 }
 
 .search-flags{
@@ -305,23 +318,24 @@ body{
 }
 
 .search-flags img{
-    width:20px;
-    height:15px;
+    width:17px;
+    height:13px;
     border-radius:2px;
-    box-shadow:0 0 2px rgba(3,18,56,0.18);
+    box-shadow:0 0 2px rgba(3,18,56,0.14);
 }
 
 .more-countries{
     color:#031238;
-    font-size:13.5px;
+    font-size:12px;
     margin-left:4px;
 }
 
 .search-note{
     color:#031238;
-    font-size:13.5px;
-    line-height:1.55;
-    margin-top:12px;
+    font-size:12px;
+    line-height:1.45;
+    margin-top:14px;
+    text-align:center;
 }
 
 /* FOOTER */
@@ -357,7 +371,7 @@ body{
 
     .hero-inner{
         grid-template-columns:240px 1fr;
-        gap:48px;
+        gap:52px;
     }
 
     .adet-shield{
@@ -374,15 +388,15 @@ body{
     }
 
     .hero-title{
-        font-size:56px;
+        font-size:62px;
     }
 
     .hero-motto{
-        font-size:29px;
+        font-size:34px;
     }
 
     .mission-text{
-        font-size:25px;
+        font-size:21px;
     }
 
 }
@@ -431,25 +445,29 @@ body{
     }
 
     .hero-title{
-        font-size:46px;
+        font-size:48px;
     }
 
     .hero-motto{
-        font-size:26px;
+        font-size:30px;
         margin-top:18px;
     }
 
     .content-inner{
         grid-template-columns:1fr;
-        gap:30px;
+        gap:26px;
     }
 
     .mission-text{
-        font-size:23px;
+        font-size:20px;
         text-align:left;
     }
 
     .search-footprint{
+        text-align:left;
+    }
+
+    .search-note{
         text-align:left;
     }
 
@@ -466,6 +484,10 @@ body{
 
 @media (max-width:560px){
 
+    .top-white-band{
+        height:14px;
+    }
+
     .site-name{
         font-size:17px;
     }
@@ -474,12 +496,16 @@ body{
         font-size:38px;
     }
 
+    .hero-motto{
+        font-size:26px;
+    }
+
     .logo-fullname{
         font-size:15px;
     }
 
     .mission-text{
-        font-size:20px;
+        font-size:19px;
     }
 
     .search-mainline{
@@ -506,6 +532,8 @@ body{
 </head>
 
 <body>
+
+<div class="top-white-band"></div>
 
 <div class="navbar">
 
@@ -583,7 +611,7 @@ body{
         <div class="mission-block">
 
             <div class="mission-text">
-                Generating evidence across health, behavioral, and care systems to guide better practice and outcomes — for lasting impact.
+                <strong>ADET Research Group</strong> — Generating evidence across health, behavioral, and care systems to guide better practice and outcomes — for lasting impact.
             </div>
 
         </div>
