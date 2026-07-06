@@ -135,20 +135,21 @@ body{
 
 .hero{
     background:
-        radial-gradient(circle at 15% 48%, rgba(212,160,23,0.08), transparent 30%),
-        radial-gradient(circle at 72% 42%, rgba(212,160,23,0.07), transparent 34%),
+        radial-gradient(circle at 18% 50%, rgba(212,160,23,0.08), transparent 32%),
+        radial-gradient(circle at 82% 50%, rgba(212,160,23,0.06), transparent 34%),
         linear-gradient(135deg,#031238 0%,#061a4d 100%);
-    padding:70px 0 72px;
+    padding:64px 0 66px;
 }
 
 .hero-inner{
-    max-width:1280px;
-    width:92%;
+    max-width:980px;
+    width:90%;
     margin:auto;
     display:grid;
-    grid-template-columns:310px 1fr 420px;
+    grid-template-columns:280px 1fr;
     align-items:center;
-    gap:44px;
+    justify-content:center;
+    gap:70px;
 }
 
 /* CSS LOGO */
@@ -239,84 +240,6 @@ body{
     line-height:1.25;
     margin-top:26px;
 }
-
-/* WORLD NETWORK */
-
-.world-panel{
-    height:310px;
-    position:relative;
-    opacity:0.92;
-}
-
-.world-map{
-    position:absolute;
-    inset:0;
-    background-image:
-        radial-gradient(circle, rgba(212,160,23,0.72) 1.1px, transparent 1.3px);
-    background-size:9px 9px;
-    opacity:0.28;
-    mask-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 900 440' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='black' d='M91 123h95l24 24l-18 35l24 28l-22 58l-45 7l-32-43l-41-22l-25-48zM259 72h99l30 22l-14 32l33 18l-25 42l-62 4l-51-32l-41-41zM420 116h83l26 24l-10 43l31 29l-38 33l-76-10l-42-44zM586 83h111l55 31l-17 47l42 29l-35 53l-86-8l-70-38l-40-58zM718 247h73l44 45l-22 48l-76 14l-45-44zM516 272h79l37 48l-25 51l-74 2l-45-44zM294 254h66l31 37l-24 47l-56 18l-40-38z'/%3E%3C/svg%3E");
-    mask-size:100% 100%;
-    mask-repeat:no-repeat;
-    mask-position:center;
-    -webkit-mask-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 900 440' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='black' d='M91 123h95l24 24l-18 35l24 28l-22 58l-45 7l-32-43l-41-22l-25-48zM259 72h99l30 22l-14 32l33 18l-25 42l-62 4l-51-32l-41-41zM420 116h83l26 24l-10 43l31 29l-38 33l-76-10l-42-44zM586 83h111l55 31l-17 47l42 29l-35 53l-86-8l-70-38l-40-58zM718 247h73l44 45l-22 48l-76 14l-45-44zM516 272h79l37 48l-25 51l-74 2l-45-44zM294 254h66l31 37l-24 47l-56 18l-40-38z'/%3E%3C/svg%3E");
-    -webkit-mask-size:100% 100%;
-    -webkit-mask-repeat:no-repeat;
-    -webkit-mask-position:center;
-}
-
-.arc{
-    position:absolute;
-    height:130px;
-    border-top:1.4px solid rgba(212,160,23,0.66);
-    border-radius:50% 50% 0 0;
-    transform-origin:center bottom;
-}
-
-.arc-1{
-    width:300px;
-    left:42px;
-    top:96px;
-    transform:rotate(6deg);
-}
-
-.arc-2{
-    width:260px;
-    right:10px;
-    top:92px;
-    transform:rotate(-7deg);
-}
-
-.arc-3{
-    width:230px;
-    left:210px;
-    top:150px;
-    transform:rotate(-11deg);
-}
-
-.arc-4{
-    width:260px;
-    right:18px;
-    top:184px;
-    transform:rotate(9deg);
-}
-
-.node{
-    position:absolute;
-    width:10px;
-    height:10px;
-    border-radius:50%;
-    background:#d4a017;
-    box-shadow:
-        0 0 8px rgba(212,160,23,0.95),
-        0 0 18px rgba(212,160,23,0.55);
-}
-
-.node-1{left:70px; top:120px;}
-.node-2{left:185px; top:180px;}
-.node-3{left:278px; top:130px;}
-.node-4{right:126px; top:138px;}
-.node-5{right:34px; top:222px;}
 
 /* WHITE STRIP */
 
@@ -440,8 +363,8 @@ body{
     }
 
     .hero-inner{
-        grid-template-columns:260px 1fr 330px;
-        gap:28px;
+        grid-template-columns:240px 1fr;
+        gap:48px;
     }
 
     .adet-shield{
@@ -463,10 +386,6 @@ body{
 
     .hero-motto{
         font-size:29px;
-    }
-
-    .world-panel{
-        height:280px;
     }
 
     .mission-text{
@@ -525,13 +444,6 @@ body{
     .hero-motto{
         font-size:26px;
         margin-top:18px;
-    }
-
-    .world-panel{
-        height:220px;
-        max-width:420px;
-        width:100%;
-        margin:auto;
     }
 
     .content-inner{
@@ -664,23 +576,6 @@ body{
             <div class="hero-motto">
                 “For the greater good”
             </div>
-
-        </div>
-
-        <div class="world-panel">
-
-            <div class="world-map"></div>
-
-            <div class="arc arc-1"></div>
-            <div class="arc arc-2"></div>
-            <div class="arc arc-3"></div>
-            <div class="arc arc-4"></div>
-
-            <div class="node node-1"></div>
-            <div class="node node-2"></div>
-            <div class="node node-3"></div>
-            <div class="node node-4"></div>
-            <div class="node node-5"></div>
 
         </div>
 
