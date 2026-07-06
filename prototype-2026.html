@@ -24,6 +24,8 @@ body{
 .top-white-band{
     height:18px;
     background:#f7f3ea;
+    border-top:1px solid rgba(212,160,23,0.30);
+    border-bottom:1px solid rgba(212,160,23,0.30);
 }
 
 /* NAVBAR */
@@ -187,14 +189,14 @@ body{
 .adet-shield::after{
     content:"";
     position:absolute;
-    inset:12px;
+    inset:8px;
     background:#031238;
     clip-path:polygon(0 0,100% 0,100% 68%,50% 100%,0 68%);
 }
 
 .shield-inner{
     position:absolute;
-    inset:32px;
+    inset:30px;
     background:linear-gradient(145deg,#e0af2b 0%,#c79017 100%);
     clip-path:polygon(0 0,100% 0,100% 67%,50% 100%,0 67%);
     display:flex;
@@ -214,23 +216,11 @@ body{
 
 .logo-fullname{
     color:#d4a017;
-    font-size:18px;
+    font-size:19px;
     font-weight:bold;
-    line-height:1.38;
-    letter-spacing:0.35px;
+    line-height:1.42;
+    letter-spacing:0.4px;
     text-align:center;
-    white-space:nowrap;
-}
-
-.logo-major{
-    text-transform:uppercase;
-    font-weight:bold;
-}
-
-.logo-minor{
-    text-transform:none;
-    font-size:0.82em;
-    font-weight:500;
 }
 
 /* HERO CENTER */
@@ -369,7 +359,7 @@ body{
 
 .footer-divider{
     color:white;
-    padding:0 4px;
+    padding:0 1px;
 }
 
 /* RESPONSIVE */
@@ -396,7 +386,7 @@ body{
     }
 
     .logo-fullname{
-        font-size:15.5px;
+        font-size:16px;
     }
 
     .hero-title{
@@ -489,7 +479,7 @@ body{
 
     .footer-divider{
         display:inline-block;
-        padding:0 4px;
+        padding:0 1px;
     }
 
 }
@@ -513,9 +503,7 @@ body{
     }
 
     .logo-fullname{
-        font-size:13.5px;
-        line-height:1.45;
-        white-space:normal;
+        font-size:15px;
     }
 
     .mission-text{
@@ -594,13 +582,8 @@ body{
             </div>
 
             <div class="logo-fullname">
-                <span class="logo-major">Alliance</span>
-                <span class="logo-minor">for</span>
-                <span class="logo-major">Development</span>
-                <span class="logo-minor">in</span><br>
-                <span class="logo-major">Evidence</span>
-                <span class="logo-minor">and</span>
-                <span class="logo-major">Transformation</span>
+                Alliance for Development in<br>
+                Evidence and Transformation
             </div>
 
         </div>
