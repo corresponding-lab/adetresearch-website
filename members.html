@@ -10,34 +10,27 @@
 
 <style>
 
+*{box-sizing:border-box;}
+
 body{
     margin:0;
     font-family:Georgia, serif;
-    background:#031238;
-    color:white;
-    overflow-x:visible;
-}
-
-/* LAYER */
-
-.layer{
-    display:none;
-}
-
-.layer.active{
-    display:block;
+    background:#f7f3ea;
+    color:#031238;
+    overflow-x:hidden;
 }
 
 /* NAVBAR */
 
 .navbar{
     height:68px;
-    max-width:1280px;
-    width:95%;
-    margin:auto;
+    width:100%;
+    padding:0 3%;
     display:flex;
     align-items:center;
     justify-content:space-between;
+    background:#031238;
+    border-bottom:1px solid rgba(212,160,23,0.45);
     position:relative;
     z-index:1000;
 }
@@ -59,9 +52,7 @@ body{
     text-decoration:none;
 }
 
-.site-name:hover{
-    color:#c79b3b;
-}
+.site-name:hover{color:#d4a017;}
 
 .nav-right{
     display:flex;
@@ -74,11 +65,10 @@ body{
 .nav-right a{
     color:white;
     text-decoration:none;
+    transition:0.2s;
 }
 
-.nav-right a:hover{
-    color:#c79b3b;
-}
+.nav-right a:hover{color:#d4a017;}
 
 /* DROPDOWN */
 
@@ -94,9 +84,7 @@ body{
     cursor:pointer;
 }
 
-.dropdown > a:hover{
-    color:#c79b3b;
-}
+.dropdown > a:hover{color:#d4a017;}
 
 .dropdown::after{
     content:"";
@@ -117,6 +105,7 @@ body{
     padding:14px 16px;
     text-align:center;
     z-index:9999;
+    border:1px solid rgba(212,160,23,0.45);
 }
 
 .dropdown-menu a{
@@ -127,9 +116,7 @@ body{
     line-height:1.6;
 }
 
-.dropdown-menu a:hover{
-    color:#c79b3b;
-}
+.dropdown-menu a:hover{color:#d4a017;}
 
 .dropdown:hover .dropdown-menu,
 .dropdown:focus-within .dropdown-menu,
@@ -137,57 +124,70 @@ body{
     display:block;
 }
 
-/* NETWORK PAGE */
+/* HERO */
 
-.page{
-    max-width:1280px;
-    width:94%;
-    margin:28px auto 0;
+.network-hero{
+    background:
+        radial-gradient(circle at 16% 42%, rgba(212,160,23,0.11), transparent 34%),
+        radial-gradient(circle at 84% 52%, rgba(212,160,23,0.07), transparent 32%),
+        linear-gradient(135deg,#031238 0%,#061a4d 100%);
+    padding:42px 0 56px;
+    border-bottom:1px solid rgba(212,160,23,0.32);
+}
+
+.network-inner{
+    max-width:1120px;
+    width:88%;
+    margin:auto;
     text-align:center;
 }
 
-.title{
+.page-title{
     color:#d4a017;
-    font-size:44px;
+    font-size:52px;
     line-height:1.15;
     font-weight:bold;
-    margin-bottom:10px;
+    margin:0 0 8px;
 }
 
 .subtitle{
     color:white;
     font-size:18px;
     line-height:1.4;
-    margin-bottom:24px;
+    font-style:italic;
+    margin-bottom:22px;
 }
 
 /* STATS */
 
 .stats{
     display:grid;
-    grid-template-columns:repeat(3, 1fr);
+    grid-template-columns:repeat(3,1fr);
     gap:18px;
-    max-width:760px;
-    margin:0 auto 26px;
+    max-width:650px;
+    margin:0 auto 20px;
 }
 
 .stat-card{
     position:relative;
-    border:1px solid rgba(212,160,23,0.45);
-    background:rgba(255,255,255,0.035);
-    padding:12px 12px;
+    border:1px solid rgba(212,160,23,0.75);
+    background:rgba(3,18,56,0.34);
+    border-radius:8px;
+    padding:16px 12px;
+    box-shadow:0 10px 28px rgba(0,0,0,0.22);
 }
 
 .stat-number{
     color:#d4a017;
-    font-size:30px;
+    font-size:36px;
     font-weight:bold;
+    line-height:1;
 }
 
 .stat-label{
     color:white;
     font-size:16px;
-    margin-top:4px;
+    margin-top:8px;
 }
 
 .stat-card.interactive{
@@ -212,6 +212,7 @@ body{
     text-align:left;
     margin-top:10px;
     box-shadow:0 8px 24px rgba(0,0,0,0.45);
+    border-radius:8px;
 }
 
 .stat-card.interactive:hover .background-dropdown{
@@ -235,14 +236,16 @@ body{
 /* MAP */
 
 .map-wrap{
-    border:1px solid rgba(212,160,23,0.55);
+    border:1px solid rgba(212,160,23,0.75);
     background:#020b22;
-    padding:12px;
+    padding:10px;
+    border-radius:8px;
+    box-shadow:0 18px 40px rgba(0,0,0,0.35);
 }
 
 #map{
     width:100%;
-    height:430px;
+    height:230px;
     background:#020b22;
 }
 
@@ -299,146 +302,186 @@ body{
     line-height:1.45;
 }
 
-/* BUTTON */
-
-.back-link{
-    display:inline-block;
-    margin:24px auto 0;
-    color:#031238;
-    background:#d4a017;
-    padding:11px 24px;
-    border:none;
-    text-decoration:none;
-    font-family:Georgia, serif;
-    font-size:16px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-.back-link:hover{
-    background:white;
-    color:#031238;
-}
-
-/* MEMBERS */
+/* DIRECTORY */
 
 .members-container{
-    max-width:1100px;
-    width:92%;
-    margin:72px auto 0;
-    color:white;
+    max-width:1120px;
+    width:88%;
+    margin:-28px auto 0;
+    position:relative;
+    z-index:5;
 }
 
-.section{
-    margin-bottom:118px;
+.directory-section{
+    background:white;
+    border:1px solid rgba(3,18,56,0.10);
+    border-radius:14px;
+    box-shadow:0 14px 34px rgba(3,18,56,0.13);
+    padding:28px 34px 34px;
+    margin-bottom:18px;
+}
+
+.directory-section.advisory-section{
+    margin-bottom:56px;
+}
+
+.section-heading{
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    gap:14px;
+    margin-bottom:26px;
+}
+
+.section-heading-icon{
+    width:54px;
+    height:54px;
+    border-radius:50%;
+    background:#031238;
+    border:1px solid #d4a017;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 8px 18px rgba(3,18,56,0.20);
+    flex-shrink:0;
+}
+
+.section-heading-icon svg{
+    width:30px;
+    height:30px;
+    stroke:#d4a017;
+    fill:none;
+    stroke-width:1.65;
+    stroke-linecap:round;
+    stroke-linejoin:round;
 }
 
 .section-title{
-    color:#d4a017;
-    font-size:52px;
+    color:#031238;
+    font-size:30px;
     line-height:1.2;
     font-weight:bold;
-    text-align:center;
-    margin-bottom:40px;
 }
 
-.section-line{
-    width:100%;
-    height:2px;
-    background:white;
-    opacity:0.85;
-    margin:0 auto 78px;
+/* SUBGROUP */
+
+.member-subgroup{
+    margin-bottom:52px;
 }
 
-.note-divider{
-    width:100%;
-    height:2px;
-    background:white;
-    opacity:0.85;
-    margin:0 auto 12px;
+.member-subgroup:first-of-type{
+    margin-bottom:64px;
 }
 
-.role-row{
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:54px;
-    align-items:start;
-    margin-bottom:100px;
-    padding-left:18px;
-    padding-right:18px;
-    box-sizing:border-box;
+.member-subgroup:last-child{
+    margin-bottom:0;
 }
 
-.role-row.one-card{
-    grid-template-columns:300px;
-    justify-content:start;
-}
-
-.role-row.two-card{
-    grid-template-columns:repeat(2, 1fr);
-    width:720px;
-    margin-left:0;
-    margin-right:auto;
-}
-
-.member-card{
-    text-align:center;
-    padding-top:6px;
-}
-
-.member-card img{
-    width:100%;
-    max-width:300px;
-    display:block;
-    margin:0 auto 22px;
-}
-
-.member-affiliation{
-    color:#d4a017;
-    font-size:18px;
-    line-height:1.5;
-    font-weight:normal;
-    width:92%;
-    margin:auto;
-}
-
-/* NOTE */
-
-.note{
-    width:100%;
-    margin:0;
-    font-size:18px;
-    line-height:1.75;
+.subgroup-title{
+    color:#9c6b00;
+    font-size:20px;
+    font-weight:bold;
+    line-height:1.3;
     text-align:left;
+    margin:0 0 20px;
 }
 
-.note-block{
-    margin-bottom:42px;
+/* PEOPLE */
+
+.people-list{
+    max-width:760px;
+}
+
+.person-entry{
+    text-align:left;
+    margin-bottom:30px;
+}
+
+.person-entry:last-child{
+    margin-bottom:0;
+}
+
+.person-name{
+    color:#031238;
+    font-size:17.5px;
+    font-weight:bold;
+    line-height:1.35;
+    margin-bottom:6px;
+}
+
+.person-affiliation{
+    color:#9c6b00;
+    font-size:14.8px;
+    line-height:1.62;
+}
+
+/* NOTES */
+
+.notes-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+    margin-top:0;
+}
+
+.note-card{
+    display:grid;
+    grid-template-columns:62px 1fr;
+    gap:18px;
+    background:rgba(255,255,255,0.72);
+    border:1px solid rgba(212,160,23,0.30);
+    border-radius:10px;
+    padding:22px 24px;
+    box-shadow:0 8px 20px rgba(3,18,56,0.07);
+}
+
+.note-icon{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:#031238;
+    border:1px solid #d4a017;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.note-icon svg{
+    width:28px;
+    height:28px;
+    stroke:#d4a017;
+    fill:none;
+    stroke-width:1.55;
+    stroke-linecap:round;
+    stroke-linejoin:round;
 }
 
 .note-title{
-    color:#d4a017;
-    font-size:18px;
-    line-height:1.5;
+    color:#031238;
+    font-size:17px;
+    line-height:1.35;
     font-weight:bold;
-    margin-bottom:10px;
+    margin-bottom:8px;
 }
 
 .note-text{
-    color:white;
+    color:#031238;
+    font-size:14.5px;
+    line-height:1.55;
 }
 
 /* FOOTER */
 
 .footer{
-    max-width:1000px;
-    width:92%;
-    margin:110px auto 0;
+    width:100%;
+    margin:28px auto 0;
+    background:#031238;
     color:white;
     text-align:center;
     font-size:16px;
     line-height:1.8;
-    padding-bottom:46px;
+    padding:24px 20px;
+    border-top:1px solid #d4a017;
 }
 
 /* RESPONSIVE */
@@ -450,39 +493,40 @@ body{
         font-size:15px;
     }
 
-    .section-title{
-        font-size:46px;
-    }
-
-    .section-line{
-        margin-bottom:70px;
-    }
-
-    .role-row{
-        gap:40px;
-        padding-left:14px;
-        padding-right:14px;
-    }
-
-    .role-row.two-card{
-        width:680px;
-    }
-
 }
 
-@media (max-width:900px){
+@media (max-width:780px){
+
+    .navbar{
+        height:auto;
+        padding:18px 5%;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:16px;
+    }
 
     .nav-right{
-        font-size:13px;
-        gap:8px;
+        flex-wrap:wrap;
+        white-space:normal;
+        gap:16px;
     }
 
-    .title{
-        font-size:36px;
+    .dropdown-menu{
+        right:auto;
+        left:0;
+        min-width:300px;
     }
 
-    .subtitle{
-        font-size:17px;
+    .network-hero{
+        padding:34px 0 50px;
+    }
+
+    .network-inner{
+        width:92%;
+    }
+
+    .page-title{
+        font-size:38px;
     }
 
     .stats{
@@ -491,7 +535,55 @@ body{
     }
 
     #map{
-        height:420px;
+        height:230px;
+    }
+
+    .members-container{
+        width:92%;
+        margin-top:-24px;
+    }
+
+    .directory-section{
+        padding:24px 20px 30px;
+    }
+
+    .directory-section.advisory-section{
+        margin-bottom:44px;
+    }
+
+    .section-heading{
+        gap:12px;
+    }
+
+    .section-heading-icon{
+        width:50px;
+        height:50px;
+    }
+
+    .section-heading-icon svg{
+        width:28px;
+        height:28px;
+    }
+
+    .section-title{
+        font-size:25px;
+    }
+
+    .member-subgroup,
+    .member-subgroup:first-of-type{
+        margin-bottom:46px;
+    }
+
+    .person-entry{
+        margin-bottom:28px;
+    }
+
+    .notes-grid{
+        grid-template-columns:1fr;
+    }
+
+    .note-card{
+        grid-template-columns:1fr;
     }
 
 }
@@ -515,11 +607,7 @@ body{
     <div class="nav-right">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
-
-        <a href="#" onclick="showMembersLayer(); return false;">
-            Members & Collaborators
-        </a>
-
+        <a href="members.html">Members & Collaborators</a>
         <a href="projects.html">Projects</a>
 
         <div class="dropdown">
@@ -539,13 +627,11 @@ body{
 
 </div>
 
-<!-- LAYER 1: RESEARCH NETWORK -->
+<section class="network-hero">
 
-<div id="networkLayer" class="layer active">
+    <div class="network-inner">
 
-    <div class="page">
-
-        <div class="title">
+        <div class="page-title">
             ADET Research Network
         </div>
 
@@ -584,183 +670,225 @@ body{
             <div id="map"></div>
         </div>
 
-        <button class="back-link" onclick="showMembersLayer()">
-            Enter Members & Collaborators
-        </button>
+    </div>
+
+</section>
+
+<div class="members-container">
+
+    <div class="directory-section">
+
+        <div class="section-heading">
+            <div class="section-heading-icon">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="9" cy="8" r="3"></circle>
+                    <circle cx="15" cy="8" r="3"></circle>
+                    <path d="M4 20v-2.5C4 15.6 6.2 14 9 14s5 1.6 5 3.5V20"></path>
+                    <path d="M10 20v-2.5c0-1.9 2.2-3.5 5-3.5s5 1.6 5 3.5V20"></path>
+                </svg>
+            </div>
+            <div class="section-title">ADET Members</div>
+        </div>
+
+        <div class="member-subgroup">
+
+            <div class="subgroup-title">Founder & Director</div>
+
+            <div class="people-list">
+                <div class="person-entry">
+                    <div class="person-name">Aeckapholpholladet Detkaew</div>
+                    <div class="person-affiliation">
+                        Faculty of Medicine Siriraj Hospital, Mahidol University, Bangkok, Thailand.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="member-subgroup">
+
+            <div class="subgroup-title">Members</div>
+
+            <div class="people-list">
+
+                <div class="person-entry">
+                    <div class="person-name">Chanandchidadussadee Toonsiri</div>
+                    <div class="person-affiliation">Burapha University, Chonburi, Thailand.</div>
+                </div>
+
+                <div class="person-entry">
+                    <div class="person-name">Areeya Somroop</div>
+                    <div class="person-affiliation">Panyapiwat Institute of Management, Chonburi, Thailand.</div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="member-subgroup">
+
+            <div class="subgroup-title">Associate Members</div>
+
+            <div class="people-list">
+
+                <div class="person-entry">
+                    <div class="person-name">Wannisa Jampathet</div>
+                    <div class="person-affiliation">
+                        Somdech Phra Nangchao Sirikit Hospital, Naval Medical Department, Royal Thai Navy, Chonburi, Thailand.
+                    </div>
+                </div>
+
+                <div class="person-entry">
+                    <div class="person-name">Witsupha Soison</div>
+                    <div class="person-affiliation">
+                        King Chulalongkorn Memorial Hospital, Thai Red Cross Society, Bangkok, Thailand.
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="member-subgroup">
+
+            <div class="subgroup-title">Affiliates</div>
+
+            <div class="people-list">
+
+                <div class="person-entry">
+                    <div class="person-name">Ketsarin Khamwangchan</div>
+                    <div class="person-affiliation">
+                        Queen Savang Vadhana Memorial Hospital, Thai Red Cross Society, Chonburi, Thailand.
+                    </div>
+                </div>
+
+                <div class="person-entry">
+                    <div class="person-name">Methinee Pimprasri</div>
+                    <div class="person-affiliation">
+                        Faculty of Medicine Ramathibodi Hospital, Mahidol University, Bangkok, Thailand.
+                    </div>
+                </div>
+
+                <div class="person-entry">
+                    <div class="person-name">Thamonnat Srisawat</div>
+                    <div class="person-affiliation">
+                        Faculty of Medicine Siriraj Hospital, Mahidol University, Bangkok, Thailand.
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
 
-</div>
+    <div class="directory-section">
 
-<!-- LAYER 2: MEMBERS & COLLABORATORS - ORIGINAL CONTENT KEPT -->
-
-<div id="membersLayer" class="layer">
-
-    <div class="members-container">
-
-        <div class="section">
-
-            <div class="section-title">ADET Members</div>
-            <div class="section-line"></div>
-
-            <div class="role-row one-card">
-                <div class="member-card">
-                    <img src="founder.png">
-                    <div class="member-affiliation">
-                        Aeckapholpholladet Detkaew — Faculty of Medicine Siriraj Hospital, Mahidol University, Bangkok, Thailand.
-                    </div>
-                </div>
+        <div class="section-heading">
+            <div class="section-heading-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M8 12l2.2-2.2c.7-.7 1.8-.7 2.5 0L14 11"></path>
+                    <path d="M14 11l1.4-1.4c.7-.7 1.8-.7 2.5 0L21 12.7"></path>
+                    <path d="M3 12.5l3.1-3.1c.7-.7 1.8-.7 2.5 0L15 15.8c.7.7.7 1.8 0 2.5s-1.8.7-2.5 0L10 15.8"></path>
+                </svg>
             </div>
-
-            <div class="role-row two-card">
-
-                <div class="member-card">
-                    <img src="member.png">
-
-                    <div class="member-affiliation">
-                        Chanandchidadussadee Toonsiri — Burapha University, Chonburi, Thailand.
-                    </div>
-                </div>
-
-                <div class="member-card">
-                    <img src="member.png">
-
-                    <div class="member-affiliation">
-                        Areeya Somroop — Panyapiwat Institute of Management, Chonburi, Thailand.
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="role-row two-card">
-
-                <div class="member-card">
-                    <img src="associate-member.png">
-
-                    <div class="member-affiliation">
-                        Wannisa Jampathet — Somdech Phra Nangchao Sirikit Hospital, Naval Medical Department, Royal Thai Navy, Chonburi, Thailand.
-                    </div>
-                </div>
-
-                <div class="member-card">
-                    <img src="associate-member.png">
-
-                    <div class="member-affiliation">
-                        Witsupha Soison — King Chulalongkorn Memorial Hospital, Thai Red Cross Society, Bangkok, Thailand.
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="role-row">
-
-                <div class="member-card">
-                    <img src="Affiliate.png">
-
-                    <div class="member-affiliation">
-                        Ketsarin Khamwangchan — Queen Savang Vadhana Memorial Hospital, Thai Red Cross Society, Chonburi, Thailand.
-                    </div>
-                </div>
-
-                <div class="member-card">
-                    <img src="Affiliate.png">
-
-                    <div class="member-affiliation">
-                        Methinee Pimprasri — Faculty of Medicine Ramathibodi Hospital, Mahidol University, Bangkok, Thailand.
-                    </div>
-                </div>
-
-                <div class="member-card">
-                    <img src="Affiliate.png">
-
-                    <div class="member-affiliation">
-                        Thamonnat Srisawat — Faculty of Medicine Siriraj Hospital, Mahidol University, Bangkok, Thailand.
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="section">
-
             <div class="section-title">Collaborators</div>
-            <div class="section-line"></div>
+        </div>
 
-            <div class="role-row">
+        <div class="people-list">
 
-                <div class="member-card">
-                    <img src="collaborator.png">
+            <div class="person-entry">
+                <div class="person-name">Francesco Marcatto</div>
+                <div class="person-affiliation">University of Trieste, Italy.</div>
+            </div>
 
-                    <div class="member-affiliation">
-                        Francesco Marcatto — University of Trieste, Italy.
-                    </div>
-                </div>
+            <div class="person-entry">
+                <div class="person-name">Mooly Mei-Ching Wong</div>
+                <div class="person-affiliation">University of British Columbia, Canada.</div>
+            </div>
 
-                <div class="member-card">
-                    <img src="collaborator.png">
-
-                    <div class="member-affiliation">
-                        Mooly Mei-Ching Wong — University of British Columbia, Canada.
-                    </div>
-                </div>
-
-                <div class="member-card">
-                    <img src="collaborator.png">
-
-                    <div class="member-affiliation">
-                        Hyunkyoung Oh — University of Wisconsin–Milwaukee School of Nursing, USA.
-                    </div>
-                </div>
-
+            <div class="person-entry">
+                <div class="person-name">Hyunkyoung Oh</div>
+                <div class="person-affiliation">University of Wisconsin–Milwaukee School of Nursing, USA.</div>
             </div>
 
         </div>
 
-        <div class="section">
+    </div>
 
+    <div class="directory-section">
+
+        <div class="section-heading">
+            <div class="section-heading-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M6 19l4-2l8-8l-2-2l-8 8l-2 4z"></path>
+                    <path d="M14 7l2-2l3 3l-2 2"></path>
+                    <path d="M8 17l-2 2"></path>
+                </svg>
+            </div>
             <div class="section-title">Contributors</div>
-            <div class="section-line"></div>
+        </div>
 
-            <div class="role-row one-card">
+        <div class="people-list">
 
-                <div class="member-card">
-                    <img src="contributor.png">
-
-                    <div class="member-affiliation">
-                        Machi Suka — The Jikei University School of Medicine, Japan.
-                    </div>
-                </div>
-
+            <div class="person-entry">
+                <div class="person-name">Machi Suka</div>
+                <div class="person-affiliation">The Jikei University School of Medicine, Japan.</div>
             </div>
 
         </div>
 
-        <div class="section">
+    </div>
 
+    <div class="directory-section advisory-section">
+
+        <div class="section-heading">
+            <div class="section-heading-icon">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="7"></circle>
+                    <path d="M12 5v3"></path>
+                    <path d="M12 16v3"></path>
+                    <path d="M5 12h3"></path>
+                    <path d="M16 12h3"></path>
+                    <path d="M14.5 9.5l-2 5l-3 1l2-5z"></path>
+                </svg>
+            </div>
             <div class="section-title">ADET Advisory Board</div>
-            <div class="section-line"></div>
+        </div>
 
-            <div class="role-row one-card">
+        <div class="member-subgroup">
 
-                <div class="member-card">
-                    <img src="honorary-advisor.png">
+            <div class="subgroup-title">Honorary Scientific Advisor</div>
 
-                    <div class="member-affiliation">
-                        Chairat Permpikul — Faculty of Medicine Siriraj Hospital, Mahidol University, Bangkok, Thailand.
+            <div class="people-list">
+                <div class="person-entry">
+                    <div class="person-name">Chairat Permpikul</div>
+                    <div class="person-affiliation">
+                        Faculty of Medicine Siriraj Hospital, Mahidol University, Bangkok, Thailand.
                     </div>
                 </div>
-
             </div>
 
         </div>
 
-        <div class="note-divider"></div>
+    </div>
 
-        <div class="note">
+    <div class="notes-grid">
 
-            <div class="note-block">
+        <div class="note-card">
+            <div class="note-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M4 20h16"></path>
+                    <path d="M5 9h14"></path>
+                    <path d="M6 9l6-5l6 5"></path>
+                    <path d="M7 9v9"></path>
+                    <path d="M11 9v9"></path>
+                    <path d="M15 9v9"></path>
+                    <path d="M19 9v9"></path>
+                </svg>
+            </div>
 
+            <div>
                 <div class="note-title">
                     Note on Institutional Affiliations:
                 </div>
@@ -770,11 +898,20 @@ body{
                     <br><br>
                     The group operates independently and is not officially affiliated with any university, hospital, or organization.
                 </div>
+            </div>
+        </div>
 
+        <div class="note-card">
+            <div class="note-icon">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="9" cy="8" r="3"></circle>
+                    <circle cx="15" cy="8" r="3"></circle>
+                    <path d="M4 20v-2.5C4 15.6 6.2 14 9 14s5 1.6 5 3.5V20"></path>
+                    <path d="M10 20v-2.5c0-1.9 2.2-3.5 5-3.5s5 1.6 5 3.5V20"></path>
+                </svg>
             </div>
 
-            <div class="note-block">
-
+            <div>
                 <div class="note-title">
                     Note on Membership Structure:
                 </div>
@@ -784,15 +921,7 @@ body{
                     <br><br>
                     Membership titles may evolve over time to reflect each individual's actual role and contribution as projects progress.
                 </div>
-
             </div>
-
-        </div>
-
-        <div style="text-align:center; margin-top:42px;">
-            <button class="back-link" onclick="showNetworkLayer()">
-                View Research Network
-            </button>
         </div>
 
     </div>
@@ -809,114 +938,67 @@ body{
 
 const networkData = [
     {
-        location: "Bangkok, Thailand",
-        lat: 13.7563,
-        lng: 100.5018,
-        people: [
-            {
-                name: "Aeckapholpholladet Detkaew",
-                affiliation: "Faculty of Medicine Siriraj Hospital, Mahidol University"
-            },
-            {
-                name: "Witsupha Soison",
-                affiliation: "King Chulalongkorn Memorial Hospital, Thai Red Cross Society"
-            },
-            {
-                name: "Methinee Pimprasri",
-                affiliation: "Faculty of Medicine Ramathibodi Hospital, Mahidol University"
-            },
-            {
-                name: "Thamonnat Srisawat",
-                affiliation: "Faculty of Medicine Siriraj Hospital, Mahidol University"
-            },
-            {
-                name: "Chairat Permpikul",
-                affiliation: "Faculty of Medicine Siriraj Hospital, Mahidol University"
-            }
+        location:"Bangkok, Thailand",
+        lat:13.7563,
+        lng:100.5018,
+        people:[
+            {name:"Aeckapholpholladet Detkaew", affiliation:"Faculty of Medicine Siriraj Hospital, Mahidol University"},
+            {name:"Witsupha Soison", affiliation:"King Chulalongkorn Memorial Hospital, Thai Red Cross Society"},
+            {name:"Methinee Pimprasri", affiliation:"Faculty of Medicine Ramathibodi Hospital, Mahidol University"},
+            {name:"Thamonnat Srisawat", affiliation:"Faculty of Medicine Siriraj Hospital, Mahidol University"},
+            {name:"Chairat Permpikul", affiliation:"Faculty of Medicine Siriraj Hospital, Mahidol University"}
         ]
     },
     {
-        location: "Chonburi, Thailand",
-        lat: 13.3611,
-        lng: 100.9847,
-        people: [
-            {
-                name: "Chanandchidadussadee Toonsiri",
-                affiliation: "Burapha University"
-            },
-            {
-                name: "Areeya Somroop",
-                affiliation: "Panyapiwat Institute of Management"
-            },
-            {
-                name: "Wannisa Jampathet",
-                affiliation: "Somdech Phra Nangchao Sirikit Hospital, Naval Medical Department, Royal Thai Navy"
-            },
-            {
-                name: "Ketsarin Khamwangchan",
-                affiliation: "Queen Savang Vadhana Memorial Hospital, Thai Red Cross Society"
-            }
+        location:"Chonburi, Thailand",
+        lat:13.3611,
+        lng:100.9847,
+        people:[
+            {name:"Chanandchidadussadee Toonsiri", affiliation:"Burapha University"},
+            {name:"Areeya Somroop", affiliation:"Panyapiwat Institute of Management"},
+            {name:"Wannisa Jampathet", affiliation:"Somdech Phra Nangchao Sirikit Hospital, Naval Medical Department, Royal Thai Navy"},
+            {name:"Ketsarin Khamwangchan", affiliation:"Queen Savang Vadhana Memorial Hospital, Thai Red Cross Society"}
         ]
     },
     {
-        location: "Italy",
-        lat: 45.6495,
-        lng: 13.7768,
-        people: [
-            {
-                name: "Francesco Marcatto",
-                affiliation: "University of Trieste"
-            }
-        ]
+        location:"Italy",
+        lat:45.6495,
+        lng:13.7768,
+        people:[{name:"Francesco Marcatto", affiliation:"University of Trieste"}]
     },
     {
-        location: "Canada",
-        lat: 49.2606,
-        lng: -123.2460,
-        people: [
-            {
-                name: "Mooly Mei-Ching Wong",
-                affiliation: "University of British Columbia"
-            }
-        ]
+        location:"Canada",
+        lat:49.2606,
+        lng:-123.2460,
+        people:[{name:"Mooly Mei-Ching Wong", affiliation:"University of British Columbia"}]
     },
     {
-        location: "United States",
-        lat: 43.0389,
-        lng: -87.9065,
-        people: [
-            {
-                name: "Hyunkyoung Oh",
-                affiliation: "University of Wisconsin–Milwaukee School of Nursing"
-            }
-        ]
+        location:"United States",
+        lat:43.0389,
+        lng:-87.9065,
+        people:[{name:"Hyunkyoung Oh", affiliation:"University of Wisconsin–Milwaukee School of Nursing"}]
     },
     {
-        location: "Japan",
-        lat: 35.6895,
-        lng: 139.6917,
-        people: [
-            {
-                name: "Machi Suka",
-                affiliation: "The Jikei University School of Medicine"
-            }
-        ]
+        location:"Japan",
+        lat:35.6895,
+        lng:139.6917,
+        people:[{name:"Machi Suka", affiliation:"The Jikei University School of Medicine"}]
     }
 ];
 
 const map = L.map("map", {
-    worldCopyJump: true,
-    scrollWheelZoom: true
-}).setView([20, 20], 2);
+    worldCopyJump:true,
+    scrollWheelZoom:true
+}).setView([20,20],2);
 
 L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}", {
-    attribution: "Tiles &copy; Esri",
-    maxZoom: 8
+    attribution:"Tiles &copy; Esri",
+    maxZoom:8
 }).addTo(map);
 
 const goldIcon = L.divIcon({
-    className: "adet-marker",
-    html: `<div style="
+    className:"adet-marker",
+    html:`<div style="
         width:10px;
         height:10px;
         background:#d4a017;
@@ -924,8 +1006,8 @@ const goldIcon = L.divIcon({
         border-radius:50%;
         box-shadow:0 0 6px #d4a017;
     "></div>`,
-    iconSize: [14,14],
-    iconAnchor: [7,7]
+    iconSize:[14,14],
+    iconAnchor:[7,7]
 });
 
 networkData.forEach(location => {
@@ -942,26 +1024,10 @@ networkData.forEach(location => {
         ${peopleHtml}
     `;
 
-    L.marker([location.lat, location.lng], {icon: goldIcon})
+    L.marker([location.lat, location.lng], {icon:goldIcon})
         .addTo(map)
         .bindPopup(popupHtml);
 });
-
-function showMembersLayer(){
-    document.getElementById("networkLayer").classList.remove("active");
-    document.getElementById("membersLayer").classList.add("active");
-    window.scrollTo({top:0, behavior:"smooth"});
-}
-
-function showNetworkLayer(){
-    document.getElementById("membersLayer").classList.remove("active");
-    document.getElementById("networkLayer").classList.add("active");
-    window.scrollTo({top:0, behavior:"smooth"});
-
-    setTimeout(function(){
-        map.invalidateSize();
-    },250);
-}
 
 </script>
 
