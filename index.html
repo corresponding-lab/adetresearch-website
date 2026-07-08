@@ -19,16 +19,12 @@ body{
     overflow-x:hidden;
 }
 
-/* TOP WHITE BAND */
-
 .top-white-band{
     height:18px;
     background:#f7f3ea;
     border-top:1px solid rgba(212,160,23,0.32);
     border-bottom:1px solid rgba(212,160,23,0.32);
 }
-
-/* NAVBAR */
 
 .navbar{
     height:68px;
@@ -81,8 +77,6 @@ body{
 .nav-right a:hover{
     color:#d4a017;
 }
-
-/* DROPDOWN */
 
 .dropdown{
     position:relative;
@@ -140,8 +134,6 @@ body{
     display:block;
 }
 
-/* HERO */
-
 .hero{
     background:
         radial-gradient(circle at 18% 50%, rgba(212,160,23,0.08), transparent 32%),
@@ -159,8 +151,6 @@ body{
     justify-content:center;
     gap:14px;
 }
-
-/* CSS LOGO */
 
 .logo-panel{
     width:360px;
@@ -225,8 +215,6 @@ body{
     white-space:nowrap;
 }
 
-/* HERO CENTER */
-
 .hero-title-panel{
     width:460px;
     flex:0 0 460px;
@@ -255,8 +243,6 @@ body{
     white-space:nowrap;
 }
 
-/* WHITE STRIP */
-
 .content-strip{
     background:#f7f3ea;
     border-top:1px solid rgba(212,160,23,0.22);
@@ -283,16 +269,12 @@ body{
     font-weight:bold;
 }
 
-/* SEARCH FOOTPRINT */
-
 .search-footprint{
     color:#031238;
     font-size:12px;
     line-height:1.45;
     width:100%;
-    max-width:none;
     margin-top:28px;
-    margin-left:0;
     text-align:center;
 }
 
@@ -303,7 +285,6 @@ body{
     flex-wrap:wrap;
     gap:8px;
     color:#031238;
-    white-space:normal;
 }
 
 .search-number{
@@ -324,6 +305,7 @@ body{
     align-items:center;
     gap:6px;
     flex-wrap:wrap;
+    margin-left:8px;
 }
 
 .search-flags img{
@@ -344,10 +326,7 @@ body{
     font-size:12px;
     line-height:1.45;
     display:inline;
-    margin-top:0;
 }
-
-/* FOOTER */
 
 .footer{
     width:100%;
@@ -372,8 +351,6 @@ body{
 .footer-updated{
     font-style:italic;
 }
-
-/* RESPONSIVE */
 
 @media (max-width:1100px){
 
@@ -498,12 +475,6 @@ body{
         text-align:left;
     }
 
-    .search-footprint{
-        text-align:center;
-        max-width:none;
-        margin-left:0;
-    }
-
     .search-mainline{
         justify-content:center;
     }
@@ -561,6 +532,7 @@ body{
 
     .search-flags{
         margin-top:8px;
+        margin-left:0;
     }
 
 }
@@ -658,15 +630,13 @@ body{
 
             <div class="search-mainline">
 
-                <span class="search-number" id="googleSearchVisits">569</span>
+                <span class="search-number" id="googleSearchVisits">580</span>
                 <span>Google Search Clicks</span>
 
                 <span class="search-divider">|</span>
 
-                <span class="search-number" id="countriesReached">66</span>
+                <span class="search-number" id="countriesReached">69</span>
                 <span>Countries Reached</span>
-
-                <span class="search-divider">|</span>
 
                 <span class="search-flags" id="flagRow">
                     <img src="https://flagcdn.com/24x18/th.png" alt="Thailand">
@@ -674,13 +644,13 @@ body{
                     <img src="https://flagcdn.com/24x18/kr.png" alt="South Korea">
                     <img src="https://flagcdn.com/24x18/sg.png" alt="Singapore">
                     <img src="https://flagcdn.com/24x18/us.png" alt="United States">
-                    <span class="more-countries">+61 more countries</span>
+                    <span class="more-countries">+64 more countries</span>
                 </span>
 
                 <span class="search-divider">|</span>
 
                 <span class="search-note" id="metricsNote">
-                    Google Search visibility since September 2025. Metrics updated through June 2026.
+                    Google Search visibility since September 2025. Metrics updated through July 2026.
                 </span>
 
             </div>
@@ -709,23 +679,23 @@ body{
 
 <script>
 
-const METRICS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzpzZoTS3Nh9XMJ9bfC9hy_MvK48zspziDcOmNz_NQiUwiMV10kpKNZqrO3hAJz3m2x/exec";
+const METRICS_ENDPOINT = "https://script.google.com/macros/s/AKfycbwKdT55u6blz50Ik6VSEz_PFWxpgjTAminXKEoBq42bvxFhZeKjlBywPOoTR76yUs3D/exec";
 
 const fallbackMetrics = {
-    googleSearchVisits: 569,
-    countriesReached: 66,
-    lastUpdated: "2026-06-29"
+    googleSearchVisits: 580,
+    countriesReached: 69,
+    lastUpdated: "2026-07-06"
 };
 
 function formatMonthYear(dateString){
     if(!dateString){
-        return "June 2026";
+        return "July 2026";
     }
 
     const date = new Date(dateString + "T00:00:00");
 
     if(isNaN(date.getTime())){
-        return "June 2026";
+        return "July 2026";
     }
 
     return date.toLocaleDateString("en-US", {
@@ -808,7 +778,7 @@ function renderMetrics(data){
         ".";
 }
 
-fetch(METRICS_ENDPOINT)
+fetch(METRICS_ENDPOINT + "?v=" + Date.now())
     .then(response => response.json())
     .then(data => {
         renderMetrics(data);
