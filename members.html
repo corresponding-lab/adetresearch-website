@@ -245,7 +245,7 @@ body{
 
 #map{
     width:100%;
-    height:230px;
+    height:360px;
     background:#020b22;
 }
 
@@ -259,6 +259,8 @@ body{
     color:white;
     border:1px solid #d4a017;
     border-radius:10px;
+    width:360px;
+    max-width:calc(100vw - 48px);
 }
 
 .leaflet-popup-tip{
@@ -266,8 +268,12 @@ body{
 }
 
 .leaflet-popup-content{
-    max-height:320px;
+    width:auto !important;
+    max-height:250px;
+    margin:16px 18px;
     overflow-y:auto;
+    overflow-x:hidden;
+    padding-right:8px;
 }
 
 .popup-location{
@@ -535,7 +541,7 @@ body{
     }
 
     #map{
-        height:230px;
+        height:340px;
     }
 
     .members-container{
@@ -584,6 +590,16 @@ body{
 
     .note-card{
         grid-template-columns:1fr;
+    }
+
+    .leaflet-popup-content-wrapper{
+        width:300px;
+        max-width:calc(100vw - 36px);
+    }
+
+    .leaflet-popup-content{
+        max-height:230px;
+        margin:14px 16px;
     }
 
 }
@@ -951,6 +967,7 @@ body{
 
 <script>
 
+// Updated: Surat Tongyoo included in the Bangkok map popup.
 const networkData = [
     {
         location:"Bangkok, Thailand",
@@ -1042,7 +1059,13 @@ networkData.forEach(location => {
 
     L.marker([location.lat, location.lng], {icon:goldIcon})
         .addTo(map)
-        .bindPopup(popupHtml);
+        .bindPopup(popupHtml, {
+            maxWidth:360,
+            minWidth:300,
+            autoPan:true,
+            autoPanPaddingTopLeft:[24,24],
+            autoPanPaddingBottomRight:[24,24]
+        });
 });
 
 </script>
