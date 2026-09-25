@@ -199,12 +199,12 @@ body{
 }
 
 .shield-tree{
-    width:156px;
-    height:192px;
-    margin-top:11px;
-    flex:0 0 auto;
-    fill:#031238;
+    width:164px;
+    height:184px;
+    object-fit:contain;
     display:block;
+    margin-top:10px;
+    flex:0 0 auto;
 }
 
 .shield-text{
@@ -213,7 +213,7 @@ body{
     font-weight:bold;
     letter-spacing:1px;
     line-height:1;
-    margin-top:-5px;
+    margin-top:-2px;
 }
 
 .logo-fullname{
@@ -391,14 +391,14 @@ body{
     }
 
     .shield-tree{
-        width:119px;
-        height:147px;
+        width:126px;
+        height:141px;
         margin-top:8px;
     }
 
     .shield-text{
         font-size:34px;
-        margin-top:-4px;
+        margin-top:-1px;
     }
 
     .logo-fullname{
@@ -470,14 +470,14 @@ body{
     }
 
     .shield-tree{
-        width:118px;
-        height:145px;
+        width:125px;
+        height:140px;
         margin-top:8px;
     }
 
     .shield-text{
         font-size:34px;
-        margin-top:-4px;
+        margin-top:-1px;
     }
 
     .hero-title{
@@ -608,25 +608,8 @@ body{
 
             <div class="adet-shield">
                 <div class="shield-inner">
-
-                    <!-- TREE SVG START -->
-
-                    <svg class="shield-tree" viewBox="0 0 272 335" aria-hidden="true">
-                        <!-- traced tree path -->
-                        <path d="M246 240 L246 241 L247 241 L247 240 Z"/>
-                        <path d="M93 221 L92 222 L93 223 L94 223 L94 221 Z"/>
-                        <path d="M170 201 L173 203 L172 202 L172 201 Z"/>
-
-                        <!--
-                        ตรงนี้ในเวอร์ชันเต็มมี SVG path จำนวนมาก
-                        จากการ trace ต้นไม้จริง
-                        -->
-                    </svg>
-
-                    <!-- TREE SVG END -->
-
+                    <img class="shield-tree" src="adet-tree.png" alt="">
                     <div class="shield-text">ADET</div>
-
                 </div>
             </div>
 
@@ -720,8 +703,7 @@ body{
 
 <script>
 
-const METRICS_ENDPOINT =
-"https://script.google.com/macros/s/AKfycbwKdT55u6blz5Olk6VSEz_PFWxpgjTAminXKEoBq42bvxFhZeKjlBywPOoTR76yUs3D/exec";
+const METRICS_ENDPOINT = "https://script.google.com/macros/s/AKfycbwKdT55u6blz5Olk6VSEz_PFWxpgjTAminXKEoBq42bvxFhZeKjlBywPOoTR76yUs3D/exec";
 
 const fallbackMetrics = {
     googleSearchVisits: 810,
@@ -780,8 +762,7 @@ function renderFlagRow(countries){
         {code:"us", name:"United States"}
     ];
 
-    const remaining =
-        Math.max(countries - featuredCountries.length, 0);
+    const remaining = Math.max(countries - featuredCountries.length, 0);
 
     document.getElementById("flagRow").innerHTML =
         featuredCountries.map(country =>
@@ -791,22 +772,17 @@ function renderFlagRow(countries){
 }
 
 function renderMetrics(data){
-
-    const visits =
-        Number(data.googleSearchVisits) > 0
+    const visits = Number(data.googleSearchVisits) > 0
         ? Number(data.googleSearchVisits)
         : fallbackMetrics.googleSearchVisits;
 
-    const countries =
-        Number(data.countriesReached) > 0
+    const countries = Number(data.countriesReached) > 0
         ? Number(data.countriesReached)
         : fallbackMetrics.countriesReached;
 
-    const updatedMonth =
-        formatMonthYear(
-            data.lastUpdated ||
-            fallbackMetrics.lastUpdated
-        );
+    const updatedMonth = formatMonthYear(
+        data.lastUpdated || fallbackMetrics.lastUpdated
+    );
 
     animateNumber(
         document.getElementById("googleSearchVisits"),
