@@ -630,12 +630,12 @@ body{
 
             <div class="search-mainline">
 
-                <span class="search-number" id="googleSearchVisits">810</span>
+                <span class="search-number" id="googleSearchVisits">962</span>
                 <span>Google Search Clicks</span>
 
                 <span class="search-divider">|</span>
 
-                <span class="search-number" id="countriesReached">122</span>
+                <span class="search-number" id="countriesReached">132</span>
                 <span>Countries Reached</span>
 
                 <span class="search-flags" id="flagRow">
@@ -644,13 +644,13 @@ body{
                     <img src="https://flagcdn.com/24x18/kr.png" alt="South Korea">
                     <img src="https://flagcdn.com/24x18/sg.png" alt="Singapore">
                     <img src="https://flagcdn.com/24x18/us.png" alt="United States">
-                    <span class="more-countries">+117 more countries</span>
+                    <span class="more-countries">+127 more countries</span>
                 </span>
 
                 <span class="search-divider">|</span>
 
                 <span class="search-note" id="metricsNote">
-                    Google Search visibility since September 2025. Metrics updated through August 2026.
+                    Google Search visibility since September 2025. Metrics updated through October 2026.
                 </span>
 
             </div>
@@ -665,7 +665,7 @@ body{
 
     <span>© 2025–2026 ADET Research Group. All rights reserved.</span>
     <span class="footer-divider">|</span>
-    <span class="footer-updated">Last updated July 2026.</span>
+    <span class="footer-updated">Last updated October 2026.</span>
     <span class="footer-divider">|</span>
     <span>Independent and self-funded initiative (no external grant support)</span>
     <span class="footer-divider">|</span>
@@ -682,20 +682,20 @@ body{
 const METRICS_ENDPOINT = "https://script.google.com/macros/s/AKfycbwKdT55u6blz5Olk6VSEz_PFWxpgjTAminXKEoBq42bvxFhZeKjlBywPOoTR76yUs3D/exec";
 
 const fallbackMetrics = {
-    googleSearchVisits: 810,
-    countriesReached: 122,
-    lastUpdated: "2026-08-21"
+    googleSearchVisits: 962,
+    countriesReached: 132,
+    lastUpdated: "2026-10-07"
 };
 
 function formatMonthYear(dateString){
     if(!dateString){
-        return "August 2026";
+        return "October 2026";
     }
 
     const date = new Date(dateString + "T00:00:00");
 
     if(isNaN(date.getTime())){
-        return "August 2026";
+        return "October 2026";
     }
 
     return date.toLocaleDateString("en-US", {
