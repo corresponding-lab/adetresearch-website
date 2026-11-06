@@ -288,6 +288,13 @@ body{
     background:rgba(3,18,56,0.30);
 }
 
+/* Project IV is visible and clickable, but retains planned styling. */
+.planned-marker.p4 .marker-label{
+    font-size:18px;
+    gap:9px;
+    padding:4px 8px;
+}
+
 .p1{
     top:140px;
     left:430px;
@@ -304,7 +311,7 @@ body{
 }
 
 .p4{
-    bottom:92px;
+    bottom:124px;
     left:250px;
 }
 
@@ -722,8 +729,12 @@ body{
     }
 
     .p4{
-        bottom:160px;
-        left:82px;
+        bottom:70px;
+        left:22px;
+    }
+
+    .planned-marker.p4 .marker-label{
+        font-size:17px;
     }
 
     .p5{
@@ -867,8 +878,9 @@ body{
         </div>
 
         <div class="project-marker planned-marker p4">
-            <div class="marker-label">
+            <div class="marker-label" onclick="openProject('project4')">
                 <div class="marker-dot"></div>
+                <div>Project IV</div>
             </div>
         </div>
 
@@ -987,7 +999,7 @@ body{
 
 <div class="footer">
     © 2025–2026 ADET Research Group. All rights reserved. |
-    <i>Last updated October 2026.</i>
+    <i>Last updated November 2026.</i>
 </div>
 
 <!-- MODALS -->
@@ -1122,6 +1134,38 @@ body{
         Translated under academic permission by Aeckapholpholladet Detkaew (2025) in collaboration with one of the original developers (listed as IRB co-investigator; co-authorship planned).
         <br>
         - Back-translation reviewed and face-validated by the original developer. Included in Project III (IRB 2025).
+    </div>
+</div>
+
+<div class="modal-overlay" id="project4">
+    <div class="project-modal">
+        <button class="modal-close" onclick="closeProject('project4')">×</button>
+
+        <div class="project-popup-title">Project IV</div>
+
+        <b>Focus:</b> GCS interpretation and imputation under documentation uncertainty in patients with sepsis and/or septic shock.
+        <br>
+        <b>Goals:</b> To develop and evaluate a standardized framework for addressing GCS documentation uncertainty in clinical research.
+        <br>
+        <b>Status:</b> Protocol development (pre-IRB submission; 2026).
+        <br>
+        <b>Current Progress:</b> Protocol refinement and external expert review ongoing.
+        <br>
+        <b>Principal Investigator:</b> Aeckapholpholladet Detkaew.
+        <br>
+        <b>Statistical Methodology Lead (Co-Investigator):</b> To Be Confirmed (TBC).
+        <br>
+        <b>Clinical Methodology Lead (Co-Investigator):</b> To Be Confirmed (TBC).
+        <br>
+        <b>External Methodological Feedback:</b> Informal methodological feedback received from Laure Wynants, PhD (Maastricht University; contributor to the STRATOS Initiative), during study conceptualization. No current involvement in study conduct or access to study data.
+        <br>
+        <b>Funding:</b> Self-funded (no external grant support).
+
+        <div class="popup-section-title">— Research Framework —</div>
+
+        <b>ADET-GCS Research Framework</b>
+        <br>
+        Conceptualized and currently being developed by Aeckapholpholladet Detkaew (Principal Investigator), ADET Research Group.
     </div>
 </div>
 
