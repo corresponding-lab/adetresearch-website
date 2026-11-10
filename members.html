@@ -658,7 +658,7 @@ body{
         <div class="stats">
 
             <div class="stat-card">
-                <div class="stat-number">5</div>
+                <div class="stat-number">6</div>
                 <div class="stat-label">Countries</div>
             </div>
 
@@ -677,6 +677,7 @@ body{
                     <div class="dropdown-item">Medicine (3)</div>
                     <div class="dropdown-item">Psychology (1)</div>
                     <div class="dropdown-item">Social Work (1)</div>
+                    <div class="dropdown-item">Epidemiology (1)</div>
                 </div>
             </div>
 
@@ -863,6 +864,34 @@ body{
 
     </div>
 
+    <div class="directory-section">
+
+        <div class="section-heading">
+            <div class="section-heading-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M4 5h16v11H9l-5 4V5z"></path>
+                    <path d="M8 9h8"></path>
+                    <path d="M8 12h5"></path>
+                </svg>
+            </div>
+            <div class="section-title">External Methodological Feedback</div>
+        </div>
+
+        <div class="people-list">
+
+            <div class="person-entry">
+                <div class="person-name">Laure Wynants</div>
+                <div class="person-affiliation">
+                    Maastricht University, The Netherlands.<br>
+                    Contributor to the STRATOS Initiative.<br><br>
+                    Provided informal methodological feedback during the conceptualization of the ADET-GCS Research Program (Project IV). No current involvement in study conduct or access to study data.
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
     <div class="directory-section advisory-section">
 
         <div class="section-heading">
@@ -939,7 +968,7 @@ body{
                 </div>
 
                 <div class="note-text">
-                    Institutional names shown here reflect the professional backgrounds and current affiliations of ADET members and collaborators, provided solely for academic and research context, and do not indicate that ADET Research Group is a unit, center, or affiliate of those institutions.
+                    Institutional names shown here reflect the professional backgrounds and current affiliations of individuals listed on this page, provided solely for academic and research context, and do not indicate that ADET Research Group is a unit, center, or affiliate of those institutions.
                     <br><br>
                     The group operates independently and is not officially affiliated with any university, hospital, or organization.
                 </div>
@@ -981,7 +1010,7 @@ body{
 
 <script>
 
-// Updated: Bangkok map popup includes current ADET members and advisors.
+// Updated: network map includes ADET members, collaborators, advisors, contributors, and external methodological feedback.
 const networkData = [
     {
         location:"Bangkok, Thailand",
@@ -1026,6 +1055,12 @@ const networkData = [
         lat:43.0389,
         lng:-87.9065,
         people:[{name:"Hyunkyoung Oh", affiliation:"University of Wisconsin–Milwaukee School of Nursing"}]
+    },
+    {
+        location:"The Netherlands",
+        lat:50.8514,
+        lng:5.6909,
+        people:[{name:"Laure Wynants", affiliation:"Maastricht University"}]
     },
     {
         location:"Japan",
